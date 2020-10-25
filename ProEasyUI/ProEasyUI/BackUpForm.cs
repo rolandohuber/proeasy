@@ -1,4 +1,5 @@
-﻿using BLL;
+﻿using BE;
+using BLL;
 using System;
 using System.Windows.Forms;
 
@@ -17,8 +18,19 @@ namespace ProEasyUI
 
         public override void ReloadLang()
         {
-            this.label2.Text = i18n().GetString("backup.cant");
-            this.button1.Text = i18n().GetString("backup.export");
+            try
+            {
+                this.label2.Text = i18n().GetString("backup.cant");
+                this.button1.Text = i18n().GetString("backup.export");
+            }
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
+            }
         }
 
         private void BackUpForm_Load(object sender, EventArgs e)
@@ -28,16 +40,38 @@ namespace ProEasyUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string path = service.generarBackUp(Convert.ToInt32(this.textBox2.Text != null && this.textBox2.Text.Trim().Length > 0 ? this.textBox2.Text : "1"));
-            Clipboard.SetText(path);
-            MessageBox.Show("Tu bkp esta aca y lo copiamos al clipboard: " + path);
+            try
+            {
+                string path = service.generarBackUp(Convert.ToInt32(this.textBox2.Text != null && this.textBox2.Text.Trim().Length > 0 ? this.textBox2.Text : "1"));
+                Clipboard.SetText(path);
+                showInfo("Tu bkp esta aca y lo copiamos al clipboard: " + path);
+            }
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
+            }
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            try
             {
-                e.Handled = true;
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+                {
+                    e.Handled = true;
+                }
+            }
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
             }
         }
     }

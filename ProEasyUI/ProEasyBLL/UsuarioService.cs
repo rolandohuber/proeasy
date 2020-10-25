@@ -1,8 +1,8 @@
 using BE;
 using DAL;
 using System;
-using System.Collections.Generic;
 using System.Text;
+using System.Collections.Generic;
 
 namespace BLL
 {
@@ -153,7 +153,6 @@ namespace BLL
             }
 
             this.usuarioMapper.eliminar(entity);
-            verificadorService.actualizarDVV("USUARIO");
             BitacoraService.getInstance().crear(
               Bitacora.builder()
               .Criticidad("ALTA")
@@ -166,6 +165,7 @@ namespace BLL
               .Data(entity)
               .build()
           );
+            verificadorService.actualizarDVV("USUARIO");
         }
 
         public override List<Usuario> listar()

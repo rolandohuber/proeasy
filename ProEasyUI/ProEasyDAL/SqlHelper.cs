@@ -1,7 +1,7 @@
-﻿using Nini.Config;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data;
+using Nini.Config;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace DAL
@@ -36,7 +36,6 @@ namespace DAL
                         throw new BE.ProEasyException(100, "Conexion no establecida");
                     }
                 }
-
 
                 instance = new SqlHelper(connectionString);
             }
@@ -197,7 +196,6 @@ namespace DAL
                 {
                     comando.Parameters.AddWithValue(key, paramList[key]);
                 }
-
                 conexion.Open();
 
                 SqlDataReader reader = comando.ExecuteReader();
@@ -206,9 +204,6 @@ namespace DAL
                 {
                     DB.Load(reader);
                 }
-
-
-
                 conexion.Close();
 
                 return DB;
@@ -218,6 +213,5 @@ namespace DAL
                 throw;
             }
         }
-
     }
 }

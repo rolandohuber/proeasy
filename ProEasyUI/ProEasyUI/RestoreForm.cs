@@ -1,5 +1,7 @@
 ﻿
+using BE;
 using BLL;
+using System;
 using System.Windows.Forms;
 
 namespace ProEasyUI
@@ -17,8 +19,19 @@ namespace ProEasyUI
 
         public override void ReloadLang()
         {
-            this.label1.Text = i18n().GetString("restore.path");
-            this.button1.Text = i18n().GetString("restore.import");
+            try
+            {
+                this.label1.Text = i18n().GetString("restore.path");
+                this.button1.Text = i18n().GetString("restore.import");
+            }
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
+            }
         }
 
         private void RestoreForm_Load(object sender, System.EventArgs e)
@@ -28,15 +41,26 @@ namespace ProEasyUI
 
         private void button2_Click(object sender, System.EventArgs e)
         {
-            OpenFileDialog choofdlog = new OpenFileDialog();
-            choofdlog.Filter = "ZIP files (.zip)|*.zip";
-            choofdlog.FilterIndex = 1;
-            choofdlog.Multiselect = false;
-
-            if (choofdlog.ShowDialog() == DialogResult.OK)
+            try
             {
-                this.path = choofdlog.FileName;
-                this.label1.Text += ": " + choofdlog.FileName;
+                OpenFileDialog choofdlog = new OpenFileDialog();
+                choofdlog.Filter = "ZIP files (.zip)|*.zip";
+                choofdlog.FilterIndex = 1;
+                choofdlog.Multiselect = false;
+
+                if (choofdlog.ShowDialog() == DialogResult.OK)
+                {
+                    this.path = choofdlog.FileName;
+                    this.label1.Text += ": " + choofdlog.FileName;
+                }
+            }
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
             }
         }
 

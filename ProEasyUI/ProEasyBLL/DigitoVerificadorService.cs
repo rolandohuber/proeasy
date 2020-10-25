@@ -113,7 +113,7 @@ namespace BLL
             }
             {
                 dvv = "";
-                foreach (Usuario entity in new UsuarioMapper().listar())
+                foreach (Usuario entity in new UsuarioMapper().listarTodos())
                 {
                     string dvh = generarDVH(new string[] { entity.Username, entity.Apellido, entity.Nombre, entity.Contrasenia });
                     dvv += dvh;

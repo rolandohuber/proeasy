@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Windows.Forms;
 
 namespace ProEasyUI

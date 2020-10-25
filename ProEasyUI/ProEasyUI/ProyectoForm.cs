@@ -19,78 +19,144 @@ namespace ProEasyUI
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AgregarRecursosProyectoForm form = new AgregarRecursosProyectoForm(this.proyectoSelected);
-            form.ShowDialog();
+            try
+            {
+                AgregarRecursosProyectoForm form = new AgregarRecursosProyectoForm(this.proyectoSelected);
+                form.ShowDialog();
+            }
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
+            }
         }
 
         public override void ReloadLang()
         {
-            this.label1.Text = i18n().GetString("project.list.title");
-            this.label2.Text = i18n().GetString("project.estimated");
-            this.label3.Text = i18n().GetString("project.insumidas");
-            this.label4.Text = i18n().GetString("project.valor");
-            this.habilitadoField.Text = i18n().GetString("project.enabled");
-            this.createButton.Text = i18n().GetString("project.create");
-            this.deleteButton.Text = i18n().GetString("project.delete");
-            this.saveButton.Text = i18n().GetString("project.save");
-            this.cancelButton.Text = i18n().GetString("project.cancel");
-            this.resourcesButton.Text = i18n().GetString("project.resources");
-            this.NombreProyecto.HeaderText = i18n().GetString("project.list.title");
-            this.Habilitado.HeaderText = i18n().GetString("project.list.enabled");
+            try
+            {
+                this.label1.Text = i18n().GetString("project.list.title");
+                this.label2.Text = i18n().GetString("project.estimated");
+                this.label3.Text = i18n().GetString("project.insumidas");
+                this.label4.Text = i18n().GetString("project.valor");
+                this.habilitadoField.Text = i18n().GetString("project.enabled");
+                this.createButton.Text = i18n().GetString("project.create");
+                this.deleteButton.Text = i18n().GetString("project.delete");
+                this.saveButton.Text = i18n().GetString("project.save");
+                this.cancelButton.Text = i18n().GetString("project.cancel");
+                this.resourcesButton.Text = i18n().GetString("project.resources");
+                this.NombreProyecto.HeaderText = i18n().GetString("project.list.title");
+                this.Habilitado.HeaderText = i18n().GetString("project.list.enabled");
+            }
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
+            }
         }
 
         private void ProyectoForm_Load(object sender, EventArgs e)
         {
-            this.listado.Rows.Clear();
-            List<Proyecto> proyectos = proyectoService.listar();
-            foreach (Proyecto proyecto in proyectos)
+            try
             {
-                this.listado.Rows.Add(new object[] { proyecto.Id, proyecto.Nombre, proyecto.Habilitado });
+                this.listado.Rows.Clear();
+                List<Proyecto> proyectos = proyectoService.listar();
+                foreach (Proyecto proyecto in proyectos)
+                {
+                    this.listado.Rows.Add(new object[] { proyecto.Id, proyecto.Nombre, proyecto.Habilitado });
+                }
+                this.createButton.Visible = true;
+                this.deleteButton.Visible = false;
+                this.saveButton.Visible = false;
+                this.cancelButton.Visible = true;
+                this.resourcesButton.Visible = false;
             }
-            this.createButton.Visible = true;
-            this.deleteButton.Visible = false;
-            this.saveButton.Visible = false;
-            this.cancelButton.Visible = true;
-            this.resourcesButton.Visible = false;
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!validarForm())
-                return;
+            try
+            {
+                if (!validarForm())
+                    return;
 
-            Proyecto proyecto = Proyecto.builder().build();
-            proyecto.Nombre = this.nombreField.Text;
-            proyecto.HorasEstimadas = this.horasEstimadasField.Text;
-            proyecto.ValorHora = this.valorHoraField.Text;
-            proyecto.Habilitado = this.habilitadoField.Checked;
-            proyecto.Fecha = DateTime.Now;
-            this.proyectoService.crear(proyecto);
+                Proyecto proyecto = Proyecto.builder().build();
+                proyecto.Nombre = this.nombreField.Text;
+                proyecto.HorasEstimadas = this.horasEstimadasField.Text;
+                proyecto.ValorHora = this.valorHoraField.Text;
+                proyecto.Habilitado = this.habilitadoField.Checked;
+                proyecto.Fecha = DateTime.Now;
+                this.proyectoService.crear(proyecto);
 
-            cancelButton_Click(null, null);
-            ProyectoForm_Load(null, null);
+                cancelButton_Click(null, null);
+                ProyectoForm_Load(null, null);
+            }
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
+            }
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            this.proyectoService.eliminar(this.proyectoSelected);
-            cancelButton_Click(null, null);
-            ProyectoForm_Load(null, null);
+            try
+            {
+                this.proyectoService.eliminar(this.proyectoSelected);
+                cancelButton_Click(null, null);
+                ProyectoForm_Load(null, null);
+            }
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
+            }
 
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if (!validarForm())
-                return;
+            try
+            {
+                if (!validarForm())
+                    return;
 
-            this.proyectoSelected.Nombre = this.nombreField.Text;
-            this.proyectoSelected.HorasEstimadas = this.horasEstimadasField.Text;
-            this.proyectoSelected.ValorHora = this.valorHoraField.Text;
-            this.proyectoSelected.Habilitado = this.habilitadoField.Checked;
-            this.proyectoService.actualizar(proyectoSelected);
-            cancelButton_Click(null, null);
-            ProyectoForm_Load(null, null);
+                this.proyectoSelected.Nombre = this.nombreField.Text;
+                this.proyectoSelected.HorasEstimadas = this.horasEstimadasField.Text;
+                this.proyectoSelected.ValorHora = this.valorHoraField.Text;
+                this.proyectoSelected.Habilitado = this.habilitadoField.Checked;
+                this.proyectoService.actualizar(proyectoSelected);
+                cancelButton_Click(null, null);
+                ProyectoForm_Load(null, null);
+            }
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
+            }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -110,23 +176,34 @@ namespace ProEasyUI
 
         private void listado_CellClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0)
-                return;
-            DataGridViewRow row = this.listado.Rows[e.RowIndex];
-            this.proyectoSelected = this.proyectoService.leer(Convert.ToInt32(row.Cells[0].Value));
+            try
+            {
+                if (e.RowIndex < 0)
+                    return;
+                DataGridViewRow row = this.listado.Rows[e.RowIndex];
+                this.proyectoSelected = this.proyectoService.leer(Convert.ToInt32(row.Cells[0].Value));
 
-            this.nombreField.Text = this.proyectoSelected.Nombre;
-            this.horasEstimadasField.Text = this.proyectoSelected.HorasEstimadas;
-            this.valorHoraField.Text = this.proyectoSelected.ValorHora;
-            this.habilitadoField.Checked = this.proyectoSelected.Habilitado;
-            this.horasInsumidasField.Text = this.proyectoSelected.Horas != null ? this.proyectoSelected.Horas.Sum(hora => hora.Cantidad).ToString() : "0";
+                this.nombreField.Text = this.proyectoSelected.Nombre;
+                this.horasEstimadasField.Text = this.proyectoSelected.HorasEstimadas;
+                this.valorHoraField.Text = this.proyectoSelected.ValorHora;
+                this.habilitadoField.Checked = this.proyectoSelected.Habilitado;
+                this.horasInsumidasField.Text = this.proyectoSelected.Horas != null ? this.proyectoSelected.Horas.Sum(hora => hora.Cantidad).ToString() : "0";
 
 
-            this.createButton.Visible = false;
-            this.deleteButton.Visible = true;
-            this.saveButton.Visible = true;
-            this.cancelButton.Visible = true;
-            this.resourcesButton.Visible = true;
+                this.createButton.Visible = false;
+                this.deleteButton.Visible = true;
+                this.saveButton.Visible = true;
+                this.cancelButton.Visible = true;
+                this.resourcesButton.Visible = true;
+            }
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
+            }
         }
 
         private bool validarForm()

@@ -17,3 +17,13 @@ D:\TFI\putoElQueLee\ProEasyUI\ProEasyDAL\obj\Debug\ProEasyDAL.csproj.CopyComplet
 D:\TFI\putoElQueLee\ProEasyUI\ProEasyDAL\obj\Debug\ProEasyDAL.dll
 D:\TFI\putoElQueLee\ProEasyUI\ProEasyDAL\obj\Debug\ProEasyDAL.pdb
 D:\TFI\putoElQueLee\ProEasyUI\ProEasyDAL\bin\Debug\Nini.dll
+D:\TFI\proeasy\ProEasyUI\ProEasyDAL\bin\Debug\ProEasyDAL.dll
+D:\TFI\proeasy\ProEasyUI\ProEasyDAL\bin\Debug\ProEasyDAL.pdb
+D:\TFI\proeasy\ProEasyUI\ProEasyDAL\bin\Debug\Nini.dll
+D:\TFI\proeasy\ProEasyUI\ProEasyDAL\bin\Debug\ProEasyBE.dll
+D:\TFI\proeasy\ProEasyUI\ProEasyDAL\bin\Debug\ProEasyBE.pdb
+D:\TFI\proeasy\ProEasyUI\ProEasyDAL\obj\Debug\ProEasyDAL.csprojAssemblyReference.cache
+D:\TFI\proeasy\ProEasyUI\ProEasyDAL\obj\Debug\ProEasyDAL.csproj.CoreCompileInputs.cache
+D:\TFI\proeasy\ProEasyUI\ProEasyDAL\obj\Debug\ProEasyDAL.csproj.CopyComplete
+D:\TFI\proeasy\ProEasyUI\ProEasyDAL\obj\Debug\ProEasyDAL.dll
+D:\TFI\proeasy\ProEasyUI\ProEasyDAL\obj\Debug\ProEasyDAL.pdb

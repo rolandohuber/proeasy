@@ -20,104 +20,192 @@ namespace ProEasyUI
 
         public override void ReloadLang()
         {
-            this.label1.Text = i18n().GetString("task.project");
-            this.label2.Text = i18n().GetString("task.title");
-            this.label3.Text = i18n().GetString("task.description");
-            this.createButton.Text = i18n().GetString("task.create");
-            this.deleteButton.Text = i18n().GetString("task.delete");
-            this.saveButton.Text = i18n().GetString("task.save");
-            this.cancelButton.Text = i18n().GetString("task.cancel");
-            this.Proyecto.HeaderText = i18n().GetString("task.list.project");
-            this.Titulo.HeaderText = i18n().GetString("task.list.title");
+            try
+            {
+                this.label1.Text = i18n().GetString("task.project");
+                this.label2.Text = i18n().GetString("task.title");
+                this.label3.Text = i18n().GetString("task.description");
+                this.createButton.Text = i18n().GetString("task.create");
+                this.deleteButton.Text = i18n().GetString("task.delete");
+                this.saveButton.Text = i18n().GetString("task.save");
+                this.cancelButton.Text = i18n().GetString("task.cancel");
+                this.Proyecto.HeaderText = i18n().GetString("task.list.project");
+                this.Titulo.HeaderText = i18n().GetString("task.list.title");
+            }
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
+            }
         }
 
         private void TareaForm_Load(object sender, EventArgs e)
         {
-            this.proyectosCombo.Items.Clear();
-            foreach (Proyecto p in proyectoService.listar())
+            try
             {
-                this.proyectosCombo.Items.Add(p);
+                this.proyectosCombo.Items.Clear();
+                foreach (Proyecto p in proyectoService.listar())
+                {
+                    this.proyectosCombo.Items.Add(p);
+                }
+
+                if (proyectoSelected != null)
+                    this.proyectosCombo.SelectedItem = proyectoSelected;
+
+                this.createButton.Visible = true;
+                this.deleteButton.Visible = false;
+                this.saveButton.Visible = false;
+                this.createButton.Visible = true;
             }
-
-            if (proyectoSelected != null)
-                this.proyectosCombo.SelectedItem = proyectoSelected;
-
-            this.createButton.Visible = true;
-            this.deleteButton.Visible = false;
-            this.saveButton.Visible = false;
-            this.createButton.Visible = true;
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
+            }
         }
 
         private void proyectosCombo_SelectedValueChanged(object sender, EventArgs e)
         {
-            this.proyectoSelected = (Proyecto)this.proyectosCombo.SelectedItem;
-            this.listado.Rows.Clear();
-            this.tituloField.Clear();
-            this.descripcionField.Clear();
-            List<Tarea> tareas = tareaService.listarPorProyecto(proyectoSelected);
-            foreach (Tarea tarea in tareas)
+            try
             {
-                this.listado.Rows.Add(new object[] { tarea.Id, tarea.Proyecto.Nombre, tarea.Titulo });
+                this.proyectoSelected = (Proyecto)this.proyectosCombo.SelectedItem;
+                this.listado.Rows.Clear();
+                this.tituloField.Clear();
+                this.descripcionField.Clear();
+                List<Tarea> tareas = tareaService.listarPorProyecto(proyectoSelected);
+                foreach (Tarea tarea in tareas)
+                {
+                    this.listado.Rows.Add(new object[] { tarea.Id, tarea.Proyecto.Nombre, tarea.Titulo });
+                }
+            }
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
             }
         }
 
         private void createButton_Click(object sender, EventArgs e)
         {
-            if (!validarForm())
-                return;
+            try
+            {
+                if (!validarForm())
+                    return;
 
-            Tarea t = Tarea.builder().build();
-            t.Proyecto = proyectoSelected;
-            t.Titulo = this.tituloField.Text;
-            t.Descripcion = this.descripcionField.Text;
-            tareaService.crear(t);
+                Tarea t = Tarea.builder().build();
+                t.Proyecto = proyectoSelected;
+                t.Titulo = this.tituloField.Text;
+                t.Descripcion = this.descripcionField.Text;
+                tareaService.crear(t);
 
-            cancelButton_Click(null, null);
+                cancelButton_Click(null, null);
+            }
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
+            }
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            tareaService.eliminar(tareaSelected);
+            try
+            {
+                tareaService.eliminar(tareaSelected);
 
-            cancelButton_Click(null, null);
+                cancelButton_Click(null, null);
+            }
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
+            }
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            if (!validarForm())
-                return;
+            try
+            {
+                if (!validarForm())
+                    return;
 
-            tareaSelected.Titulo = this.tituloField.Text;
-            tareaSelected.Descripcion = this.descripcionField.Text;
-            tareaService.actualizar(tareaSelected);
+                tareaSelected.Titulo = this.tituloField.Text;
+                tareaSelected.Descripcion = this.descripcionField.Text;
+                tareaService.actualizar(tareaSelected);
 
-            cancelButton_Click(null, null);
+                cancelButton_Click(null, null);
+            }
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
+            }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            this.tituloField.Clear();
-            this.descripcionField.Clear();
+            try
+            {
+                this.tituloField.Clear();
+                this.descripcionField.Clear();
 
-            TareaForm_Load(null, null);
-            proyectosCombo_SelectedValueChanged(null, null);
+                TareaForm_Load(null, null);
+                proyectosCombo_SelectedValueChanged(null, null);
+            }
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
+            }
         }
 
         private void listado_CellClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0)
-                return;
-            DataGridViewRow row = this.listado.Rows[e.RowIndex];
-            this.tareaSelected = tareaService.leer(Convert.ToInt32(row.Cells[0].Value));
-            this.tareaSelected.Proyecto = proyectoSelected;
+            try
+            {
+                if (e.RowIndex < 0)
+                    return;
+                DataGridViewRow row = this.listado.Rows[e.RowIndex];
+                this.tareaSelected = tareaService.leer(Convert.ToInt32(row.Cells[0].Value));
+                this.tareaSelected.Proyecto = proyectoSelected;
 
-            this.tituloField.Text = tareaSelected.Titulo;
-            this.descripcionField.Text = tareaSelected.Descripcion;
+                this.tituloField.Text = tareaSelected.Titulo;
+                this.descripcionField.Text = tareaSelected.Descripcion;
 
-            this.createButton.Visible = false;
-            this.deleteButton.Visible = true;
-            this.saveButton.Visible = true;
-            this.createButton.Visible = true;
+                this.createButton.Visible = false;
+                this.deleteButton.Visible = true;
+                this.saveButton.Visible = true;
+                this.createButton.Visible = true;
+            }
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
+            }
         }
 
         private bool validarForm()

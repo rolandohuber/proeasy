@@ -18,50 +18,90 @@ namespace ProEasyUI
 
         public override void ReloadLang()
         {
-            this.label1.Text = i18n().GetString("asig.pat.fam.disp");
-            this.label2.Text = i18n().GetString("asig.pat.fam.asign");
+            try
+            {
+                this.label1.Text = i18n().GetString("asig.pat.fam.disp");
+                this.label2.Text = i18n().GetString("asig.pat.fam.asign");
+            }
+            catch (Exception ex)
+            {
+                showError("ALV el idioma");
+            }
         }
 
         private void AgregarPatenteFamiliaForm_Load(object sender, EventArgs e)
         {
-            List<Patente> disponibles = patenteService.obtenerPatentesDisponibles(this.familiaSelected);
-            List<Patente> asignadas = patenteService.obtenerPatentesAsignadas(this.familiaSelected);
-            this.disponibles.Items.Clear();
-            this.asignadas.Items.Clear();
-
-            foreach (Patente patente in disponibles)
+            try
             {
-                this.disponibles.Items.Add(patente);
+                List<Patente> disponibles = patenteService.obtenerPatentesDisponibles(this.familiaSelected);
+                List<Patente> asignadas = patenteService.obtenerPatentesAsignadas(this.familiaSelected);
+                this.disponibles.Items.Clear();
+                this.asignadas.Items.Clear();
+
+                foreach (Patente patente in disponibles)
+                {
+                    this.disponibles.Items.Add(patente);
+                }
+
+                foreach (Patente patente in asignadas)
+                {
+                    this.asignadas.Items.Add(patente);
+                }
             }
-
-            foreach (Patente patente in asignadas)
+            catch (ProEasyException pEx)
             {
-                this.asignadas.Items.Add(patente);
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Patente patente = (Patente)this.disponibles.SelectedItem;
-            if (patente == null)
+            try
             {
-                showWarning("Debe seleccionar una patente para asignar.");
-                return;
+                Patente patente = (Patente)this.disponibles.SelectedItem;
+                if (patente == null)
+                {
+                    showWarning("Debe seleccionar una patente para asignar.");
+                    return;
+                }
+                patenteService.asignarPatente(familiaSelected, patente);
+                AgregarPatenteFamiliaForm_Load(null, null);
             }
-            patenteService.asignarPatente(familiaSelected, patente);
-            AgregarPatenteFamiliaForm_Load(null, null);
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Patente patente = (Patente)this.asignadas.SelectedItem;
-            if (patente == null)
+            try
             {
-                showWarning("Debe seleccionar una patente para desasignar.");
-                return;
+                Patente patente = (Patente)this.asignadas.SelectedItem;
+                if (patente == null)
+                {
+                    showWarning("Debe seleccionar una patente para desasignar.");
+                    return;
+                }
+                patenteService.quitarPatente(familiaSelected, patente);
+                AgregarPatenteFamiliaForm_Load(null, null);
             }
-            patenteService.quitarPatente(familiaSelected, patente);
-            AgregarPatenteFamiliaForm_Load(null, null);
+            catch (ProEasyException pEx)
+            {
+                showError(pEx.Code.ToString());
+            }
+            catch (Exception ex)
+            {
+                showError("General");
+            }
         }
     }
 }
