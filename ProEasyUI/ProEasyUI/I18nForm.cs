@@ -11,7 +11,7 @@ namespace ProEasyUI
 
         protected ResourceManager i18n()
         {
-            return new ResourceManager("ProEasyUI.i18n." + System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName + "_lang", Assembly.GetExecutingAssembly());
+            return new I18n("ProEasyUI.i18n." + System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName + "_lang");
         }
 
         protected int getUnit()

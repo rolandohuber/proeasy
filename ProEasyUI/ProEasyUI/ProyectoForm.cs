@@ -26,7 +26,7 @@ namespace ProEasyUI
             }
             catch (ProEasyException pEx)
             {
-                showError(pEx.Code.ToString());
+                showError(i18n().GetString("errors." + pEx.Code));
             }
             catch (Exception ex)
             {
@@ -53,7 +53,7 @@ namespace ProEasyUI
             }
             catch (ProEasyException pEx)
             {
-                showError(pEx.Code.ToString());
+                showError(i18n().GetString("errors." + pEx.Code));
             }
             catch (Exception ex)
             {
@@ -79,7 +79,7 @@ namespace ProEasyUI
             }
             catch (ProEasyException pEx)
             {
-                showError(pEx.Code.ToString());
+                showError(i18n().GetString("errors." + pEx.Code));
             }
             catch (Exception ex)
             {
@@ -107,7 +107,7 @@ namespace ProEasyUI
             }
             catch (ProEasyException pEx)
             {
-                showError(pEx.Code.ToString());
+                showError(i18n().GetString("errors." + pEx.Code));
             }
             catch (Exception ex)
             {
@@ -125,7 +125,7 @@ namespace ProEasyUI
             }
             catch (ProEasyException pEx)
             {
-                showError(pEx.Code.ToString());
+                showError(i18n().GetString("errors." + pEx.Code));
             }
             catch (Exception ex)
             {
@@ -151,7 +151,7 @@ namespace ProEasyUI
             }
             catch (ProEasyException pEx)
             {
-                showError(pEx.Code.ToString());
+                showError(i18n().GetString("errors." + pEx.Code));
             }
             catch (Exception ex)
             {
@@ -198,7 +198,7 @@ namespace ProEasyUI
             }
             catch (ProEasyException pEx)
             {
-                showError(pEx.Code.ToString());
+                showError(i18n().GetString("errors." + pEx.Code));
             }
             catch (Exception ex)
             {

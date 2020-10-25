@@ -26,7 +26,7 @@ namespace ProEasyUI
             }
             catch (ProEasyException pEx)
             {
-                showError(pEx.Code.ToString());
+                showError(i18n().GetString("errors." + pEx.Code));
             }
             catch (Exception ex)
             {
@@ -56,7 +56,7 @@ namespace ProEasyUI
             }
             catch (ProEasyException pEx)
             {
-                showError(pEx.Code.ToString());
+                showError(i18n().GetString("errors." + pEx.Code));
             }
             catch (Exception ex)
             {
@@ -66,7 +66,18 @@ namespace ProEasyUI
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            service.restaurar(this.path);
+            try
+            {
+                service.restaurar(this.path);
+            }
+            catch (ProEasyException pEx)
+            {
+                showError(i18n().GetString("errors." + pEx.Code));
+            }
+            catch (Exception ex)
+            {
+                showError("General");
+            }
         }
     }
 }
