@@ -10,7 +10,6 @@ namespace BE
         public Int64 DesvioDinero { get; set; }
         public Int64 DesvioHoras { get; set; }
         public DateTime Fecha { get; set; }
-
         public ProyectoReporte(string nombre, long horasEstimadas, long horasInsumidas, long desvioDinero, long desvioHoras, DateTime fecha)
         {
             Nombre = nombre;
@@ -20,7 +19,6 @@ namespace BE
             DesvioHoras = desvioHoras;
             Fecha = fecha;
         }
-
         public ProyectoReporte()
         {
         }
@@ -32,17 +30,14 @@ namespace BE
         {
             return new ProyectoReporteBuilder();
         }
-
         public class ProyectoReporteBuilder
         {
             private ProyectoReporte entity = new ProyectoReporte();
-
             public ProyectoReporteBuilder Nombre(string nombre)
             {
                 this.entity.Nombre = nombre;
                 return this;
             }
-
             public ProyectoReporteBuilder HorasEstimadas(long HorasEstimadas)
             {
                 this.entity.HorasEstimadas = HorasEstimadas;
@@ -69,12 +64,10 @@ namespace BE
                 this.entity.Fecha = Fecha;
                 return this;
             }
-
             public ProyectoReporte build()
             {
                 return this.entity;
             }
         }
     }
-
 }

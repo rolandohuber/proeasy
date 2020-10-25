@@ -20,14 +20,10 @@ namespace BE
         public Boolean Eliminado { get; set; }
         public string Dvh { get; set; }
         public Proyecto Proyecto { get; set; }
-
         public int Intentos { get; set; }
-
-
         public Usuario()
         {
         }
-
         public override string ToString()
         {
             return this.Nombre;
@@ -42,11 +38,9 @@ namespace BE
         {
             return new UsuarioBuilder();
         }
-
         public class UsuarioBuilder
         {
             Usuario usuario = new Usuario();
-
             public UsuarioBuilder Id(long id)
             {
                 this.usuario.Id = id;
@@ -122,13 +116,10 @@ namespace BE
                 this.usuario.Proyecto = proyecto;
                 return this;
             }
-
             public Usuario build()
             {
                 return this.usuario;
             }
-
         }
     }
-
 }

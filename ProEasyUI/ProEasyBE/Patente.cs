@@ -4,13 +4,11 @@ namespace BE
     {
         public long Id { get; set; }
         public string Nombre { get; set; }
-
         public Patente(long id, string nombre)
         {
             Id = id;
             Nombre = nombre;
         }
-
         public Patente()
         {
         }
@@ -28,28 +26,23 @@ namespace BE
         {
             return new PatenteBuilder();
         }
-
         public class PatenteBuilder
         {
             private Patente entity = new Patente();
-
             public PatenteBuilder Id(long Id)
             {
                 this.entity.Id = Id;
                 return this;
             }
-
             public PatenteBuilder Nombre(string nombre)
             {
                 this.entity.Nombre = nombre;
                 return this;
             }
-
             public Patente build()
             {
                 return this.entity;
             }
         }
     }
-
 }

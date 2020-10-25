@@ -12,7 +12,6 @@ namespace BE
         public Usuario Usuario { get; set; }
         public Boolean Eliminado { get; set; }
         public string Dvh { get; set; }
-
         public Hora(long id, long cantidad, DateTime fecha, Proyecto proyecto, Tarea tarea, Usuario usuario, bool eliminado, string dvh)
         {
             Id = id;
@@ -24,7 +23,6 @@ namespace BE
             Eliminado = eliminado;
             Dvh = dvh;
         }
-
         public Hora()
         {
         }
@@ -38,23 +36,19 @@ namespace BE
         {
             return new HoraBuilder();
         }
-
         public class HoraBuilder
         {
             private Hora entity = new Hora();
-
             public HoraBuilder Id(long Id)
             {
                 this.entity.Id = Id;
                 return this;
             }
-
             public HoraBuilder Cantidad(long Cantidad)
             {
                 this.entity.Cantidad = Cantidad;
                 return this;
             }
-
             public HoraBuilder Proyecto(Proyecto Proyecto)
             {
                 this.entity.Proyecto = Proyecto;
@@ -70,7 +64,6 @@ namespace BE
                 this.entity.Usuario = Usuario;
                 return this;
             }
-
             public HoraBuilder Eliminado(Boolean Eliminado)
             {
                 this.entity.Eliminado = Eliminado;
@@ -86,12 +79,10 @@ namespace BE
                 this.entity.Dvh = Dvh;
                 return this;
             }
-
             public Hora build()
             {
                 return this.entity;
             }
         }
     }
-
 }

@@ -4,14 +4,10 @@ namespace BE
 {
     public class Idioma
     {
-
         public long Id { get; set; }
         public string Nombre { get; set; }
-
         public string Code { get; set; }
-
         public Boolean Eliminado { get; set; }
-
         public Idioma(long id, string nombre, bool eliminado, string code)
         {
             Id = id;
@@ -19,7 +15,6 @@ namespace BE
             Eliminado = eliminado;
             Code = code;
         }
-
         public Idioma()
         {
         }
@@ -33,28 +28,23 @@ namespace BE
                 return false;
             return obj != null && Id == ((Idioma)obj).Id;
         }
-
         public static IdiomaBuilder builder()
         {
             return new IdiomaBuilder();
         }
-
         public class IdiomaBuilder
         {
             private Idioma entity = new Idioma();
-
             public IdiomaBuilder Id(long Id)
             {
                 this.entity.Id = Id;
                 return this;
             }
-
             public IdiomaBuilder Nombre(string nombre)
             {
                 this.entity.Nombre = nombre;
                 return this;
             }
-
             public IdiomaBuilder Eliminado(Boolean Eliminado)
             {
                 this.entity.Eliminado = Eliminado;
@@ -65,12 +55,10 @@ namespace BE
                 this.entity.Code = Code;
                 return this;
             }
-
             public Idioma build()
             {
                 return this.entity;
             }
         }
     }
-
 }

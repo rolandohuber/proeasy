@@ -28,11 +28,9 @@ namespace BE
         {
             return new BitacoraBuilder();
         }
-
         public class BitacoraBuilder
         {
             private Bitacora entity = new Bitacora();
-
             public BitacoraBuilder Id(long Id)
             {
                 this.entity.Id = Id;
@@ -53,13 +51,11 @@ namespace BE
                 this.entity.Funcionalidad = Funcionalidad;
                 return this;
             }
-
             public BitacoraBuilder Descripcion(string Descripcion)
             {
                 this.entity.Descripcion = Descripcion;
                 return this;
             }
-
             public BitacoraBuilder Fecha(DateTime Fecha)
             {
                 this.entity.Fecha = Fecha;
@@ -70,25 +66,21 @@ namespace BE
                 this.entity.Dvh = Dvh;
                 return this;
             }
-
             public BitacoraBuilder Data(object data)
             {
                 this.entity.Data = data;
                 return this;
             }
-
             public BitacoraBuilder Desde(DateTime Fecha)
             {
                 this.entity.Desde = Fecha;
                 return this;
             }
-
             public BitacoraBuilder Hasta(DateTime Fecha)
             {
                 this.entity.Hasta = Fecha;
                 return this;
             }
-
             public Bitacora build()
             {
                 return this.entity;

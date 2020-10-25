@@ -4,14 +4,12 @@ namespace BE
 {
     public class Tarea
     {
-
         public long Id { get; set; }
         public string Titulo { get; set; }
         public string Descripcion { get; set; }
         public Proyecto Proyecto { get; set; }
         public Boolean Eliminado { get; set; }
         public string Dvh { get; set; }
-
         public Tarea(long id, string titulo, string descripcion, Proyecto proyecto, bool eliminado, string dvh)
         {
             Id = id;
@@ -21,7 +19,6 @@ namespace BE
             Eliminado = eliminado;
             Dvh = dvh;
         }
-
         public Tarea()
         {
         }
@@ -29,24 +26,19 @@ namespace BE
         {
             return this.Titulo;
         }
-
         public override bool Equals(object obj)
         {
             if (typeof(Tarea) != obj.GetType())
                 return false;
             return this.Id.Equals(((Tarea)obj).Id);
         }
-
-
         public static TareaBuilder builder()
         {
             return new TareaBuilder();
         }
-
         public class TareaBuilder
         {
             private Tarea entity = new Tarea();
-
             public TareaBuilder Id(long id)
             {
                 this.entity.Id = id;
@@ -77,12 +69,10 @@ namespace BE
                 this.entity.Dvh = dvh;
                 return this;
             }
-
             public Tarea build()
             {
                 return this.entity;
             }
         }
     }
-
 }

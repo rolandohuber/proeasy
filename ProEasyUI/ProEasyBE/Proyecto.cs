@@ -16,7 +16,6 @@ namespace BE
         public Boolean Eliminado { get; set; }
         public DateTime Fecha { get; set; }
         public String Dvh { get; set; }
-
         public Proyecto(long id, string nombre, string horasEstimadas, string valorHorav, bool habilitado, List<Usuario> usuarios, List<Tarea> tareas, List<Hora> horas, bool eliminado, DateTime fecha, string dvh)
         {
             Id = id;
@@ -31,7 +30,6 @@ namespace BE
             Fecha = fecha;
             Dvh = dvh;
         }
-
         public Proyecto()
         {
         }
@@ -39,7 +37,6 @@ namespace BE
         {
             return this.Nombre;
         }
-
         public override bool Equals(object obj)
         {
             if (typeof(Proyecto) != obj.GetType())
@@ -47,28 +44,23 @@ namespace BE
 
             return obj != null && this.Id == ((Proyecto)obj).Id;
         }
-
         public static ProyectoBuilder builder()
         {
             return new ProyectoBuilder();
         }
-
         public class ProyectoBuilder
         {
             private Proyecto entity = new Proyecto();
-
             public ProyectoBuilder Id(long Id)
             {
                 this.entity.Id = Id;
                 return this;
             }
-
             public ProyectoBuilder Nombre(string nombre)
             {
                 this.entity.Nombre = nombre;
                 return this;
             }
-
             public ProyectoBuilder HorasEstimadas(string HorasEstimadas)
             {
                 this.entity.HorasEstimadas = HorasEstimadas;
@@ -114,12 +106,10 @@ namespace BE
                 this.entity.Dvh = Dvh;
                 return this;
             }
-
             public Proyecto build()
             {
                 return this.entity;
             }
         }
     }
-
 }
