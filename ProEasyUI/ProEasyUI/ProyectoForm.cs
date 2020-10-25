@@ -1,0 +1,153 @@
+﻿using BE;
+using BLL;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
+
+namespace ProEasyUI
+{
+    public partial class ProyectoForm : I18nForm
+    {
+        readonly ProyectoService proyectoService = ProyectoService.getInstance();
+        Proyecto proyectoSelected;
+        public ProyectoForm()
+        {
+            InitializeComponent();
+            ReloadLang();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AgregarRecursosProyectoForm form = new AgregarRecursosProyectoForm(this.proyectoSelected);
+            form.ShowDialog();
+        }
+
+        public override void ReloadLang()
+        {
+            this.label1.Text = i18n().GetString("project.list.title");
+            this.label2.Text = i18n().GetString("project.estimated");
+            this.label3.Text = i18n().GetString("project.insumidas");
+            this.label4.Text = i18n().GetString("project.valor");
+            this.habilitadoField.Text = i18n().GetString("project.enabled");
+            this.createButton.Text = i18n().GetString("project.create");
+            this.deleteButton.Text = i18n().GetString("project.delete");
+            this.saveButton.Text = i18n().GetString("project.save");
+            this.cancelButton.Text = i18n().GetString("project.cancel");
+            this.resourcesButton.Text = i18n().GetString("project.resources");
+            this.NombreProyecto.HeaderText = i18n().GetString("project.list.title");
+            this.Habilitado.HeaderText = i18n().GetString("project.list.enabled");
+        }
+
+        private void ProyectoForm_Load(object sender, EventArgs e)
+        {
+            this.listado.Rows.Clear();
+            List<Proyecto> proyectos = proyectoService.listar();
+            foreach (Proyecto proyecto in proyectos)
+            {
+                this.listado.Rows.Add(new object[] { proyecto.Id, proyecto.Nombre, proyecto.Habilitado });
+            }
+            this.createButton.Visible = true;
+            this.deleteButton.Visible = false;
+            this.saveButton.Visible = false;
+            this.cancelButton.Visible = true;
+            this.resourcesButton.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (!validarForm())
+                return;
+
+            Proyecto proyecto = Proyecto.builder().build();
+            proyecto.Nombre = this.nombreField.Text;
+            proyecto.HorasEstimadas = this.horasEstimadasField.Text;
+            proyecto.ValorHora = this.valorHoraField.Text;
+            proyecto.Habilitado = this.habilitadoField.Checked;
+            proyecto.Fecha = DateTime.Now;
+            this.proyectoService.crear(proyecto);
+
+            cancelButton_Click(null, null);
+            ProyectoForm_Load(null, null);
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            this.proyectoService.eliminar(this.proyectoSelected);
+            cancelButton_Click(null, null);
+            ProyectoForm_Load(null, null);
+
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            if (!validarForm())
+                return;
+
+            this.proyectoSelected.Nombre = this.nombreField.Text;
+            this.proyectoSelected.HorasEstimadas = this.horasEstimadasField.Text;
+            this.proyectoSelected.ValorHora = this.valorHoraField.Text;
+            this.proyectoSelected.Habilitado = this.habilitadoField.Checked;
+            this.proyectoService.actualizar(proyectoSelected);
+            cancelButton_Click(null, null);
+            ProyectoForm_Load(null, null);
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.nombreField.Clear();
+            this.horasEstimadasField.Clear();
+            this.valorHoraField.Clear();
+            this.habilitadoField.Checked = false;
+            this.horasInsumidasField.Clear();
+
+            this.createButton.Visible = true;
+            this.deleteButton.Visible = false;
+            this.saveButton.Visible = false;
+            this.cancelButton.Visible = true;
+            this.resourcesButton.Visible = false;
+        }
+
+        private void listado_CellClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+            DataGridViewRow row = this.listado.Rows[e.RowIndex];
+            this.proyectoSelected = this.proyectoService.leer(Convert.ToInt32(row.Cells[0].Value));
+
+            this.nombreField.Text = this.proyectoSelected.Nombre;
+            this.horasEstimadasField.Text = this.proyectoSelected.HorasEstimadas;
+            this.valorHoraField.Text = this.proyectoSelected.ValorHora;
+            this.habilitadoField.Checked = this.proyectoSelected.Habilitado;
+            this.horasInsumidasField.Text = this.proyectoSelected.Horas != null ? this.proyectoSelected.Horas.Sum(hora => hora.Cantidad).ToString() : "0";
+
+
+            this.createButton.Visible = false;
+            this.deleteButton.Visible = true;
+            this.saveButton.Visible = true;
+            this.cancelButton.Visible = true;
+            this.resourcesButton.Visible = true;
+        }
+
+        private bool validarForm()
+        {
+            if (this.nombreField.Text == null || this.nombreField.Text.Length < 1)
+            {
+                MessageBox.Show("El nombre es requerido.", "Complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (this.horasEstimadasField.Text == null || this.horasEstimadasField.Text.Length < 1)
+            {
+                MessageBox.Show("Las horas estimadas son requeridas.", "Complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (this.valorHoraField.Text == null || this.valorHoraField.Text.Length < 1)
+            {
+                MessageBox.Show("El valor hora es requerido.", "Complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+    }
+}

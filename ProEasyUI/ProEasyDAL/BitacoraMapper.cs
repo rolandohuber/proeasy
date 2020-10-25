@@ -1,0 +1,143 @@
+using BE;
+using System;
+using System.Collections.Generic;
+using System.Data;
+
+namespace DAL
+{
+    public class BitacoraMapper : EntityMapperMapper<Bitacora>
+    {
+
+        public override void actualizar(Bitacora entity)
+        {
+            string query = "UPDATE bitacora SET id_usuario = @id_usuario,criticidad = @criticidad,funcionalidad = @funcionalidad,descripcion = @descripcion,fecha = @fecha,dvh = @dvh WHERE id = @id";
+
+            Dictionary<string, object> paramList = new Dictionary<string, object>();
+            paramList.Add("@id", entity.Id);
+            paramList.Add("@id_usuario", entity.Usuario.Id);
+            paramList.Add("@criticidad", entity.Criticidad);
+            paramList.Add("@funcionalidad", entity.Funcionalidad);
+            paramList.Add("@descripcion", entity.Descripcion);
+            paramList.Add("@fecha", entity.Fecha);
+            paramList.Add("@dvh", entity.Dvh);
+
+            sqlHelper.ExecuteQueryWithParams(query, paramList);
+        }
+
+        public override void crear(Bitacora entity)
+        {
+
+            if (entity.Usuario == null)
+                return;
+
+            string query = "INSERT INTO bitacora (id_usuario,criticidad,funcionalidad,descripcion,fecha,dvh) VALUES(@id_usuario,@criticidad,@funcionalidad,@descripcion,@fecha,@dvh)";
+
+            Dictionary<string, object> paramList = new Dictionary<string, object>();
+            paramList.Add("@id_usuario", entity.Usuario.Id);
+            paramList.Add("@criticidad", entity.Criticidad);
+            paramList.Add("@funcionalidad", entity.Funcionalidad);
+            paramList.Add("@descripcion", entity.Descripcion);
+            paramList.Add("@fecha", entity.Fecha);
+            paramList.Add("@dvh", entity.Dvh);
+
+            sqlHelper.ExecuteQueryWithParams(query, paramList);
+        }
+
+        public override void eliminar(Bitacora entity)
+        {
+            string query = "DELETE FROM BITACORA WHERE ID=" + entity.Id;
+            bool ok = sqlHelper.ExecuteQuery(query);
+            if (!ok)
+            {
+                throw new Exception("ocurrio un error al eliminar la bitacora");
+            }
+        }
+
+        public override Bitacora leer(long id)
+        {
+            string query = "SELECT * FROM BITACORA WHERE ID=" + id;
+            DataTable list = sqlHelper.ExecuteReader(query);
+            if (list.Rows.Count > 1)
+            {
+                throw new Exception("mas de un registro");
+            }
+            else if (list.Rows.Count < 1)
+            {
+                throw new Exception("not found");
+            }
+
+            DataRow row = list.Rows[0];
+
+            Bitacora bitacora = new Bitacora
+            {
+                Id = Convert.ToInt32(row["id"]),
+                Criticidad = Convert.ToString(row["criticidad"]),
+                Descripcion = Convert.ToString(row["descripcion"]),
+                Fecha = Convert.ToDateTime(row["fecha"]),
+                Funcionalidad = Convert.ToString(row["funcionalidad"]),
+                //bitacora.Usuario = row.Field<long>("id_usuario");
+                Dvh = Convert.ToString(row["dvh"])
+            };
+
+            return bitacora;
+        }
+
+        public override List<Bitacora> listar()
+        {
+            string query = "SELECT * FROM BITACORA ORDER BY DVH";
+            DataTable list = sqlHelper.ExecuteReader(query);
+            List<Bitacora> bitacoras = new List<Bitacora>();
+            foreach (DataRow row in list.Rows)
+            {
+                Bitacora bitacora = new Bitacora
+                {
+                    Id = Convert.ToInt32(row["id"]),
+                    Criticidad = Convert.ToString(row["criticidad"]),
+                    Descripcion = Convert.ToString(row["descripcion"]),
+                    Fecha = Convert.ToDateTime(row["fecha"]),
+                    Funcionalidad = Convert.ToString(row["funcionalidad"]),
+                    Usuario = Usuario.builder().Id(Convert.ToInt32(row["id_usuario"])).build(),
+                    Dvh = Convert.ToString(row["dvh"])
+                };
+                bitacoras.Add(bitacora);
+            }
+            return bitacoras;
+        }
+
+        public List<Bitacora> buscar(Bitacora entity)
+        {
+            string query = "SELECT * FROM BITACORA WHERE fecha >= @desde AND fecha <= @hasta ";
+            if (entity.Usuario != null)
+                query += " AND id_usuario = @id_usuario";
+            if (entity.Criticidad != null)
+                query += " AND criticidad = @criticidad";
+
+            Dictionary<string, object> paramList = new Dictionary<string, object>();
+            if (entity.Usuario != null)
+                paramList.Add("@id_usuario", entity.Usuario.Id);
+            if (entity.Criticidad != null)
+                paramList.Add("@criticidad", entity.Criticidad);
+            paramList.Add("@desde", entity.Desde);
+            paramList.Add("@hasta", entity.Hasta);
+
+            DataTable list = sqlHelper.ExecuteQueryWithParamsRetDataTable(query, paramList);
+            List<Bitacora> bitacoras = new List<Bitacora>();
+            foreach (DataRow row in list.Rows)
+            {
+                Bitacora bitacora = new Bitacora
+                {
+                    Id = Convert.ToInt32(row["id"]),
+                    Criticidad = Convert.ToString(row["criticidad"]),
+                    Descripcion = Convert.ToString(row["descripcion"]),
+                    Fecha = Convert.ToDateTime(row["fecha"]),
+                    Funcionalidad = Convert.ToString(row["funcionalidad"]),
+                    Usuario = Usuario.builder().Id(Convert.ToInt32(row["id_usuario"])).build(),
+                    Dvh = Convert.ToString(row["dvh"])
+                };
+                bitacoras.Add(bitacora);
+            }
+            return bitacoras;
+        }
+    }
+
+}

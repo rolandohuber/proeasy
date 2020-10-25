@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="project.name" xml:space="preserve">
+    <value>ProEasy</value>
+  </data>
+  <data name="menu.backup" xml:space="preserve">
+    <value>Realizar backup</value>
+  </data>
+  <data name="menu.connection.string" xml:space="preserve">
+    <value>Modificar String de conexión</value>
+  </data>
+  <data name="menu.families" xml:space="preserve">
+    <value>Familias</value>
+  </data>
+  <data name="menu.hours" xml:space="preserve">
+    <value>Carga de Horas</value>
+  </data>
+  <data name="menu.language" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="menu.logout" xml:space="preserve">
+    <value>Cerrar sesión</value>
+  </data>
+  <data name="menu.logs" xml:space="preserve">
+    <value>Consultar Bitácora</value>
+  </data>
+  <data name="menu.projects" xml:space="preserve">
+    <value>Proyectos</value>
+  </data>
+  <data name="menu.report" xml:space="preserve">
+    <value>Reporte de rentabilidad de proyectos</value>
+  </data>
+  <data name="menu.restore" xml:space="preserve">
+    <value>Realizar restore</value>
+  </data>
+  <data name="menu.tasks" xml:space="preserve">
+    <value>Tareas</value>
+  </data>
+  <data name="menu.users" xml:space="preserve">
+    <value>Usuarios</value>
+  </data>
+  <data name="restore.path.label" xml:space="preserve">
+    <value>Directorio del backup</value>
+  </data>
+  <data name="asig.family.asign" xml:space="preserve">
+    <value>Familias asignadas</value>
+  </data>
+  <data name="asig.family.disp" xml:space="preserve">
+    <value>Familias disponibles</value>
+  </data>
+  <data name="asig.family.title" xml:space="preserve">
+    <value>Familias del usuario</value>
+  </data>
+  <data name="asig.pat.fam.asign" xml:space="preserve">
+    <value>Patentes asignadas</value>
+  </data>
+  <data name="asig.pat.fam.disp" xml:space="preserve">
+    <value>Patentes disponibles</value>
+  </data>
+  <data name="asig.pat.fam.title" xml:space="preserve">
+    <value>Patentes de la familia</value>
+  </data>
+  <data name="asig.patente.asign" xml:space="preserve">
+    <value>Patentes asignadas</value>
+  </data>
+  <data name="asig.patente.disp" xml:space="preserve">
+    <value>Patentes disponibles</value>
+  </data>
+  <data name="asig.patente.title" xml:space="preserve">
+    <value>Patentes del usuario</value>
+  </data>
+  <data name="asig.rec.proj.asign" xml:space="preserve">
+    <value>Recursos asignados</value>
+  </data>
+  <data name="asig.rec.proj.disp" xml:space="preserve">
+    <value>Recursos disponibles</value>
+  </data>
+  <data name="asig.rec.proj.title" xml:space="preserve">
+    <value>Recursos del proyecto</value>
+  </data>
+  <data name="backup.cant" xml:space="preserve">
+    <value>Cantidad de volumenes</value>
+  </data>
+  <data name="backup.export" xml:space="preserve">
+    <value>Exportar</value>
+  </data>
+  <data name="backup.path" xml:space="preserve">
+    <value>Ruta de destino</value>
+  </data>
+  <data name="connection.db" xml:space="preserve">
+    <value>Base de datos</value>
+  </data>
+  <data name="connection.pass" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="connection.save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="connection.server" xml:space="preserve">
+    <value>Servidor</value>
+  </data>
+  <data name="connection.user" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="family.cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="family.create" xml:space="preserve">
+    <value>Crear</value>
+  </data>
+  <data name="family.delete" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="family.list.name" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="family.name" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="family.patentes" xml:space="preserve">
+    <value>Asignar patentes</value>
+  </data>
+  <data name="family.save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="hour.amount" xml:space="preserve">
+    <value>Cantidad de hs</value>
+  </data>
+  <data name="hour.cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="hour.create" xml:space="preserve">
+    <value>Crear</value>
+  </data>
+  <data name="hour.date" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="hour.delete" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="hour.list.amount" xml:space="preserve">
+    <value>Horas</value>
+  </data>
+  <data name="hour.list.date" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="hour.list.project" xml:space="preserve">
+    <value>Proyecto</value>
+  </data>
+  <data name="hour.list.task" xml:space="preserve">
+    <value>Tarea</value>
+  </data>
+  <data name="hour.project" xml:space="preserve">
+    <value>Proyecto</value>
+  </data>
+  <data name="hour.save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="hour.task" xml:space="preserve">
+    <value>Tarea</value>
+  </data>
+  <data name="log.clean" xml:space="preserve">
+    <value>Limpiar</value>
+  </data>
+  <data name="log.level" xml:space="preserve">
+    <value>Criticidad</value>
+  </data>
+  <data name="log.list.date" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="log.list.desc" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="log.list.functionality" xml:space="preserve">
+    <value>Funcionalidad</value>
+  </data>
+  <data name="log.list.level" xml:space="preserve">
+    <value>Criticidad</value>
+  </data>
+  <data name="log.list.user" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="log.search" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="log.since" xml:space="preserve">
+    <value>Desde</value>
+  </data>
+  <data name="log.until" xml:space="preserve">
+    <value>Hasta</value>
+  </data>
+  <data name="log.user" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="login.connection.string" xml:space="preserve">
+    <value>Modificar String de conexion</value>
+  </data>
+  <data name="login.language" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="login.login" xml:space="preserve">
+    <value>Ingresar</value>
+  </data>
+  <data name="login.pass" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="login.user" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="project.cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="project.create" xml:space="preserve">
+    <value>Crear</value>
+  </data>
+  <data name="project.delete" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="project.enabled" xml:space="preserve">
+    <value>Habilitado</value>
+  </data>
+  <data name="project.estimated" xml:space="preserve">
+    <value>Estimadas</value>
+  </data>
+  <data name="project.insumidas" xml:space="preserve">
+    <value>Insumidas</value>
+  </data>
+  <data name="project.list.enabled" xml:space="preserve">
+    <value>Habilitado</value>
+  </data>
+  <data name="project.list.title" xml:space="preserve">
+    <value>Nombre del proyecto</value>
+  </data>
+  <data name="project.resources" xml:space="preserve">
+    <value>Asignar recursos</value>
+  </data>
+  <data name="project.save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="project.title" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="project.valor" xml:space="preserve">
+    <value>Valor hora acordado con el cliente</value>
+  </data>
+  <data name="report.clean" xml:space="preserve">
+    <value>Limpiar</value>
+  </data>
+  <data name="report.list.date" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="report.list.desvio.hs" xml:space="preserve">
+    <value>Hs Desvio</value>
+  </data>
+  <data name="report.list.estimated.hs" xml:space="preserve">
+    <value>Hs Estimadas</value>
+  </data>
+  <data name="report.list.insumidas.hs" xml:space="preserve">
+    <value>Hs Insumidas</value>
+  </data>
+  <data name="report.list.project" xml:space="preserve">
+    <value>Proyecto</value>
+  </data>
+  <data name="report.list.state" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="report.search" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="report.since" xml:space="preserve">
+    <value>Desde</value>
+  </data>
+  <data name="report.until" xml:space="preserve">
+    <value>Hasta</value>
+  </data>
+  <data name="restore.import" xml:space="preserve">
+    <value>Importar</value>
+  </data>
+  <data name="restore.path" xml:space="preserve">
+    <value>Ruta de origen</value>
+  </data>
+  <data name="task.cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="task.create" xml:space="preserve">
+    <value>Crear</value>
+  </data>
+  <data name="task.delete" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="task.description" xml:space="preserve">
+    <value>Descripcion</value>
+  </data>
+  <data name="task.list.project" xml:space="preserve">
+    <value>Proyecto</value>
+  </data>
+  <data name="task.list.title" xml:space="preserve">
+    <value>Titulo</value>
+  </data>
+  <data name="task.project" xml:space="preserve">
+    <value>Proyecto</value>
+  </data>
+  <data name="task.save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="task.title" xml:space="preserve">
+    <value>Titulo</value>
+  </data>
+  <data name="user.cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="user.create" xml:space="preserve">
+    <value>Crear</value>
+  </data>
+  <data name="user.delete" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="user.disp" xml:space="preserve">
+    <value>Disponibilidad mensual</value>
+  </data>
+  <data name="user.email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="user.enabled" xml:space="preserve">
+    <value>Habilitado</value>
+  </data>
+  <data name="user.families" xml:space="preserve">
+    <value>Asignar familia</value>
+  </data>
+  <data name="user.generate.pass" xml:space="preserve">
+    <value>Generar contraseña</value>
+  </data>
+  <data name="user.lastname" xml:space="preserve">
+    <value>Apellido</value>
+  </data>
+  <data name="user.list.lastname" xml:space="preserve">
+    <value>Apellido</value>
+  </data>
+  <data name="user.list.name" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="user.list.state" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="user.list.username" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="user.name" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="user.patentes" xml:space="preserve">
+    <value>Asignar patente</value>
+  </data>
+  <data name="user.save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="user.username" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="user.valor" xml:space="preserve">
+    <value>Valor hora</value>
+  </data>
+  <data name="report.list.desvio.dinero" xml:space="preserve">
+    <value>Desvio dinero</value>
+  </data>
+  <data name="user.unlock" xml:space="preserve">
+    <value>Desbloquear</value>
+  </data>
+</root>

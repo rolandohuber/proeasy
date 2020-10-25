@@ -1,0 +1,12 @@
+C:\Users\rolando_huber\Desktop\proeasy\ProEasyUI\ProEasyBE\bin\Debug\ProEasyBE.dll
+C:\Users\rolando_huber\Desktop\proeasy\ProEasyUI\ProEasyBE\bin\Debug\ProEasyBE.pdb
+C:\Users\rolando_huber\Desktop\proeasy\ProEasyUI\ProEasyBE\obj\Debug\ProEasyBE.csprojAssemblyReference.cache
+C:\Users\rolando_huber\Desktop\proeasy\ProEasyUI\ProEasyBE\obj\Debug\ProEasyBE.csproj.CoreCompileInputs.cache
+C:\Users\rolando_huber\Desktop\proeasy\ProEasyUI\ProEasyBE\obj\Debug\ProEasyBE.dll
+C:\Users\rolando_huber\Desktop\proeasy\ProEasyUI\ProEasyBE\obj\Debug\ProEasyBE.pdb
+D:\TFI\putoElQueLee\ProEasyUI\ProEasyBE\bin\Debug\ProEasyBE.dll
+D:\TFI\putoElQueLee\ProEasyUI\ProEasyBE\bin\Debug\ProEasyBE.pdb
+D:\TFI\putoElQueLee\ProEasyUI\ProEasyBE\obj\Debug\ProEasyBE.csproj.CoreCompileInputs.cache
+D:\TFI\putoElQueLee\ProEasyUI\ProEasyBE\obj\Debug\ProEasyBE.dll
+D:\TFI\putoElQueLee\ProEasyUI\ProEasyBE\obj\Debug\ProEasyBE.pdb
+D:\TFI\putoElQueLee\ProEasyUI\ProEasyBE\obj\Debug\ProEasyBE.csprojAssemblyReference.cache
