@@ -27,7 +27,7 @@ namespace ProEasyUI
             // 
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "I18nForm";
-            this.Load += new System.EventHandler(this.I18nForm_Load);
+            this.Load += new EventHandler(this.I18nForm_Load);
             this.ResumeLayout(false);
 
         }

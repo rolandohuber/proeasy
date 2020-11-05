@@ -94,11 +94,9 @@ namespace DAL
         {
             try
             {
-                string query = "UPDATE HORA SET eliminado = @eliminado,dvh = @dvh WHERE id = @id";
+                string query = "DELETE FROM HORA WHERE id = @id";
                 Dictionary<string, object> paramList = new Dictionary<string, object>();
                 paramList.Add("@id", entity.Id);
-                paramList.Add("@eliminado", entity.Eliminado);
-                paramList.Add("@dvh", entity.Dvh);
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
             }
@@ -116,11 +114,11 @@ namespace DAL
                 DataTable list = sqlHelper.ExecuteReader(query);
                 if (list.Rows.Count > 1)
                 {
-                    throw new Exception("mas de un registro");
+                    throw new ProEasyException(15, "mas de un registro");
                 }
                 else if (list.Rows.Count < 1)
                 {
-                    throw new Exception("not found");
+                    throw new ProEasyException(16, "not found");
                 }
 
                 DataRow row = list.Rows[0];

@@ -10,6 +10,7 @@ namespace ProEasyUI
     {
         FamiliaService familiaService = FamiliaService.getInstance();
         Familia familiaSelected;
+
         public FamiliaForm()
         {
             InitializeComponent();
@@ -27,9 +28,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -49,9 +50,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -76,9 +77,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -92,14 +93,15 @@ namespace ProEasyUI
                 familiaService.crear(new BE.Familia(0, this.textBox1.Text, null, false, "", null));
 
                 FamiliaForm_Load(null, null);
+                showInfo(i18n().GetString("family.created"));
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -123,9 +125,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -135,14 +137,15 @@ namespace ProEasyUI
             {
                 familiaService.eliminar(familiaSelected);
                 FamiliaForm_Load(null, null);
+                showInfo(i18n().GetString("family.deleted"));
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -156,14 +159,15 @@ namespace ProEasyUI
                 familiaSelected.Nombre = this.textBox1.Text;
                 familiaService.actualizar(this.familiaSelected);
                 FamiliaForm_Load(null, null);
+                showInfo(i18n().GetString("family.updated"));
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -177,9 +181,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -189,7 +193,7 @@ namespace ProEasyUI
             {
                 if (this.textBox1.Text == null || this.textBox1.Text.Length < 1)
                 {
-                    MessageBox.Show("El nombre es requerido.", "Complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    showError(i18n().GetString("family.required.name"));
                     return false;
                 }
 
@@ -199,9 +203,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
             return false;
         }

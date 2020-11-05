@@ -10,3 +10,9 @@ D:\TFI\putoElQueLee\ProEasyUI\ProEasyBE\obj\Debug\ProEasyBE.csproj.CoreCompileIn
 D:\TFI\putoElQueLee\ProEasyUI\ProEasyBE\obj\Debug\ProEasyBE.dll
 D:\TFI\putoElQueLee\ProEasyUI\ProEasyBE\obj\Debug\ProEasyBE.pdb
 D:\TFI\putoElQueLee\ProEasyUI\ProEasyBE\obj\Debug\ProEasyBE.csprojAssemblyReference.cache
+D:\TFI\proeasy\ProEasyUI\ProEasyBE\bin\Debug\ProEasyBE.dll
+D:\TFI\proeasy\ProEasyUI\ProEasyBE\bin\Debug\ProEasyBE.pdb
+D:\TFI\proeasy\ProEasyUI\ProEasyBE\obj\Debug\ProEasyBE.csprojAssemblyReference.cache
+D:\TFI\proeasy\ProEasyUI\ProEasyBE\obj\Debug\ProEasyBE.csproj.CoreCompileInputs.cache
+D:\TFI\proeasy\ProEasyUI\ProEasyBE\obj\Debug\ProEasyBE.dll
+D:\TFI\proeasy\ProEasyUI\ProEasyBE\obj\Debug\ProEasyBE.pdb

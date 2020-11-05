@@ -7,11 +7,8 @@ namespace BLL
 {
     public class EmailService
     {
-
-
         public Boolean send(Usuario usuario, bool updatePass)
         {
-
             try
             {
                 String FROM = "mimailfalso2020@gmail.com";
@@ -54,13 +51,11 @@ namespace BLL
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
             return true;
         }
-
     }
-
 }

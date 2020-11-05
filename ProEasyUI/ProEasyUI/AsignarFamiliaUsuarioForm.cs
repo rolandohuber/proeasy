@@ -2,15 +2,15 @@
 using BLL;
 using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace ProEasyUI
 {
     public partial class AsignarFamiliaUsuarioForm : I18nForm
     {
-        BE.Usuario userSelected;
+        Usuario userSelected;
         FamiliaService familiaService = FamiliaService.getInstance();
-        public AsignarFamiliaUsuarioForm(BE.Usuario userSelected)
+
+        public AsignarFamiliaUsuarioForm(Usuario userSelected)
         {
             InitializeComponent();
             ReloadLang();
@@ -28,9 +28,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -57,9 +57,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
 
         }
@@ -72,10 +72,9 @@ namespace ProEasyUI
 
                 if (familia == null)
                 {
-                    MessageBox.Show("Debe seleccionar una familia para asignar.", "Seleccione una familia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    showError(i18n().GetString("asignacion.familia.usuario.asign.required"));
                     return;
                 }
-
 
                 familiaService.asignarFamilia(userSelected, familia);
                 AsignarFamiliaUsuarioForm_Load(null, null);
@@ -84,9 +83,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -98,7 +97,7 @@ namespace ProEasyUI
 
                 if (familia == null)
                 {
-                    MessageBox.Show("Debe seleccionar una familia para desasignar.", "Seleccione una familia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    showError(i18n().GetString("asignacion.familia.usuario.remove.required"));
                     return;
                 }
 
@@ -109,9 +108,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
     }

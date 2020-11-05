@@ -71,5 +71,4 @@ namespace BLL
             return list;
         }
     }
-
 }

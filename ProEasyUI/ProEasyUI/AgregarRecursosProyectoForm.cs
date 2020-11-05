@@ -2,7 +2,6 @@
 using BLL;
 using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace ProEasyUI
 {
@@ -29,9 +28,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -59,9 +58,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
 
         }
@@ -73,7 +72,7 @@ namespace ProEasyUI
                 Usuario usuario = (Usuario)this.disponiblesList.SelectedItem;
                 if (usuario == null)
                 {
-                    MessageBox.Show("Debe seleccionar un usuario para asignar.", "Seleccione un usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    showError(i18n().GetString("asignacion.recurso.project.asign.required"));
                     return;
                 }
                 usuarioService.asignarRecurso(this.proyectoSelected, usuario);
@@ -83,9 +82,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -96,7 +95,7 @@ namespace ProEasyUI
                 Usuario usuario = (Usuario)this.asignadosList.SelectedItem;
                 if (usuario == null)
                 {
-                    MessageBox.Show("Debe seleccionar un usuario para desasignar.", "Seleccione un usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    showError(i18n().GetString("asignacion.recurso.project.remove.required"));
                     return;
                 }
                 usuarioService.desasignarRecurso(this.proyectoSelected, usuario);
@@ -106,9 +105,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
     }

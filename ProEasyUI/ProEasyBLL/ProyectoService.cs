@@ -55,18 +55,15 @@ namespace BLL
             return list;
         }
 
-
         public int calcularMontoAcordado(Proyecto proyecto)
         {
             return (int)Int32.Parse(proyecto.ValorHora);
         }
 
-
         public long sumarHoras(List<Hora> horas)
         {
             return horas.Sum(item => item.Cantidad);
         }
-
 
         public long sumarMontoInsumido(List<Hora> horas)
         {
@@ -76,7 +73,7 @@ namespace BLL
         public override void crear(Proyecto entity)
         {
             if (this.mapper.existe(0, entity.Nombre))
-                throw new Exception("Proyecto ya existe");
+                throw new ProEasyException(40, "Proyecto ya existe");
 
             entity.ValorHora = encriptarAES(entity.ValorHora);
             entity.HorasEstimadas = encriptarAES(entity.HorasEstimadas);
@@ -98,7 +95,7 @@ namespace BLL
         public override void actualizar(Proyecto entity)
         {
             if (this.mapper.existe(entity.Id, entity.Nombre))
-                throw new Exception("Proyecto ya existe");
+                throw new ProEasyException(40, "Proyecto ya existe");
 
             entity.ValorHora = encriptarAES(entity.ValorHora);
             entity.HorasEstimadas = encriptarAES(entity.HorasEstimadas);
@@ -119,6 +116,8 @@ namespace BLL
 
         public override void eliminar(Proyecto entity)
         {
+            if (new TareaMapper().listarPorProyecto(entity).Count > 0)
+                throw new ProEasyException(41, "Proyecto tiene tareas asociadas");
             mapper.eliminar(entity);
             verificadorService.actualizarDVV("PROYECTO");
             BitacoraService.getInstance().crear(
@@ -169,5 +168,4 @@ namespace BLL
             return proyecto;
         }
     }
-
 }

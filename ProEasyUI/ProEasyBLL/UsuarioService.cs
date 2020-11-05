@@ -8,7 +8,6 @@ namespace BLL
 {
     public class UsuarioService : EntityService<Usuario>
     {
-
         private static UsuarioService instance;
         readonly UsuarioMapper usuarioMapper = new UsuarioMapper();
         readonly PatenteMapper patenteMapper = new PatenteMapper();
@@ -40,9 +39,9 @@ namespace BLL
 
                 return sb.ToString(); ;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw (ex);
+                throw new ProEasyException(10, "Ocurrio un error al generar la contraseña");
             }
 
         }
@@ -50,10 +49,10 @@ namespace BLL
         public Usuario login(string usuario, string contraseña)
         {
             if (!verificadorService.verificarIntegridad())
-                throw new Exception("Error al verificar la integridad de la base");
+                throw new ProEasyException(11, "Error al verificar la integridad de la base");
 
             if (usuarioMapper.estaBloqueado(encriptarAES(usuario)))
-                throw new Exception("Usuario bloqueado");
+                throw new ProEasyException(12, "El usuario se encuentra bloqueado");
 
             Usuario user = usuarioMapper.login(encriptarAES(usuario), encriptarMD5(contraseña));
             user.Idioma = idiomaMapper.leer(user.Idioma.Id);
@@ -80,18 +79,13 @@ namespace BLL
             return user;
         }
 
-        public void logout(Usuario usuario)
-        {
-            this.usuarioMapper.logout(usuario);
-        }
-
         public override void crear(Usuario entity)
         {
             var usernameMail = entity.Username;
             entity.Username = encriptarAES(entity.Username);
 
             if (this.usuarioMapper.existe(entity))
-                throw new Exception("usuario ya existe");
+                throw new ProEasyException(13, "El usuario ya existe");
             var passMail = generarContrasenia();
 
             entity.Contrasenia = encriptarMD5(passMail);
@@ -104,14 +98,12 @@ namespace BLL
             entity.Username = usernameMail;
             new EmailService().send(entity, false);
             BitacoraService.getInstance().crear(
-                Bitacora.builder()
+            Bitacora.builder()
                 .Criticidad("ALTA")
                 .Descripcion("Se creo un usuario")
                 .Funcionalidad("CREAR_USUARIO")
                 .Fecha(DateTime.Now)
-                .Usuario(
-                    Session.getInstance().Usuario
-                    )
+                .Usuario(Session.getInstance().Usuario)
                 .Data(entity)
                 .build()
             );
@@ -122,7 +114,7 @@ namespace BLL
             entity.Username = encriptarAES(entity.Username);
 
             if (this.usuarioMapper.existe(entity))
-                throw new Exception("usuario ya existe");
+                throw new ProEasyException(13, "El usuario ya existe");
 
             entity.ValorHora = encriptarAES(entity.ValorHora);
             entity.Dvh = verificadorService.generarDVH(new string[] { entity.Username, entity.Apellido, entity.Nombre, entity.Contrasenia });
@@ -131,14 +123,12 @@ namespace BLL
             verificadorService.actualizarDVV("USUARIO");
 
             BitacoraService.getInstance().crear(
-               Bitacora.builder()
+            Bitacora.builder()
                .Criticidad("ALTA")
                .Descripcion("Se actualizo un usuario")
                .Funcionalidad("ACTUALIZAR_USUARIO")
                .Fecha(DateTime.Now)
-               .Usuario(
-                  Session.getInstance().Usuario
-                   )
+               .Usuario(Session.getInstance().Usuario)
                .Data(entity)
                .build()
            );
@@ -149,22 +139,20 @@ namespace BLL
             foreach (Patente patente in patenteMapper.obtenerTodasLasPatentes(entity))
             {
                 if (!patenteMapper.existeOtraAsignacion(patente.Id, entity.Id))
-                    throw new Exception("hay patentes que quedaran sin asignacion");
+                    throw new ProEasyException(14, "Hay patentes que quedaran sin asignacion");
             }
 
             this.usuarioMapper.eliminar(entity);
             BitacoraService.getInstance().crear(
-              Bitacora.builder()
+            Bitacora.builder()
               .Criticidad("ALTA")
               .Descripcion("Se elimino un usuario")
               .Funcionalidad("ELIMINAR_USUARIO")
               .Fecha(DateTime.Now)
-              .Usuario(
-                 Session.getInstance().Usuario
-                  )
+              .Usuario(Session.getInstance().Usuario)
               .Data(entity)
               .build()
-          );
+            );
             verificadorService.actualizarDVV("USUARIO");
         }
 
@@ -182,9 +170,7 @@ namespace BLL
              .Descripcion("Se listaron los usuarios")
              .Funcionalidad("LISTAR_USUARIO")
              .Fecha(DateTime.Now)
-             .Usuario(
-                 Session.getInstance().Usuario
-                 )
+             .Usuario(Session.getInstance().Usuario)
              .build()
          );
             return list;
@@ -202,14 +188,11 @@ namespace BLL
             .Descripcion("Se consulto un usuario")
             .Funcionalidad("LEER_USUARIO")
             .Fecha(DateTime.Now)
-            .Usuario(
-                Session.getInstance().Usuario
-                )
+            .Usuario(Session.getInstance().Usuario)
             .build()
         );
             return usuario;
         }
-
 
         public void resetPass(Usuario user)
         {
@@ -222,9 +205,7 @@ namespace BLL
                 .Descripcion("Se reseteo la contraseña de un usuario")
                 .Funcionalidad("RESET_PASS_USUARIO")
                 .Fecha(DateTime.Now)
-                .Usuario(
-                    Session.getInstance().Usuario
-                    )
+                .Usuario(Session.getInstance().Usuario)
                 .build()
             );
             user.Contrasenia = newPass;
@@ -240,14 +221,11 @@ namespace BLL
                .Descripcion("Se obtienen los usuarios asociados al proyecto")
                .Funcionalidad("LISTAR_USUARIOS_ASIGNADOS")
                .Fecha(DateTime.Now)
-               .Usuario(
-                  Session.getInstance().Usuario
-                   )
+               .Usuario(Session.getInstance().Usuario)
                .build()
            );
             return usuarios;
         }
-
 
         public List<Usuario> obtenerUsuariosDisponibles(Proyecto proyecto)
         {
@@ -258,14 +236,11 @@ namespace BLL
               .Descripcion("Se obtienen los usuarios disponibles para el proyecto")
               .Funcionalidad("LISTAR_USUARIOS_DISPONIBLES")
               .Fecha(DateTime.Now)
-              .Usuario(
-                  Session.getInstance().Usuario
-                  )
+              .Usuario(Session.getInstance().Usuario)
               .build()
           );
             return usuarios;
         }
-
 
         public void asignarRecurso(Proyecto proyecto, Usuario usuario)
         {
@@ -277,13 +252,10 @@ namespace BLL
               .Descripcion("Se asigna un usuario al proyecto")
               .Funcionalidad("ASIGNAR USUARIO PROYECTO")
               .Fecha(DateTime.Now)
-              .Usuario(
-                 Session.getInstance().Usuario
-                  )
+              .Usuario(Session.getInstance().Usuario)
               .build()
           );
         }
-
 
         public void desasignarRecurso(Proyecto proyecto, Usuario usuario)
         {
@@ -295,12 +267,9 @@ namespace BLL
               .Descripcion("Se desasigna un usuario al proyecto")
               .Funcionalidad("DESASIGNAR USUARIO PROYECTO")
               .Fecha(DateTime.Now)
-              .Usuario(
-                  Session.getInstance().Usuario
-                  )
+              .Usuario(Session.getInstance().Usuario)
               .build()
           );
         }
     }
-
 }

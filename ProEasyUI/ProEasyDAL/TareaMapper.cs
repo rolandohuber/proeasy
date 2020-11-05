@@ -58,7 +58,7 @@ namespace DAL
                 bool ok = sqlHelper.ExecuteQuery(query);
                 if (!ok)
                 {
-                    throw new Exception("ocurrio un error al eliminar el usuario");
+                    throw new ProEasyException(25, "ocurrio un error al eliminar la tarea");
                 }
             }
             catch (Exception ex)
@@ -99,7 +99,7 @@ namespace DAL
         {
             try
             {
-                string query = "SELECT COUNT(*) FROM TAREA WHERE ID_PROYECTO = " + id + " AND TITULO = '" + titulo + "'";
+                string query = "SELECT COUNT(*) FROM TAREA WHERE ID_PROYECTO != " + id + " AND TITULO = '" + titulo + "'";
                 int count = sqlHelper.ExecuteScalar(query);
 
                 return count > 0;
@@ -118,11 +118,11 @@ namespace DAL
                 DataTable list = sqlHelper.ExecuteReader(query);
                 if (list.Rows.Count > 1)
                 {
-                    throw new Exception("mas de un registro");
+                    throw new ProEasyException(15, "mas de un registro");
                 }
                 else if (list.Rows.Count < 1)
                 {
-                    throw new Exception("not found");
+                    throw new ProEasyException(16, "not found");
                 }
 
                 DataRow row = list.Rows[0];

@@ -15,6 +15,7 @@ namespace ProEasyUI
             InitializeComponent();
             ReloadLang();
         }
+
         public override void ReloadLang()
         {
             try
@@ -35,9 +36,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -60,9 +61,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -85,9 +86,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 

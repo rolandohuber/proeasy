@@ -12,6 +12,7 @@ namespace ProEasyUI
         readonly TareaService tareaService = TareaService.getInstance();
         private Proyecto proyectoSelected;
         private Tarea tareaSelected;
+
         public TareaForm()
         {
             InitializeComponent();
@@ -36,9 +37,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -58,15 +59,14 @@ namespace ProEasyUI
                 this.createButton.Visible = true;
                 this.deleteButton.Visible = false;
                 this.saveButton.Visible = false;
-                this.createButton.Visible = true;
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -88,9 +88,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -108,14 +108,15 @@ namespace ProEasyUI
                 tareaService.crear(t);
 
                 cancelButton_Click(null, null);
+                showInfo(i18n().GetString("task.created"));
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -126,14 +127,15 @@ namespace ProEasyUI
                 tareaService.eliminar(tareaSelected);
 
                 cancelButton_Click(null, null);
+                showInfo(i18n().GetString("task.deleted"));
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -149,14 +151,15 @@ namespace ProEasyUI
                 tareaService.actualizar(tareaSelected);
 
                 cancelButton_Click(null, null);
+                showInfo(i18n().GetString("task.updated"));
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -174,9 +177,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -196,15 +199,14 @@ namespace ProEasyUI
                 this.createButton.Visible = false;
                 this.deleteButton.Visible = true;
                 this.saveButton.Visible = true;
-                this.createButton.Visible = true;
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -212,20 +214,19 @@ namespace ProEasyUI
         {
             if (this.proyectosCombo.SelectedItem == null)
             {
-                MessageBox.Show("El proyecto es requerido.", "Complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                showWarning(i18n().GetString("task.required.project"));
                 return false;
             }
             if (this.tituloField.Text == null || this.tituloField.Text.Length < 1)
             {
-                MessageBox.Show("El titulo es requerido.", "Complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                showWarning(i18n().GetString("task.required.title"));
                 return false;
             }
             if (this.descripcionField.Text == null || this.descripcionField.Text.Length < 1)
             {
-                MessageBox.Show("El campo descripcion es requerido.", "Complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                showWarning(i18n().GetString("task.required.description"));
                 return false;
             }
-
             return true;
         }
     }

@@ -214,7 +214,6 @@ namespace BLL
             return encriptarMD5(cadena);
         }
 
-
         public void actualizarDVV(String tabla)
         {
             List<String> dvhs = mapper.listarDvh(tabla);
@@ -270,5 +269,4 @@ namespace BLL
             return dvh;
         }
     }
-
 }

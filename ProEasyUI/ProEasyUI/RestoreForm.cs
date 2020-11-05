@@ -8,7 +8,6 @@ namespace ProEasyUI
 {
     public partial class RestoreForm : I18nForm
     {
-        DbBackUpService service = DbBackUpService.getInstance();
         private string path;
 
         public RestoreForm()
@@ -28,9 +27,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -58,9 +57,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -68,15 +67,16 @@ namespace ProEasyUI
         {
             try
             {
-                service.restaurar(this.path);
+                DbBackUpService.getInstance().restaurar(this.path);
+                showInfo(i18n().GetString("restore.sucess"));
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
     }

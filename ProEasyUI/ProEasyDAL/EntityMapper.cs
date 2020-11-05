@@ -17,5 +17,4 @@ namespace DAL
         public abstract E leer(long entity);
 
     }
-
 }

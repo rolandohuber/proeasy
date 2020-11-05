@@ -26,7 +26,6 @@ namespace BLL
 
         public string generarBackUp(int partitionNumber)
         {
-
             BitacoraService.getInstance().crear(
                 Bitacora.builder()
                 .Criticidad("ALTA")
@@ -36,7 +35,6 @@ namespace BLL
                 .Usuario(Session.getInstance().Usuario)
                 .build()
             );
-
 
             var nombreBaseDeDatos = sqlHelper.getDatabaseName();
             var nombreBackup = nombreBaseDeDatos + "-" + DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".bak";
@@ -48,7 +46,7 @@ namespace BLL
             DataTable list = sqlHelper.ExecuteReader(String.Format("SELECT top 1 physical_device_name as ruta ,backup_start_date, backup_finish_date, backup_size AS tamaño FROM msdb.dbo.backupset b JOIN msdb.dbo.backupmediafamily m ON b.media_set_id = m.media_set_id WHERE physical_device_name like '%{0}%' ORDER BY backup_finish_date DESC", nombreBackup));
             if (list.Rows.Count == 0)
             {
-                throw new Exception("Ocurrio un error al crear el bkp");
+                throw new ProEasyException(60, "Ocurrio un error al crear el bkp");
             }
             var path = list.Rows[0].Field<string>("ruta");
             CreateZipFile(path, partitionNumber);
@@ -62,7 +60,7 @@ namespace BLL
             {
                 foreach (ZipEntry e in zip)
                 {
-                    e.Extract(path.Substring(0, path.LastIndexOf("\\")));
+                    e.Extract(path.Substring(0, path.LastIndexOf("\\")), ExtractExistingFileAction.OverwriteSilently);
                 }
             }
 
@@ -81,7 +79,7 @@ namespace BLL
 
         private static void CreateZipFile(string filePath, int partitions)
         {
-            using (var zipFile = new Ionic.Zip.ZipFile())
+            using (var zipFile = new ZipFile())
             {
                 zipFile.CompressionLevel = Ionic.Zlib.CompressionLevel.BestCompression;
                 zipFile.AddFile(filePath, directoryPathInArchive: string.Empty);
@@ -90,7 +88,5 @@ namespace BLL
                 zipFile.Save(filePath + ".zip");
             }
         }
-
     }
-
 }

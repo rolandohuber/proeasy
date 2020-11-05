@@ -9,19 +9,15 @@ namespace BLL
 {
     public abstract class EntityService<E>
     {
-
         public abstract void crear(E entity);
 
-
         public abstract void actualizar(E entity);
-
 
         public abstract void eliminar(E entity);
 
         public abstract List<E> listar();
 
         public abstract E leer(long id);
-
 
         public string encriptarMD5(string input)
         {
@@ -92,5 +88,4 @@ namespace BLL
         }
 
     }
-
 }

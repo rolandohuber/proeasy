@@ -2,16 +2,15 @@
 using BLL;
 using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace ProEasyUI
 {
     public partial class AsignarPatenteUsuarioForm : I18nForm
     {
-        BE.Usuario userSelected;
+        Usuario userSelected;
         PatenteService patenteService = PatenteService.getInstance();
 
-        public AsignarPatenteUsuarioForm(BE.Usuario userSelected)
+        public AsignarPatenteUsuarioForm(Usuario userSelected)
         {
             InitializeComponent();
             ReloadLang();
@@ -29,9 +28,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -58,9 +57,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -72,7 +71,7 @@ namespace ProEasyUI
 
                 if (patente == null)
                 {
-                    MessageBox.Show("Debe seleccionar una patente para asignar.", "Seleccione una patente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    showError(i18n().GetString("asignacion.patente.uduario.asign.required"));
                     return;
                 }
 
@@ -83,9 +82,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -97,7 +96,7 @@ namespace ProEasyUI
 
                 if (patente == null)
                 {
-                    MessageBox.Show("Debe seleccionar una patente para desasignar.", "Seleccione una patente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    showError(i18n().GetString("asignacion.patente.uduario.remove.required"));
                     return;
                 }
 
@@ -108,9 +107,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
     }

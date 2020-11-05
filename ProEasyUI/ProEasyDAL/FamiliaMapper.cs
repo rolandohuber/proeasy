@@ -8,12 +8,11 @@ namespace DAL
 {
     public class FamiliaMapper : EntityMapperMapper<Familia>
     {
-
-        public Boolean existe(string nombre)
+        public Boolean existe(long id, string nombre)
         {
             try
             {
-                string query = "SELECT COUNT(*) FROM FAMILIA WHERE NOMBRE ='" + nombre + "'";
+                string query = "SELECT COUNT(*) FROM FAMILIA WHERE NOMBRE ='" + nombre + "' AND ID != " + id;
                 int count = sqlHelper.ExecuteScalar(query);
 
                 return count > 0;
@@ -23,7 +22,6 @@ namespace DAL
                 throw new ProEasyException(1, ex.Message);
             }
         }
-
 
         public Boolean estaAsignada(Familia familia)
         {
@@ -39,7 +37,6 @@ namespace DAL
                 throw new ProEasyException(1, ex.Message);
             }
         }
-
 
         public Boolean tieneAlgunaPatenteSinOtraAsignacion(Familia familia)
         {
@@ -83,7 +80,6 @@ namespace DAL
             }
         }
 
-
         public void asignarPatente(Familia familia, Patente patente)
         {
             try
@@ -102,7 +98,6 @@ namespace DAL
                 throw new ProEasyException(1, ex.Message);
             }
         }
-
 
         public void desasignarPatente(Familia familia, Patente patente)
         {
@@ -209,19 +204,16 @@ namespace DAL
         {
             try
             {
-                string query = "DELETE FAMILIA WHERE id = @id";
+                string query = "DELETE FROM FAMILIA WHERE id = @id";
 
                 Dictionary<string, object> paramList = new Dictionary<string, object>();
                 paramList.Add("@id", entity.Id);
-                paramList.Add("@nombre", entity.Nombre);
-                paramList.Add("@eliminado", entity.Eliminado);
-                paramList.Add("@dvh", entity.Dvh);
 
                 bool ok = sqlHelper.ExecuteQueryWithParams(query, paramList) > 0;
 
                 if (!ok)
                 {
-                    throw new Exception("ocurrio un error al eliminar la familia");
+                    throw new ProEasyException(55, "ocurrio un error al eliminar la familia");
                 }
             }
             catch (Exception ex)
@@ -305,11 +297,11 @@ namespace DAL
                 DataTable list = sqlHelper.ExecuteReader(query);
                 if (list.Rows.Count > 1)
                 {
-                    throw new Exception("mas de un registro");
+                    throw new ProEasyException(15, "mas de un registro");
                 }
                 else if (list.Rows.Count < 1)
                 {
-                    throw new Exception("not found");
+                    throw new ProEasyException(16, "not found");
                 }
 
                 DataRow row = list.Rows[0];

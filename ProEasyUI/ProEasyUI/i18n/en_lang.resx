@@ -118,591 +118,591 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="project.name" xml:space="preserve">
-    <value>ProEasy</value>
+    <value>ProEasy_EN</value>
   </data>
   <data name="menu.backup" xml:space="preserve">
-    <value>Realizar backup</value>
+    <value>Realizar backup_EN</value>
   </data>
   <data name="menu.connection.string" xml:space="preserve">
-    <value>Modificar String de conexión</value>
+    <value>Modificar String de conexión_EN</value>
   </data>
   <data name="menu.families" xml:space="preserve">
-    <value>Familias</value>
+    <value>Familias_EN</value>
   </data>
   <data name="menu.hours" xml:space="preserve">
-    <value>Carga de Horas</value>
+    <value>Carga de Horas_EN</value>
   </data>
   <data name="menu.language" xml:space="preserve">
-    <value>Idioma</value>
+    <value>Idioma_EN</value>
   </data>
   <data name="menu.logout" xml:space="preserve">
-    <value>Cerrar sesión</value>
+    <value>Cerrar sesión_EN</value>
   </data>
   <data name="menu.logs" xml:space="preserve">
-    <value>Consultar Bitácora</value>
+    <value>Consultar Bitácora_EN</value>
   </data>
   <data name="menu.projects" xml:space="preserve">
-    <value>Proyectos</value>
+    <value>Proyectos_EN</value>
   </data>
   <data name="menu.report" xml:space="preserve">
-    <value>Reporte de rentabilidad de proyectos</value>
+    <value>Reporte de rentabilidad de proyectos_EN</value>
   </data>
   <data name="menu.restore" xml:space="preserve">
-    <value>Realizar restore</value>
+    <value>Realizar restore_EN</value>
   </data>
   <data name="menu.tasks" xml:space="preserve">
-    <value>Tareas</value>
+    <value>Tareas_EN</value>
   </data>
   <data name="menu.users" xml:space="preserve">
-    <value>Usuarios</value>
+    <value>Usuarios_EN</value>
   </data>
   <data name="restore.path.label" xml:space="preserve">
-    <value>Directorio del backup</value>
+    <value>Directorio del backup_EN</value>
   </data>
   <data name="asig.family.asign" xml:space="preserve">
-    <value>Familias asignadas</value>
+    <value>Familias asignadas_EN</value>
   </data>
   <data name="asig.family.disp" xml:space="preserve">
-    <value>Familias disponibles</value>
+    <value>Familias disponibles_EN</value>
   </data>
   <data name="asig.family.title" xml:space="preserve">
-    <value>Familias del usuario</value>
+    <value>Familias del usuario_EN</value>
   </data>
   <data name="asig.pat.fam.asign" xml:space="preserve">
-    <value>Patentes asignadas</value>
+    <value>Patentes asignadas_EN</value>
   </data>
   <data name="asig.pat.fam.disp" xml:space="preserve">
-    <value>Patentes disponibles</value>
+    <value>Patentes disponibles_EN</value>
   </data>
   <data name="asig.pat.fam.title" xml:space="preserve">
-    <value>Patentes de la familia</value>
+    <value>Patentes de la familia_EN</value>
   </data>
   <data name="asig.patente.asign" xml:space="preserve">
-    <value>Patentes asignadas</value>
+    <value>Patentes asignadas_EN</value>
   </data>
   <data name="asig.patente.disp" xml:space="preserve">
-    <value>Patentes disponibles</value>
+    <value>Patentes disponibles_EN</value>
   </data>
   <data name="asig.patente.title" xml:space="preserve">
-    <value>Patentes del usuario</value>
+    <value>Patentes del usuario_EN</value>
   </data>
   <data name="asig.rec.proj.asign" xml:space="preserve">
-    <value>Recursos asignados</value>
+    <value>Recursos asignados_EN</value>
   </data>
   <data name="asig.rec.proj.disp" xml:space="preserve">
-    <value>Recursos disponibles</value>
+    <value>Recursos disponibles_EN</value>
   </data>
   <data name="asig.rec.proj.title" xml:space="preserve">
-    <value>Recursos del proyecto</value>
+    <value>Recursos del proyecto_EN</value>
   </data>
   <data name="backup.cant" xml:space="preserve">
-    <value>Cantidad de volumenes</value>
+    <value>Cantidad de volumenes_EN</value>
   </data>
   <data name="backup.export" xml:space="preserve">
-    <value>Exportar</value>
+    <value>Exportar_EN</value>
   </data>
   <data name="backup.path" xml:space="preserve">
-    <value>Ruta de destino</value>
+    <value>Ruta de destino_EN</value>
   </data>
   <data name="connection.db" xml:space="preserve">
-    <value>Base de datos</value>
+    <value>Base de datos_EN</value>
   </data>
   <data name="connection.pass" xml:space="preserve">
-    <value>Contraseña</value>
+    <value>Contraseña_EN</value>
   </data>
   <data name="connection.save" xml:space="preserve">
-    <value>Guardar</value>
+    <value>Guardar_EN</value>
   </data>
   <data name="connection.server" xml:space="preserve">
-    <value>Servidor</value>
+    <value>Servidor_EN</value>
   </data>
   <data name="connection.user" xml:space="preserve">
-    <value>Usuario</value>
+    <value>Usuario_EN</value>
   </data>
   <data name="family.cancel" xml:space="preserve">
-    <value>Cancelar</value>
+    <value>Cancelar_EN</value>
   </data>
   <data name="family.create" xml:space="preserve">
-    <value>Crear</value>
+    <value>Crear_EN</value>
   </data>
   <data name="family.delete" xml:space="preserve">
-    <value>Eliminar</value>
+    <value>Eliminar_EN</value>
   </data>
   <data name="family.list.name" xml:space="preserve">
-    <value>Nombre</value>
+    <value>Nombre_EN</value>
   </data>
   <data name="family.name" xml:space="preserve">
-    <value>Nombre</value>
+    <value>Nombre_EN</value>
   </data>
   <data name="family.patentes" xml:space="preserve">
-    <value>Asignar patentes</value>
+    <value>Asignar patentes_EN</value>
   </data>
   <data name="family.save" xml:space="preserve">
-    <value>Guardar</value>
+    <value>Guardar_EN</value>
   </data>
   <data name="hour.amount" xml:space="preserve">
-    <value>Cantidad de hs</value>
+    <value>Cantidad de hs_EN</value>
   </data>
   <data name="hour.cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Cancel_EN</value>
   </data>
   <data name="hour.create" xml:space="preserve">
-    <value>Crear</value>
+    <value>Crear_EN</value>
   </data>
   <data name="hour.date" xml:space="preserve">
-    <value>Fecha</value>
+    <value>Fecha_EN</value>
   </data>
   <data name="hour.delete" xml:space="preserve">
-    <value>Eliminar</value>
+    <value>Eliminar_EN</value>
   </data>
   <data name="hour.list.amount" xml:space="preserve">
-    <value>Horas</value>
+    <value>Horas_EN</value>
   </data>
   <data name="hour.list.date" xml:space="preserve">
-    <value>Fecha</value>
+    <value>Fecha_EN</value>
   </data>
   <data name="hour.list.project" xml:space="preserve">
-    <value>Proyecto</value>
+    <value>Proyecto_EN</value>
   </data>
   <data name="hour.list.task" xml:space="preserve">
-    <value>Tarea</value>
+    <value>Tarea_EN</value>
   </data>
   <data name="hour.project" xml:space="preserve">
-    <value>Proyecto</value>
+    <value>Proyecto_EN</value>
   </data>
   <data name="hour.save" xml:space="preserve">
-    <value>Guardar</value>
+    <value>Guardar_EN</value>
   </data>
   <data name="hour.task" xml:space="preserve">
-    <value>Tarea</value>
+    <value>Tarea_EN</value>
   </data>
   <data name="log.clean" xml:space="preserve">
-    <value>Limpiar</value>
+    <value>Limpiar_EN</value>
   </data>
   <data name="log.level" xml:space="preserve">
-    <value>Criticidad</value>
+    <value>Criticidad_EN</value>
   </data>
   <data name="log.list.date" xml:space="preserve">
-    <value>Fecha</value>
+    <value>Fecha_EN</value>
   </data>
   <data name="log.list.desc" xml:space="preserve">
-    <value>Description</value>
+    <value>Description_EN</value>
   </data>
   <data name="log.list.functionality" xml:space="preserve">
-    <value>Funcionalidad</value>
+    <value>Funcionalidad_EN</value>
   </data>
   <data name="log.list.level" xml:space="preserve">
-    <value>Criticidad</value>
+    <value>Criticidad_EN</value>
   </data>
   <data name="log.list.user" xml:space="preserve">
-    <value>Usuario</value>
+    <value>Usuario_EN</value>
   </data>
   <data name="log.search" xml:space="preserve">
-    <value>Buscar</value>
+    <value>Buscar_EN</value>
   </data>
   <data name="log.since" xml:space="preserve">
-    <value>Desde</value>
+    <value>Desde_EN</value>
   </data>
   <data name="log.until" xml:space="preserve">
-    <value>Hasta</value>
+    <value>Hasta_EN</value>
   </data>
   <data name="log.user" xml:space="preserve">
-    <value>Usuario</value>
+    <value>Usuario_EN</value>
   </data>
   <data name="login.connection.string" xml:space="preserve">
-    <value>Modificar String de conexion</value>
+    <value>Modificar String de conexion_EN</value>
   </data>
   <data name="login.language" xml:space="preserve">
-    <value>Idioma</value>
+    <value>Idioma_EN</value>
   </data>
   <data name="login.login" xml:space="preserve">
-    <value>Ingresar</value>
+    <value>Ingresar_EN</value>
   </data>
   <data name="login.pass" xml:space="preserve">
-    <value>Contraseña</value>
+    <value>Contraseña_EN</value>
   </data>
   <data name="login.user" xml:space="preserve">
-    <value>Usuario</value>
+    <value>Usuario_EN</value>
   </data>
   <data name="project.cancel" xml:space="preserve">
-    <value>Cancelar</value>
+    <value>Cancelar_EN</value>
   </data>
   <data name="project.create" xml:space="preserve">
-    <value>Crear</value>
+    <value>Crear_EN</value>
   </data>
   <data name="project.delete" xml:space="preserve">
-    <value>Eliminar</value>
+    <value>Eliminar_EN</value>
   </data>
   <data name="project.enabled" xml:space="preserve">
-    <value>Habilitado</value>
+    <value>Habilitado_EN</value>
   </data>
   <data name="project.estimated" xml:space="preserve">
-    <value>Estimadas</value>
+    <value>Estimadas_EN</value>
   </data>
   <data name="project.insumidas" xml:space="preserve">
-    <value>Insumidas</value>
+    <value>Insumidas_EN</value>
   </data>
   <data name="project.list.enabled" xml:space="preserve">
-    <value>Habilitado</value>
+    <value>Habilitado_EN</value>
   </data>
   <data name="project.list.title" xml:space="preserve">
-    <value>Nombre del proyecto</value>
+    <value>Nombre del proyecto_EN</value>
   </data>
   <data name="project.resources" xml:space="preserve">
-    <value>Asignar recursos</value>
+    <value>Asignar recursos_EN</value>
   </data>
   <data name="project.save" xml:space="preserve">
-    <value>Guardar</value>
+    <value>Guardar_EN</value>
   </data>
   <data name="project.title" xml:space="preserve">
-    <value>Nombre</value>
+    <value>Nombre_EN</value>
   </data>
   <data name="project.valor" xml:space="preserve">
-    <value>Valor hora acordado con el cliente</value>
+    <value>Valor hora acordado con el cliente_EN</value>
   </data>
   <data name="report.clean" xml:space="preserve">
-    <value>Limpiar</value>
+    <value>Limpiar_EN</value>
   </data>
   <data name="report.list.date" xml:space="preserve">
-    <value>Fecha</value>
+    <value>Fecha_EN</value>
   </data>
   <data name="report.list.desvio.hs" xml:space="preserve">
-    <value>Hs Desvio</value>
+    <value>Hs Desvio_EN</value>
   </data>
   <data name="report.list.estimated.hs" xml:space="preserve">
-    <value>Hs Estimadas</value>
+    <value>Hs Estimadas_EN</value>
   </data>
   <data name="report.list.insumidas.hs" xml:space="preserve">
-    <value>Hs Insumidas</value>
+    <value>Hs Insumidas_EN</value>
   </data>
   <data name="report.list.project" xml:space="preserve">
-    <value>Proyecto</value>
+    <value>Proyecto_EN</value>
   </data>
   <data name="report.list.state" xml:space="preserve">
-    <value>Estado</value>
+    <value>Estado_EN</value>
   </data>
   <data name="report.search" xml:space="preserve">
-    <value>Buscar</value>
+    <value>Buscar_EN</value>
   </data>
   <data name="report.since" xml:space="preserve">
-    <value>Desde</value>
+    <value>Desde_EN</value>
   </data>
   <data name="report.until" xml:space="preserve">
-    <value>Hasta</value>
+    <value>Hasta_EN</value>
   </data>
   <data name="restore.import" xml:space="preserve">
-    <value>Importar</value>
+    <value>Importar_EN</value>
   </data>
   <data name="restore.path" xml:space="preserve">
-    <value>Ruta de origen</value>
+    <value>Ruta de origen_EN</value>
   </data>
   <data name="task.cancel" xml:space="preserve">
-    <value>Cancelar</value>
+    <value>Cancelar_EN</value>
   </data>
   <data name="task.create" xml:space="preserve">
-    <value>Crear</value>
+    <value>Crear_EN</value>
   </data>
   <data name="task.delete" xml:space="preserve">
-    <value>Eliminar</value>
+    <value>Eliminar_EN</value>
   </data>
   <data name="task.description" xml:space="preserve">
-    <value>Descripcion</value>
+    <value>Descripcion_EN</value>
   </data>
   <data name="task.list.project" xml:space="preserve">
-    <value>Proyecto</value>
+    <value>Proyecto_EN</value>
   </data>
   <data name="task.list.title" xml:space="preserve">
-    <value>Titulo</value>
+    <value>Titulo_EN</value>
   </data>
   <data name="task.project" xml:space="preserve">
-    <value>Proyecto</value>
+    <value>Proyecto_EN</value>
   </data>
   <data name="task.save" xml:space="preserve">
-    <value>Guardar</value>
+    <value>Guardar_EN</value>
   </data>
   <data name="task.title" xml:space="preserve">
-    <value>Titulo</value>
+    <value>Titulo_EN</value>
   </data>
   <data name="user.cancel" xml:space="preserve">
-    <value>Cancelar</value>
+    <value>Cancelar_EN</value>
   </data>
   <data name="user.create" xml:space="preserve">
-    <value>Crear</value>
+    <value>Crear_EN</value>
   </data>
   <data name="user.delete" xml:space="preserve">
-    <value>Eliminar</value>
+    <value>Eliminar_EN</value>
   </data>
   <data name="user.disp" xml:space="preserve">
-    <value>Disponibilidad mensual</value>
+    <value>Disponibilidad mensual_EN</value>
   </data>
   <data name="user.email" xml:space="preserve">
-    <value>Email</value>
+    <value>Email_EN</value>
   </data>
   <data name="user.enabled" xml:space="preserve">
-    <value>Habilitado</value>
+    <value>Habilitado_EN</value>
   </data>
   <data name="user.families" xml:space="preserve">
-    <value>Asignar familia</value>
+    <value>Asignar familia_EN</value>
   </data>
   <data name="user.generate.pass" xml:space="preserve">
-    <value>Generar contraseña</value>
+    <value>Generar contraseña_EN</value>
   </data>
   <data name="user.lastname" xml:space="preserve">
-    <value>Apellido</value>
+    <value>Apellido_EN</value>
   </data>
   <data name="user.list.lastname" xml:space="preserve">
-    <value>Apellido</value>
+    <value>Apellido_EN</value>
   </data>
   <data name="user.list.name" xml:space="preserve">
-    <value>Nombre</value>
+    <value>Nombre_EN</value>
   </data>
   <data name="user.list.state" xml:space="preserve">
-    <value>Estado</value>
+    <value>Estado_EN</value>
   </data>
   <data name="user.list.username" xml:space="preserve">
-    <value>Usuario</value>
+    <value>Usuario_EN</value>
   </data>
   <data name="user.name" xml:space="preserve">
-    <value>Nombre</value>
+    <value>Nombre_EN</value>
   </data>
   <data name="user.patentes" xml:space="preserve">
-    <value>Asignar patente</value>
+    <value>Asignar patente_EN</value>
   </data>
   <data name="user.save" xml:space="preserve">
-    <value>Guardar</value>
+    <value>Guardar_EN</value>
   </data>
   <data name="user.username" xml:space="preserve">
-    <value>Usuario</value>
+    <value>Usuario_EN</value>
   </data>
   <data name="user.valor" xml:space="preserve">
-    <value>Valor hora</value>
+    <value>Valor hora_EN</value>
   </data>
   <data name="report.list.desvio.dinero" xml:space="preserve">
-    <value>Desvio dinero</value>
+    <value>Desvio dinero_EN</value>
   </data>
   <data name="user.unlock" xml:space="preserve">
-    <value>Desbloquear</value>
+    <value>Desbloquear_EN</value>
   </data>
   <data name="asignacion.familia.usuario.asign.required" xml:space="preserve">
-    <value>Debe seleccionar una familia para asignar</value>
+    <value>Debe seleccionar una familia para asignar_EN</value>
   </data>
   <data name="asignacion.familia.usuario.remove.required" xml:space="preserve">
-    <value>Debe seleccionar una familia para desasignar</value>
+    <value>Debe seleccionar una familia para desasignar_EN</value>
   </data>
   <data name="asignacion.patente.familia.asign.required" xml:space="preserve">
-    <value>Debe seleccionar una patente para asignar</value>
+    <value>Debe seleccionar una patente para asignar_EN</value>
   </data>
   <data name="asignacion.patente.familia.remove.required" xml:space="preserve">
-    <value>Debe seleccionar una patente para desasignar</value>
+    <value>Debe seleccionar una patente para desasignar_EN</value>
   </data>
   <data name="asignacion.patente.uduario.asign.required" xml:space="preserve">
-    <value>Debe seleccionar una patente para asignar</value>
+    <value>Debe seleccionar una patente para asignar_EN</value>
   </data>
   <data name="asignacion.patente.uduario.remove.required" xml:space="preserve">
-    <value>Debe seleccionar una patente para desasignar</value>
+    <value>Debe seleccionar una patente para desasignar_EN</value>
   </data>
   <data name="asignacion.recurso.project.asign.required" xml:space="preserve">
-    <value>Debe seleccionar un usuario para asignar</value>
+    <value>Debe seleccionar un usuario para asignar_EN</value>
   </data>
   <data name="asignacion.recurso.project.remove.required" xml:space="preserve">
-    <value>Debe seleccionar un usuario para desasignar</value>
+    <value>Debe seleccionar un usuario para desasignar_EN</value>
   </data>
   <data name="backup.created" xml:space="preserve">
-    <value>Tu bkp esta aca y lo copiamos al clipboard: </value>
+    <value>Tu bkp esta aca y lo copiamos al clipboard: _EN</value>
   </data>
   <data name="backup.required.size" xml:space="preserve">
-    <value>Indique la cantidad de particiones</value>
+    <value>Indique la cantidad de particiones_EN</value>
   </data>
   <data name="connection.string.saved" xml:space="preserve">
-    <value>Debera volver a abrir la aplicacion para tomar la nueva configuracion</value>
+    <value>Debera volver a abrir la aplicacion para tomar la nueva configuracion_EN</value>
   </data>
   <data name="errors.1" xml:space="preserve">
-    <value>Error general, contacte con el administrador</value>
+    <value>Error general, contacte con el administrador_EN</value>
   </data>
   <data name="errors.10" xml:space="preserve">
-    <value>Ocurrio un error al generar la contraseña</value>
+    <value>Ocurrio un error al generar la contraseña_EN</value>
   </data>
   <data name="errors.100" xml:space="preserve">
-    <value>Ocurrio un error al ejecutar la consulta</value>
+    <value>Ocurrio un error al ejecutar la consulta_EN</value>
   </data>
   <data name="errors.1000" xml:space="preserve">
-    <value>Login incorrecto, chequee los datos</value>
+    <value>Login incorrecto, chequee los datos_EN</value>
   </data>
   <data name="errors.1001" xml:space="preserve">
-    <value>No tiene configurada una base de datos</value>
+    <value>No tiene configurada una base de datos_EN</value>
   </data>
   <data name="errors.105" xml:space="preserve">
-    <value>Ocurrio un error al eliminar la bitacora</value>
+    <value>Ocurrio un error al eliminar la bitacora_EN</value>
   </data>
   <data name="errors.11" xml:space="preserve">
-    <value>Error al verificar la integridad de la base</value>
+    <value>Error al verificar la integridad de la base_EN</value>
   </data>
   <data name="errors.12" xml:space="preserve">
-    <value>El usuario se encuentra bloqueado</value>
+    <value>El usuario se encuentra bloqueado_EN</value>
   </data>
   <data name="errors.13" xml:space="preserve">
-    <value>El usuario ya existe</value>
+    <value>El usuario ya existe_EN</value>
   </data>
   <data name="errors.14" xml:space="preserve">
-    <value>Hay patentes que quedaran sin asignacion</value>
+    <value>Hay patentes que quedaran sin asignacion_EN</value>
   </data>
   <data name="errors.15" xml:space="preserve">
-    <value>Existe mas de un registro</value>
+    <value>Existe mas de un registro_EN</value>
   </data>
   <data name="errors.16" xml:space="preserve">
-    <value>No se encontraron resultados</value>
+    <value>No se encontraron resultados_EN</value>
   </data>
   <data name="errors.17" xml:space="preserve">
-    <value>Ocurrio un error al eliminar el usuario</value>
+    <value>Ocurrio un error al eliminar el usuario_EN</value>
   </data>
   <data name="errors.20" xml:space="preserve">
-    <value>Ya existe una tarea con ese titulo</value>
+    <value>Ya existe una tarea con ese titulo_EN</value>
   </data>
   <data name="errors.21" xml:space="preserve">
-    <value>La tarea tiene horas cargadas</value>
+    <value>La tarea tiene horas cargadas_EN</value>
   </data>
   <data name="errors.25" xml:space="preserve">
-    <value>Ocurrio un error al eliminar la tarea</value>
+    <value>Ocurrio un error al eliminar la tarea_EN</value>
   </data>
   <data name="errors.40" xml:space="preserve">
-    <value>Proyecto ya existe</value>
+    <value>Proyecto ya existe_EN</value>
   </data>
   <data name="errors.41" xml:space="preserve">
-    <value>Proyecto tiene tareas asociadas</value>
+    <value>Proyecto tiene tareas asociadas_EN</value>
   </data>
   <data name="errors.45" xml:space="preserve">
-    <value>Ocurrio un error al eliminar el proyecto</value>
+    <value>Ocurrio un error al eliminar el proyecto_EN</value>
   </data>
   <data name="errors.50" xml:space="preserve">
-    <value>La Familia existe</value>
+    <value>La Familia existe_EN</value>
   </data>
   <data name="errors.51" xml:space="preserve">
-    <value>La Familia esta asignada a un usuario</value>
+    <value>La Familia esta asignada a un usuario_EN</value>
   </data>
   <data name="errors.52" xml:space="preserve">
-    <value>La Familia tiene patentes asignadas</value>
+    <value>La Familia tiene patentes asignadas_EN</value>
   </data>
   <data name="errors.53" xml:space="preserve">
-    <value>La Familia tiene patentes asignadas</value>
+    <value>La Familia tiene patentes asignadas_EN</value>
   </data>
   <data name="errors.55" xml:space="preserve">
-    <value>Ocurrio un error al eliminar la familia</value>
+    <value>Ocurrio un error al eliminar la familia_EN</value>
   </data>
   <data name="errors.60" xml:space="preserve">
-    <value>Ocurrio un error al crear el bkp</value>
+    <value>Ocurrio un error al crear el bkp_EN</value>
   </data>
   <data name="errors.70" xml:space="preserve">
-    <value>La patente no tiene otra asignacion</value>
+    <value>La patente no tiene otra asignacion_EN</value>
   </data>
   <data name="errors.75" xml:space="preserve">
-    <value>Ocurrio un error al eliminar la patente</value>
+    <value>Ocurrio un error al eliminar la patente_EN</value>
   </data>
   <data name="errors.95" xml:space="preserve">
-    <value>Ocurrio un error al eliminar el digito verificador</value>
+    <value>Ocurrio un error al eliminar el digito verificador_EN</value>
   </data>
   <data name="family.created" xml:space="preserve">
-    <value>La familia se creo correctamente</value>
+    <value>La familia se creo correctamente_EN</value>
   </data>
   <data name="family.deleted" xml:space="preserve">
-    <value>La familia se elimino correctamente</value>
+    <value>La familia se elimino correctamente_EN</value>
   </data>
   <data name="family.required.name" xml:space="preserve">
-    <value>El nombre es requerido</value>
+    <value>El nombre es requerido_EN</value>
   </data>
   <data name="family.updated" xml:space="preserve">
-    <value>La familia se actualizo correctamente</value>
+    <value>La familia se actualizo correctamente_EN</value>
   </data>
   <data name="horas.created" xml:space="preserve">
-    <value>Se cargaron las horas</value>
+    <value>Se cargaron las horas_EN</value>
   </data>
   <data name="horas.deleted" xml:space="preserve">
-    <value>Se eliminaron las horas cargadas</value>
+    <value>Se eliminaron las horas cargadas_EN</value>
   </data>
   <data name="horas.required.project" xml:space="preserve">
-    <value>El proyecto es requerido</value>
+    <value>El proyecto es requerido_EN</value>
   </data>
   <data name="horas.required.since" xml:space="preserve">
-    <value>La fecha desde es requerida</value>
+    <value>La fecha desde es requerida_EN</value>
   </data>
   <data name="horas.required.task" xml:space="preserve">
-    <value>La tarea es requerida</value>
+    <value>La tarea es requerida_EN</value>
   </data>
   <data name="horas.required.until" xml:space="preserve">
-    <value>La fecha hasta es requerida</value>
+    <value>La fecha hasta es requerida_EN</value>
   </data>
   <data name="horas.updated" xml:space="preserve">
-    <value>Se actualizaron las horas</value>
+    <value>Se actualizaron las horas_EN</value>
   </data>
   <data name="project.created" xml:space="preserve">
-    <value>El proyecto se creo correctamente</value>
+    <value>El proyecto se creo correctamente_EN</value>
   </data>
   <data name="project.deleted" xml:space="preserve">
-    <value>El proyecto se elimino correctamente</value>
+    <value>El proyecto se elimino correctamente_EN</value>
   </data>
   <data name="project.required.horas" xml:space="preserve">
-    <value>Las horas estimadas son requeridas</value>
+    <value>Las horas estimadas son requeridas_EN</value>
   </data>
   <data name="project.required.name" xml:space="preserve">
-    <value>El nombre es requerido</value>
+    <value>El nombre es requerido_EN</value>
   </data>
   <data name="project.required.salary" xml:space="preserve">
-    <value>El valor hora es requerido</value>
+    <value>El valor hora es requerido_EN</value>
   </data>
   <data name="project.updated" xml:space="preserve">
-    <value>El proyecto se actualizo correctamente</value>
+    <value>El proyecto se actualizo correctamente_EN</value>
   </data>
   <data name="restore.sucess" xml:space="preserve">
-    <value>Se restauro la base correctamente</value>
+    <value>Se restauro la base correctamente_EN</value>
   </data>
   <data name="task.created" xml:space="preserve">
-    <value>La tarea se creo correctamente</value>
+    <value>La tarea se creo correctamente_EN</value>
   </data>
   <data name="task.deleted" xml:space="preserve">
-    <value>La tarea se elimino correctamente</value>
+    <value>La tarea se elimino correctamente_EN</value>
   </data>
   <data name="task.required.description" xml:space="preserve">
-    <value>La descripcion es requerida</value>
+    <value>La descripcion es requerida_EN</value>
   </data>
   <data name="task.required.project" xml:space="preserve">
-    <value>El proyecto es requerido</value>
+    <value>El proyecto es requerido_EN</value>
   </data>
   <data name="task.required.title" xml:space="preserve">
-    <value>El titulo es requerido</value>
+    <value>El titulo es requerido_EN</value>
   </data>
   <data name="task.updated" xml:space="preserve">
-    <value>La tarea se actualizo correctamente</value>
+    <value>La tarea se actualizo correctamente_EN</value>
   </data>
   <data name="user.created" xml:space="preserve">
-    <value>El usuario fue creado</value>
+    <value>El usuario fue creado_EN</value>
   </data>
   <data name="user.deleted" xml:space="preserve">
-    <value>El usuario se elimino correctamente</value>
+    <value>El usuario se elimino correctamente_EN</value>
   </data>
   <data name="user.pass.reseted" xml:space="preserve">
-    <value>Se reestablecio la contraseña del usuario</value>
+    <value>Se reestablecio la contraseña del usuario_EN</value>
   </data>
   <data name="user.required.availability" xml:space="preserve">
-    <value>La disponibilidad mensual es requerida</value>
+    <value>La disponibilidad mensual es requerida_EN</value>
   </data>
   <data name="user.required.email" xml:space="preserve">
-    <value>El email es requerido</value>
+    <value>El email es requerido_EN</value>
   </data>
   <data name="user.required.lastname" xml:space="preserve">
-    <value>El apellido es requerido</value>
+    <value>El apellido es requerido_EN</value>
   </data>
   <data name="user.required.name" xml:space="preserve">
-    <value>El nombre es requerido</value>
+    <value>El nombre es requerido_EN</value>
   </data>
   <data name="user.required.salary" xml:space="preserve">
-    <value>El valor hora es requerido</value>
+    <value>El valor hora es requerido_EN</value>
   </data>
   <data name="user.required.unlocked" xml:space="preserve">
-    <value>Se desbloqueo el usuario</value>
+    <value>Se desbloqueo el usuario_EN</value>
   </data>
   <data name="user.required.username" xml:space="preserve">
-    <value>El nombre de usuario es requerido</value>
+    <value>El nombre de usuario es requerido_EN</value>
   </data>
   <data name="user.updated" xml:space="preserve">
-    <value>El usuario se actualizo correctamente</value>
+    <value>El usuario se actualizo correctamente_EN</value>
   </data>
 </root>

@@ -26,19 +26,17 @@ namespace BLL
         public override void actualizar(Tarea entity)
         {
             if (mapper.existe(entity.Id, entity.Titulo))
-                throw new Exception("Duplicado");
+                throw new ProEasyException(20, "Ya existe una tarea con ese titulo");
             entity.Dvh = verificadorService.generarDVH(new string[] { entity.Titulo, entity.Descripcion });
             mapper.actualizar(entity);
             verificadorService.actualizarDVV("TAREA");
             BitacoraService.getInstance().crear(
-              Bitacora.builder()
+            Bitacora.builder()
               .Criticidad("MEDIA")
               .Descripcion("Se actualizo una tarea")
               .Funcionalidad("TAREAS")
               .Fecha(DateTime.Now)
-              .Usuario(
-                  Session.getInstance().Usuario
-                  )
+              .Usuario(Session.getInstance().Usuario)
               .build()
           );
         }
@@ -46,36 +44,36 @@ namespace BLL
         public override void crear(Tarea entity)
         {
             if (mapper.existe(0, entity.Titulo))
-                throw new Exception("Duplicado");
+                throw new ProEasyException(20, "Ya existe una tarea con ese titulo");
             entity.Dvh = verificadorService.generarDVH(new string[] { entity.Titulo, entity.Descripcion });
             mapper.crear(entity);
             verificadorService.actualizarDVV("TAREA");
             BitacoraService.getInstance().crear(
-             Bitacora.builder()
+            Bitacora.builder()
              .Criticidad("MEDIA")
              .Descripcion("Se creo una tarea")
              .Funcionalidad("TAREAS")
              .Fecha(DateTime.Now)
-             .Usuario(
-                Session.getInstance().Usuario
-                 )
+             .Usuario(Session.getInstance().Usuario)
              .build()
          );
         }
 
         public override void eliminar(Tarea entity)
         {
+            if (new HoraMapper().listarPorTarea(entity).Count > 0)
+            {
+                throw new ProEasyException(21, "La tarea tiene horas cargadas");
+            }
             mapper.eliminar(entity);
             verificadorService.actualizarDVV("TAREA");
             BitacoraService.getInstance().crear(
-             Bitacora.builder()
+            Bitacora.builder()
              .Criticidad("MEDIA")
              .Descripcion("Se elimino una tarea")
              .Funcionalidad("TAREAS")
              .Fecha(DateTime.Now)
-             .Usuario(
-                 Session.getInstance().Usuario
-                 )
+             .Usuario(Session.getInstance().Usuario)
              .build()
          );
         }
@@ -89,9 +87,7 @@ namespace BLL
              .Descripcion("Se listaron las tareas")
              .Funcionalidad("TAREAS")
              .Fecha(DateTime.Now)
-             .Usuario(
-                 Session.getInstance().Usuario
-                 )
+             .Usuario(Session.getInstance().Usuario)
              .build()
          );
             return lista;
@@ -106,9 +102,7 @@ namespace BLL
             .Descripcion("Se leyo la tarea")
             .Funcionalidad("TAREAS")
             .Fecha(DateTime.Now)
-            .Usuario(
-               Session.getInstance().Usuario
-                )
+            .Usuario(Session.getInstance().Usuario)
             .build()
         );
             return lista;
@@ -118,16 +112,15 @@ namespace BLL
         {
             List<Tarea> lista = mapper.listarPorProyecto(proyectoSelected);
             BitacoraService.getInstance().crear(
-           Bitacora.builder()
-           .Criticidad("BAJA")
-           .Descripcion("Se listaton las tareas del proyecto")
-           .Funcionalidad("TAREAS")
-           .Fecha(DateTime.Now)
-           .Usuario(Session.getInstance().Usuario)
-           .build()
-       );
+            Bitacora.builder()
+               .Criticidad("BAJA")
+               .Descripcion("Se listaton las tareas del proyecto")
+               .Funcionalidad("TAREAS")
+               .Fecha(DateTime.Now)
+               .Usuario(Session.getInstance().Usuario)
+               .build()
+            );
             return lista;
         }
     }
-
 }

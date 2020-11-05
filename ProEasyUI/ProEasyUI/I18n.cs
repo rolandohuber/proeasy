@@ -16,7 +16,7 @@ namespace ProEasyUI
             {
                 return base.GetString(name) != null ? base.GetString(name) : name;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return name;
             }

@@ -22,14 +22,14 @@ namespace ProEasyUI.i18n {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class es_lang {
+    internal class en_lang {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal es_lang() {
+        internal en_lang() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace ProEasyUI.i18n {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ProEasyUI.i18n.es_lang", typeof(es_lang).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ProEasyUI.i18n.en_lang", typeof(en_lang).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Familias asignadas.
+        ///   Busca una cadena traducida similar a Familias asignadas_EN.
         /// </summary>
         internal static string asig_family_asign {
             get {
@@ -70,7 +70,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Familias disponibles.
+        ///   Busca una cadena traducida similar a Familias disponibles_EN.
         /// </summary>
         internal static string asig_family_disp {
             get {
@@ -79,7 +79,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Familias del usuario.
+        ///   Busca una cadena traducida similar a Familias del usuario_EN.
         /// </summary>
         internal static string asig_family_title {
             get {
@@ -88,7 +88,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Patentes asignadas.
+        ///   Busca una cadena traducida similar a Patentes asignadas_EN.
         /// </summary>
         internal static string asig_pat_fam_asign {
             get {
@@ -97,7 +97,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Patentes disponibles.
+        ///   Busca una cadena traducida similar a Patentes disponibles_EN.
         /// </summary>
         internal static string asig_pat_fam_disp {
             get {
@@ -106,7 +106,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Patentes de la familia.
+        ///   Busca una cadena traducida similar a Patentes de la familia_EN.
         /// </summary>
         internal static string asig_pat_fam_title {
             get {
@@ -115,7 +115,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Patentes asignadas.
+        ///   Busca una cadena traducida similar a Patentes asignadas_EN.
         /// </summary>
         internal static string asig_patente_asign {
             get {
@@ -124,7 +124,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Patentes disponibles.
+        ///   Busca una cadena traducida similar a Patentes disponibles_EN.
         /// </summary>
         internal static string asig_patente_disp {
             get {
@@ -133,7 +133,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Patentes del usuario.
+        ///   Busca una cadena traducida similar a Patentes del usuario_EN.
         /// </summary>
         internal static string asig_patente_title {
             get {
@@ -142,7 +142,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Recursos asignados.
+        ///   Busca una cadena traducida similar a Recursos asignados_EN.
         /// </summary>
         internal static string asig_rec_proj_asign {
             get {
@@ -151,7 +151,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Recursos disponibles.
+        ///   Busca una cadena traducida similar a Recursos disponibles_EN.
         /// </summary>
         internal static string asig_rec_proj_disp {
             get {
@@ -160,7 +160,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Recursos del proyecto.
+        ///   Busca una cadena traducida similar a Recursos del proyecto_EN.
         /// </summary>
         internal static string asig_rec_proj_title {
             get {
@@ -169,7 +169,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Debe seleccionar una familia para asignar.
+        ///   Busca una cadena traducida similar a Debe seleccionar una familia para asignar_EN.
         /// </summary>
         internal static string asignacion_familia_usuario_asign_required {
             get {
@@ -178,7 +178,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Debe seleccionar una familia para desasignar.
+        ///   Busca una cadena traducida similar a Debe seleccionar una familia para desasignar_EN.
         /// </summary>
         internal static string asignacion_familia_usuario_remove_required {
             get {
@@ -187,7 +187,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Debe seleccionar una patente para asignar.
+        ///   Busca una cadena traducida similar a Debe seleccionar una patente para asignar_EN.
         /// </summary>
         internal static string asignacion_patente_familia_asign_required {
             get {
@@ -196,7 +196,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Debe seleccionar una patente para desasignar.
+        ///   Busca una cadena traducida similar a Debe seleccionar una patente para desasignar_EN.
         /// </summary>
         internal static string asignacion_patente_familia_remove_required {
             get {
@@ -205,7 +205,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Debe seleccionar una patente para asignar.
+        ///   Busca una cadena traducida similar a Debe seleccionar una patente para asignar_EN.
         /// </summary>
         internal static string asignacion_patente_uduario_asign_required {
             get {
@@ -214,7 +214,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Debe seleccionar una patente para desasignar.
+        ///   Busca una cadena traducida similar a Debe seleccionar una patente para desasignar_EN.
         /// </summary>
         internal static string asignacion_patente_uduario_remove_required {
             get {
@@ -223,7 +223,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Debe seleccionar un usuario para asignar.
+        ///   Busca una cadena traducida similar a Debe seleccionar un usuario para asignar_EN.
         /// </summary>
         internal static string asignacion_recurso_project_asign_required {
             get {
@@ -232,7 +232,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Debe seleccionar un usuario para desasignar.
+        ///   Busca una cadena traducida similar a Debe seleccionar un usuario para desasignar_EN.
         /// </summary>
         internal static string asignacion_recurso_project_remove_required {
             get {
@@ -241,7 +241,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Cantidad de volumenes.
+        ///   Busca una cadena traducida similar a Cantidad de volumenes_EN.
         /// </summary>
         internal static string backup_cant {
             get {
@@ -250,7 +250,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Tu bkp esta aca y lo copiamos al clipboard: .
+        ///   Busca una cadena traducida similar a Tu bkp esta aca y lo copiamos al clipboard: _EN.
         /// </summary>
         internal static string backup_created {
             get {
@@ -259,7 +259,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Exportar.
+        ///   Busca una cadena traducida similar a Exportar_EN.
         /// </summary>
         internal static string backup_export {
             get {
@@ -268,7 +268,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ruta de destino.
+        ///   Busca una cadena traducida similar a Ruta de destino_EN.
         /// </summary>
         internal static string backup_path {
             get {
@@ -277,7 +277,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Indique la cantidad de particiones.
+        ///   Busca una cadena traducida similar a Indique la cantidad de particiones_EN.
         /// </summary>
         internal static string backup_required_size {
             get {
@@ -286,7 +286,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Base de datos.
+        ///   Busca una cadena traducida similar a Base de datos_EN.
         /// </summary>
         internal static string connection_db {
             get {
@@ -295,7 +295,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Contraseña.
+        ///   Busca una cadena traducida similar a Contraseña_EN.
         /// </summary>
         internal static string connection_pass {
             get {
@@ -304,7 +304,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Guardar.
+        ///   Busca una cadena traducida similar a Guardar_EN.
         /// </summary>
         internal static string connection_save {
             get {
@@ -313,7 +313,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Servidor.
+        ///   Busca una cadena traducida similar a Servidor_EN.
         /// </summary>
         internal static string connection_server {
             get {
@@ -322,7 +322,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Debera volver a abrir la aplicacion para tomar la nueva configuracion.
+        ///   Busca una cadena traducida similar a Debera volver a abrir la aplicacion para tomar la nueva configuracion_EN.
         /// </summary>
         internal static string connection_string_saved {
             get {
@@ -331,7 +331,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Usuario.
+        ///   Busca una cadena traducida similar a Usuario_EN.
         /// </summary>
         internal static string connection_user {
             get {
@@ -340,7 +340,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Error general, contacte con el administrador.
+        ///   Busca una cadena traducida similar a Error general, contacte con el administrador_EN.
         /// </summary>
         internal static string errors_1 {
             get {
@@ -349,7 +349,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ocurrio un error al generar la contraseña.
+        ///   Busca una cadena traducida similar a Ocurrio un error al generar la contraseña_EN.
         /// </summary>
         internal static string errors_10 {
             get {
@@ -358,7 +358,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ocurrio un error al ejecutar la consulta.
+        ///   Busca una cadena traducida similar a Ocurrio un error al ejecutar la consulta_EN.
         /// </summary>
         internal static string errors_100 {
             get {
@@ -367,7 +367,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Login incorrecto, chequee los datos.
+        ///   Busca una cadena traducida similar a Login incorrecto, chequee los datos_EN.
         /// </summary>
         internal static string errors_1000 {
             get {
@@ -376,7 +376,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a No tiene configurada una base de datos.
+        ///   Busca una cadena traducida similar a No tiene configurada una base de datos_EN.
         /// </summary>
         internal static string errors_1001 {
             get {
@@ -385,7 +385,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ocurrio un error al eliminar la bitacora.
+        ///   Busca una cadena traducida similar a Ocurrio un error al eliminar la bitacora_EN.
         /// </summary>
         internal static string errors_105 {
             get {
@@ -394,7 +394,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Error al verificar la integridad de la base.
+        ///   Busca una cadena traducida similar a Error al verificar la integridad de la base_EN.
         /// </summary>
         internal static string errors_11 {
             get {
@@ -403,7 +403,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El usuario se encuentra bloqueado.
+        ///   Busca una cadena traducida similar a El usuario se encuentra bloqueado_EN.
         /// </summary>
         internal static string errors_12 {
             get {
@@ -412,7 +412,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El usuario ya existe.
+        ///   Busca una cadena traducida similar a El usuario ya existe_EN.
         /// </summary>
         internal static string errors_13 {
             get {
@@ -421,7 +421,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Hay patentes que quedaran sin asignacion.
+        ///   Busca una cadena traducida similar a Hay patentes que quedaran sin asignacion_EN.
         /// </summary>
         internal static string errors_14 {
             get {
@@ -430,7 +430,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Existe mas de un registro.
+        ///   Busca una cadena traducida similar a Existe mas de un registro_EN.
         /// </summary>
         internal static string errors_15 {
             get {
@@ -439,7 +439,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a No se encontraron resultados.
+        ///   Busca una cadena traducida similar a No se encontraron resultados_EN.
         /// </summary>
         internal static string errors_16 {
             get {
@@ -448,7 +448,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ocurrio un error al eliminar el usuario.
+        ///   Busca una cadena traducida similar a Ocurrio un error al eliminar el usuario_EN.
         /// </summary>
         internal static string errors_17 {
             get {
@@ -457,7 +457,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ya existe una tarea con ese titulo.
+        ///   Busca una cadena traducida similar a Ya existe una tarea con ese titulo_EN.
         /// </summary>
         internal static string errors_20 {
             get {
@@ -466,7 +466,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a La tarea tiene horas cargadas.
+        ///   Busca una cadena traducida similar a La tarea tiene horas cargadas_EN.
         /// </summary>
         internal static string errors_21 {
             get {
@@ -475,7 +475,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ocurrio un error al eliminar la tarea.
+        ///   Busca una cadena traducida similar a Ocurrio un error al eliminar la tarea_EN.
         /// </summary>
         internal static string errors_25 {
             get {
@@ -484,7 +484,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Proyecto ya existe.
+        ///   Busca una cadena traducida similar a Proyecto ya existe_EN.
         /// </summary>
         internal static string errors_40 {
             get {
@@ -493,7 +493,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Proyecto tiene tareas asociadas.
+        ///   Busca una cadena traducida similar a Proyecto tiene tareas asociadas_EN.
         /// </summary>
         internal static string errors_41 {
             get {
@@ -502,7 +502,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ocurrio un error al eliminar el proyecto.
+        ///   Busca una cadena traducida similar a Ocurrio un error al eliminar el proyecto_EN.
         /// </summary>
         internal static string errors_45 {
             get {
@@ -511,7 +511,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a La Familia existe.
+        ///   Busca una cadena traducida similar a La Familia existe_EN.
         /// </summary>
         internal static string errors_50 {
             get {
@@ -520,7 +520,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a La Familia esta asignada a un usuario.
+        ///   Busca una cadena traducida similar a La Familia esta asignada a un usuario_EN.
         /// </summary>
         internal static string errors_51 {
             get {
@@ -529,7 +529,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a La Familia tiene patentes asignadas.
+        ///   Busca una cadena traducida similar a La Familia tiene patentes asignadas_EN.
         /// </summary>
         internal static string errors_52 {
             get {
@@ -538,7 +538,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a La Familia tiene patentes asignadas.
+        ///   Busca una cadena traducida similar a La Familia tiene patentes asignadas_EN.
         /// </summary>
         internal static string errors_53 {
             get {
@@ -547,7 +547,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ocurrio un error al eliminar la familia.
+        ///   Busca una cadena traducida similar a Ocurrio un error al eliminar la familia_EN.
         /// </summary>
         internal static string errors_55 {
             get {
@@ -556,7 +556,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ocurrio un error al crear el bkp.
+        ///   Busca una cadena traducida similar a Ocurrio un error al crear el bkp_EN.
         /// </summary>
         internal static string errors_60 {
             get {
@@ -565,7 +565,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a La patente no tiene otra asignacion.
+        ///   Busca una cadena traducida similar a La patente no tiene otra asignacion_EN.
         /// </summary>
         internal static string errors_70 {
             get {
@@ -574,7 +574,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ocurrio un error al eliminar la patente.
+        ///   Busca una cadena traducida similar a Ocurrio un error al eliminar la patente_EN.
         /// </summary>
         internal static string errors_75 {
             get {
@@ -583,7 +583,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ocurrio un error al eliminar el digito verificador.
+        ///   Busca una cadena traducida similar a Ocurrio un error al eliminar el digito verificador_EN.
         /// </summary>
         internal static string errors_95 {
             get {
@@ -592,7 +592,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Cancelar.
+        ///   Busca una cadena traducida similar a Cancelar_EN.
         /// </summary>
         internal static string family_cancel {
             get {
@@ -601,7 +601,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Crear.
+        ///   Busca una cadena traducida similar a Crear_EN.
         /// </summary>
         internal static string family_create {
             get {
@@ -610,7 +610,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a La familia se creo correctamente.
+        ///   Busca una cadena traducida similar a La familia se creo correctamente_EN.
         /// </summary>
         internal static string family_created {
             get {
@@ -619,7 +619,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Eliminar.
+        ///   Busca una cadena traducida similar a Eliminar_EN.
         /// </summary>
         internal static string family_delete {
             get {
@@ -628,7 +628,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a La familia se elimino correctamente.
+        ///   Busca una cadena traducida similar a La familia se elimino correctamente_EN.
         /// </summary>
         internal static string family_deleted {
             get {
@@ -637,7 +637,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Nombre.
+        ///   Busca una cadena traducida similar a Nombre_EN.
         /// </summary>
         internal static string family_list_name {
             get {
@@ -646,7 +646,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Nombre.
+        ///   Busca una cadena traducida similar a Nombre_EN.
         /// </summary>
         internal static string family_name {
             get {
@@ -655,7 +655,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Asignar patentes.
+        ///   Busca una cadena traducida similar a Asignar patentes_EN.
         /// </summary>
         internal static string family_patentes {
             get {
@@ -664,7 +664,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El nombre es requerido.
+        ///   Busca una cadena traducida similar a El nombre es requerido_EN.
         /// </summary>
         internal static string family_required_name {
             get {
@@ -673,7 +673,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Guardar.
+        ///   Busca una cadena traducida similar a Guardar_EN.
         /// </summary>
         internal static string family_save {
             get {
@@ -682,7 +682,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a La familia se actualizo correctamente.
+        ///   Busca una cadena traducida similar a La familia se actualizo correctamente_EN.
         /// </summary>
         internal static string family_updated {
             get {
@@ -691,7 +691,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Se cargaron las horas.
+        ///   Busca una cadena traducida similar a Se cargaron las horas_EN.
         /// </summary>
         internal static string horas_created {
             get {
@@ -700,7 +700,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Se eliminaron las horas cargadas.
+        ///   Busca una cadena traducida similar a Se eliminaron las horas cargadas_EN.
         /// </summary>
         internal static string horas_deleted {
             get {
@@ -709,7 +709,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El proyecto es requerido.
+        ///   Busca una cadena traducida similar a El proyecto es requerido_EN.
         /// </summary>
         internal static string horas_required_project {
             get {
@@ -718,7 +718,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a La fecha desde es requerida.
+        ///   Busca una cadena traducida similar a La fecha desde es requerida_EN.
         /// </summary>
         internal static string horas_required_since {
             get {
@@ -727,7 +727,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a La tarea es requerida.
+        ///   Busca una cadena traducida similar a La tarea es requerida_EN.
         /// </summary>
         internal static string horas_required_task {
             get {
@@ -736,7 +736,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a La fecha hasta es requerida.
+        ///   Busca una cadena traducida similar a La fecha hasta es requerida_EN.
         /// </summary>
         internal static string horas_required_until {
             get {
@@ -745,7 +745,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Se actualizaron las horas.
+        ///   Busca una cadena traducida similar a Se actualizaron las horas_EN.
         /// </summary>
         internal static string horas_updated {
             get {
@@ -754,7 +754,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Cantidad de hs.
+        ///   Busca una cadena traducida similar a Cantidad de hs_EN.
         /// </summary>
         internal static string hour_amount {
             get {
@@ -763,7 +763,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Cancel.
+        ///   Busca una cadena traducida similar a Cancel_EN.
         /// </summary>
         internal static string hour_cancel {
             get {
@@ -772,7 +772,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Crear.
+        ///   Busca una cadena traducida similar a Crear_EN.
         /// </summary>
         internal static string hour_create {
             get {
@@ -781,7 +781,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Fecha.
+        ///   Busca una cadena traducida similar a Fecha_EN.
         /// </summary>
         internal static string hour_date {
             get {
@@ -790,7 +790,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Eliminar.
+        ///   Busca una cadena traducida similar a Eliminar_EN.
         /// </summary>
         internal static string hour_delete {
             get {
@@ -799,7 +799,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Horas.
+        ///   Busca una cadena traducida similar a Horas_EN.
         /// </summary>
         internal static string hour_list_amount {
             get {
@@ -808,7 +808,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Fecha.
+        ///   Busca una cadena traducida similar a Fecha_EN.
         /// </summary>
         internal static string hour_list_date {
             get {
@@ -817,7 +817,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Proyecto.
+        ///   Busca una cadena traducida similar a Proyecto_EN.
         /// </summary>
         internal static string hour_list_project {
             get {
@@ -826,7 +826,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Tarea.
+        ///   Busca una cadena traducida similar a Tarea_EN.
         /// </summary>
         internal static string hour_list_task {
             get {
@@ -835,7 +835,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Proyecto.
+        ///   Busca una cadena traducida similar a Proyecto_EN.
         /// </summary>
         internal static string hour_project {
             get {
@@ -844,7 +844,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Guardar.
+        ///   Busca una cadena traducida similar a Guardar_EN.
         /// </summary>
         internal static string hour_save {
             get {
@@ -853,7 +853,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Tarea.
+        ///   Busca una cadena traducida similar a Tarea_EN.
         /// </summary>
         internal static string hour_task {
             get {
@@ -862,7 +862,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Limpiar.
+        ///   Busca una cadena traducida similar a Limpiar_EN.
         /// </summary>
         internal static string log_clean {
             get {
@@ -871,7 +871,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Criticidad.
+        ///   Busca una cadena traducida similar a Criticidad_EN.
         /// </summary>
         internal static string log_level {
             get {
@@ -880,7 +880,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Fecha.
+        ///   Busca una cadena traducida similar a Fecha_EN.
         /// </summary>
         internal static string log_list_date {
             get {
@@ -889,7 +889,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Description.
+        ///   Busca una cadena traducida similar a Description_EN.
         /// </summary>
         internal static string log_list_desc {
             get {
@@ -898,7 +898,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Funcionalidad.
+        ///   Busca una cadena traducida similar a Funcionalidad_EN.
         /// </summary>
         internal static string log_list_functionality {
             get {
@@ -907,7 +907,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Criticidad.
+        ///   Busca una cadena traducida similar a Criticidad_EN.
         /// </summary>
         internal static string log_list_level {
             get {
@@ -916,7 +916,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Usuario.
+        ///   Busca una cadena traducida similar a Usuario_EN.
         /// </summary>
         internal static string log_list_user {
             get {
@@ -925,7 +925,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Buscar.
+        ///   Busca una cadena traducida similar a Buscar_EN.
         /// </summary>
         internal static string log_search {
             get {
@@ -934,7 +934,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Desde.
+        ///   Busca una cadena traducida similar a Desde_EN.
         /// </summary>
         internal static string log_since {
             get {
@@ -943,7 +943,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Hasta.
+        ///   Busca una cadena traducida similar a Hasta_EN.
         /// </summary>
         internal static string log_until {
             get {
@@ -952,7 +952,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Usuario.
+        ///   Busca una cadena traducida similar a Usuario_EN.
         /// </summary>
         internal static string log_user {
             get {
@@ -961,7 +961,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Modificar String de conexion.
+        ///   Busca una cadena traducida similar a Modificar String de conexion_EN.
         /// </summary>
         internal static string login_connection_string {
             get {
@@ -970,7 +970,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Idioma.
+        ///   Busca una cadena traducida similar a Idioma_EN.
         /// </summary>
         internal static string login_language {
             get {
@@ -979,7 +979,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ingresar.
+        ///   Busca una cadena traducida similar a Ingresar_EN.
         /// </summary>
         internal static string login_login {
             get {
@@ -988,7 +988,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Contraseña.
+        ///   Busca una cadena traducida similar a Contraseña_EN.
         /// </summary>
         internal static string login_pass {
             get {
@@ -997,7 +997,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Usuario.
+        ///   Busca una cadena traducida similar a Usuario_EN.
         /// </summary>
         internal static string login_user {
             get {
@@ -1006,7 +1006,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Realizar backup.
+        ///   Busca una cadena traducida similar a Realizar backup_EN.
         /// </summary>
         internal static string menu_backup {
             get {
@@ -1015,7 +1015,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Modificar String de conexión.
+        ///   Busca una cadena traducida similar a Modificar String de conexión_EN.
         /// </summary>
         internal static string menu_connection_string {
             get {
@@ -1024,7 +1024,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Familias.
+        ///   Busca una cadena traducida similar a Familias_EN.
         /// </summary>
         internal static string menu_families {
             get {
@@ -1033,7 +1033,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Carga de Horas.
+        ///   Busca una cadena traducida similar a Carga de Horas_EN.
         /// </summary>
         internal static string menu_hours {
             get {
@@ -1042,7 +1042,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Idioma.
+        ///   Busca una cadena traducida similar a Idioma_EN.
         /// </summary>
         internal static string menu_language {
             get {
@@ -1051,7 +1051,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Cerrar sesión.
+        ///   Busca una cadena traducida similar a Cerrar sesión_EN.
         /// </summary>
         internal static string menu_logout {
             get {
@@ -1060,7 +1060,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Consultar Bitácora.
+        ///   Busca una cadena traducida similar a Consultar Bitácora_EN.
         /// </summary>
         internal static string menu_logs {
             get {
@@ -1069,7 +1069,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Proyectos.
+        ///   Busca una cadena traducida similar a Proyectos_EN.
         /// </summary>
         internal static string menu_projects {
             get {
@@ -1078,7 +1078,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Reporte de rentabilidad de proyectos.
+        ///   Busca una cadena traducida similar a Reporte de rentabilidad de proyectos_EN.
         /// </summary>
         internal static string menu_report {
             get {
@@ -1087,7 +1087,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Realizar restore.
+        ///   Busca una cadena traducida similar a Realizar restore_EN.
         /// </summary>
         internal static string menu_restore {
             get {
@@ -1096,7 +1096,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Tareas.
+        ///   Busca una cadena traducida similar a Tareas_EN.
         /// </summary>
         internal static string menu_tasks {
             get {
@@ -1105,7 +1105,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Usuarios.
+        ///   Busca una cadena traducida similar a Usuarios_EN.
         /// </summary>
         internal static string menu_users {
             get {
@@ -1114,7 +1114,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Cancelar.
+        ///   Busca una cadena traducida similar a Cancelar_EN.
         /// </summary>
         internal static string project_cancel {
             get {
@@ -1123,7 +1123,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Crear.
+        ///   Busca una cadena traducida similar a Crear_EN.
         /// </summary>
         internal static string project_create {
             get {
@@ -1132,7 +1132,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El proyecto se creo correctamente.
+        ///   Busca una cadena traducida similar a El proyecto se creo correctamente_EN.
         /// </summary>
         internal static string project_created {
             get {
@@ -1141,7 +1141,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Eliminar.
+        ///   Busca una cadena traducida similar a Eliminar_EN.
         /// </summary>
         internal static string project_delete {
             get {
@@ -1150,7 +1150,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El proyecto se elimino correctamente.
+        ///   Busca una cadena traducida similar a El proyecto se elimino correctamente_EN.
         /// </summary>
         internal static string project_deleted {
             get {
@@ -1159,7 +1159,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Habilitado.
+        ///   Busca una cadena traducida similar a Habilitado_EN.
         /// </summary>
         internal static string project_enabled {
             get {
@@ -1168,7 +1168,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Estimadas.
+        ///   Busca una cadena traducida similar a Estimadas_EN.
         /// </summary>
         internal static string project_estimated {
             get {
@@ -1177,7 +1177,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Insumidas.
+        ///   Busca una cadena traducida similar a Insumidas_EN.
         /// </summary>
         internal static string project_insumidas {
             get {
@@ -1186,7 +1186,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Habilitado.
+        ///   Busca una cadena traducida similar a Habilitado_EN.
         /// </summary>
         internal static string project_list_enabled {
             get {
@@ -1195,7 +1195,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Nombre del proyecto.
+        ///   Busca una cadena traducida similar a Nombre del proyecto_EN.
         /// </summary>
         internal static string project_list_title {
             get {
@@ -1204,7 +1204,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a ProEasy.
+        ///   Busca una cadena traducida similar a ProEasy_EN.
         /// </summary>
         internal static string project_name {
             get {
@@ -1213,7 +1213,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Las horas estimadas son requeridas.
+        ///   Busca una cadena traducida similar a Las horas estimadas son requeridas_EN.
         /// </summary>
         internal static string project_required_horas {
             get {
@@ -1222,7 +1222,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El nombre es requerido.
+        ///   Busca una cadena traducida similar a El nombre es requerido_EN.
         /// </summary>
         internal static string project_required_name {
             get {
@@ -1231,7 +1231,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El valor hora es requerido.
+        ///   Busca una cadena traducida similar a El valor hora es requerido_EN.
         /// </summary>
         internal static string project_required_salary {
             get {
@@ -1240,7 +1240,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Asignar recursos.
+        ///   Busca una cadena traducida similar a Asignar recursos_EN.
         /// </summary>
         internal static string project_resources {
             get {
@@ -1249,7 +1249,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Guardar.
+        ///   Busca una cadena traducida similar a Guardar_EN.
         /// </summary>
         internal static string project_save {
             get {
@@ -1258,7 +1258,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Nombre.
+        ///   Busca una cadena traducida similar a Nombre_EN.
         /// </summary>
         internal static string project_title {
             get {
@@ -1267,7 +1267,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El proyecto se actualizo correctamente.
+        ///   Busca una cadena traducida similar a El proyecto se actualizo correctamente_EN.
         /// </summary>
         internal static string project_updated {
             get {
@@ -1276,7 +1276,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Valor hora acordado con el cliente.
+        ///   Busca una cadena traducida similar a Valor hora acordado con el cliente_EN.
         /// </summary>
         internal static string project_valor {
             get {
@@ -1285,7 +1285,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Limpiar.
+        ///   Busca una cadena traducida similar a Limpiar_EN.
         /// </summary>
         internal static string report_clean {
             get {
@@ -1294,7 +1294,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Fecha.
+        ///   Busca una cadena traducida similar a Fecha_EN.
         /// </summary>
         internal static string report_list_date {
             get {
@@ -1303,7 +1303,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Desvio dinero.
+        ///   Busca una cadena traducida similar a Desvio dinero_EN.
         /// </summary>
         internal static string report_list_desvio_dinero {
             get {
@@ -1312,7 +1312,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Hs Desvio.
+        ///   Busca una cadena traducida similar a Hs Desvio_EN.
         /// </summary>
         internal static string report_list_desvio_hs {
             get {
@@ -1321,7 +1321,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Hs Estimadas.
+        ///   Busca una cadena traducida similar a Hs Estimadas_EN.
         /// </summary>
         internal static string report_list_estimated_hs {
             get {
@@ -1330,7 +1330,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Hs Insumidas.
+        ///   Busca una cadena traducida similar a Hs Insumidas_EN.
         /// </summary>
         internal static string report_list_insumidas_hs {
             get {
@@ -1339,7 +1339,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Proyecto.
+        ///   Busca una cadena traducida similar a Proyecto_EN.
         /// </summary>
         internal static string report_list_project {
             get {
@@ -1348,7 +1348,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Estado.
+        ///   Busca una cadena traducida similar a Estado_EN.
         /// </summary>
         internal static string report_list_state {
             get {
@@ -1357,7 +1357,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Buscar.
+        ///   Busca una cadena traducida similar a Buscar_EN.
         /// </summary>
         internal static string report_search {
             get {
@@ -1366,7 +1366,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Desde.
+        ///   Busca una cadena traducida similar a Desde_EN.
         /// </summary>
         internal static string report_since {
             get {
@@ -1375,7 +1375,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Hasta.
+        ///   Busca una cadena traducida similar a Hasta_EN.
         /// </summary>
         internal static string report_until {
             get {
@@ -1384,7 +1384,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Importar.
+        ///   Busca una cadena traducida similar a Importar_EN.
         /// </summary>
         internal static string restore_import {
             get {
@@ -1393,7 +1393,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ruta de origen.
+        ///   Busca una cadena traducida similar a Ruta de origen_EN.
         /// </summary>
         internal static string restore_path {
             get {
@@ -1402,7 +1402,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Directorio del backup.
+        ///   Busca una cadena traducida similar a Directorio del backup_EN.
         /// </summary>
         internal static string restore_path_label {
             get {
@@ -1411,7 +1411,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Se restauro la base correctamente.
+        ///   Busca una cadena traducida similar a Se restauro la base correctamente_EN.
         /// </summary>
         internal static string restore_sucess {
             get {
@@ -1420,7 +1420,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Cancelar.
+        ///   Busca una cadena traducida similar a Cancelar_EN.
         /// </summary>
         internal static string task_cancel {
             get {
@@ -1429,7 +1429,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Crear.
+        ///   Busca una cadena traducida similar a Crear_EN.
         /// </summary>
         internal static string task_create {
             get {
@@ -1438,7 +1438,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a La tarea se creo correctamente.
+        ///   Busca una cadena traducida similar a La tarea se creo correctamente_EN.
         /// </summary>
         internal static string task_created {
             get {
@@ -1447,7 +1447,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Eliminar.
+        ///   Busca una cadena traducida similar a Eliminar_EN.
         /// </summary>
         internal static string task_delete {
             get {
@@ -1456,7 +1456,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a La tarea se elimino correctamente.
+        ///   Busca una cadena traducida similar a La tarea se elimino correctamente_EN.
         /// </summary>
         internal static string task_deleted {
             get {
@@ -1465,7 +1465,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Descripcion.
+        ///   Busca una cadena traducida similar a Descripcion_EN.
         /// </summary>
         internal static string task_description {
             get {
@@ -1474,7 +1474,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Proyecto.
+        ///   Busca una cadena traducida similar a Proyecto_EN.
         /// </summary>
         internal static string task_list_project {
             get {
@@ -1483,7 +1483,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Titulo.
+        ///   Busca una cadena traducida similar a Titulo_EN.
         /// </summary>
         internal static string task_list_title {
             get {
@@ -1492,7 +1492,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Proyecto.
+        ///   Busca una cadena traducida similar a Proyecto_EN.
         /// </summary>
         internal static string task_project {
             get {
@@ -1501,7 +1501,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a La descripcion es requerida.
+        ///   Busca una cadena traducida similar a La descripcion es requerida_EN.
         /// </summary>
         internal static string task_required_description {
             get {
@@ -1510,7 +1510,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El proyecto es requerido.
+        ///   Busca una cadena traducida similar a El proyecto es requerido_EN.
         /// </summary>
         internal static string task_required_project {
             get {
@@ -1519,7 +1519,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El titulo es requerido.
+        ///   Busca una cadena traducida similar a El titulo es requerido_EN.
         /// </summary>
         internal static string task_required_title {
             get {
@@ -1528,7 +1528,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Guardar.
+        ///   Busca una cadena traducida similar a Guardar_EN.
         /// </summary>
         internal static string task_save {
             get {
@@ -1537,7 +1537,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Titulo.
+        ///   Busca una cadena traducida similar a Titulo_EN.
         /// </summary>
         internal static string task_title {
             get {
@@ -1546,7 +1546,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a La tarea se actualizo correctamente.
+        ///   Busca una cadena traducida similar a La tarea se actualizo correctamente_EN.
         /// </summary>
         internal static string task_updated {
             get {
@@ -1555,7 +1555,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Cancelar.
+        ///   Busca una cadena traducida similar a Cancelar_EN.
         /// </summary>
         internal static string user_cancel {
             get {
@@ -1564,7 +1564,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Crear.
+        ///   Busca una cadena traducida similar a Crear_EN.
         /// </summary>
         internal static string user_create {
             get {
@@ -1573,7 +1573,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El usuario fue creado.
+        ///   Busca una cadena traducida similar a El usuario fue creado_EN.
         /// </summary>
         internal static string user_created {
             get {
@@ -1582,7 +1582,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Eliminar.
+        ///   Busca una cadena traducida similar a Eliminar_EN.
         /// </summary>
         internal static string user_delete {
             get {
@@ -1591,7 +1591,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El usuario se elimino correctamente.
+        ///   Busca una cadena traducida similar a El usuario se elimino correctamente_EN.
         /// </summary>
         internal static string user_deleted {
             get {
@@ -1600,7 +1600,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Disponibilidad mensual.
+        ///   Busca una cadena traducida similar a Disponibilidad mensual_EN.
         /// </summary>
         internal static string user_disp {
             get {
@@ -1609,7 +1609,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Email.
+        ///   Busca una cadena traducida similar a Email_EN.
         /// </summary>
         internal static string user_email {
             get {
@@ -1618,7 +1618,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Habilitado.
+        ///   Busca una cadena traducida similar a Habilitado_EN.
         /// </summary>
         internal static string user_enabled {
             get {
@@ -1627,7 +1627,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Asignar familia.
+        ///   Busca una cadena traducida similar a Asignar familia_EN.
         /// </summary>
         internal static string user_families {
             get {
@@ -1636,7 +1636,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Generar contraseña.
+        ///   Busca una cadena traducida similar a Generar contraseña_EN.
         /// </summary>
         internal static string user_generate_pass {
             get {
@@ -1645,7 +1645,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Apellido.
+        ///   Busca una cadena traducida similar a Apellido_EN.
         /// </summary>
         internal static string user_lastname {
             get {
@@ -1654,7 +1654,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Apellido.
+        ///   Busca una cadena traducida similar a Apellido_EN.
         /// </summary>
         internal static string user_list_lastname {
             get {
@@ -1663,7 +1663,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Nombre.
+        ///   Busca una cadena traducida similar a Nombre_EN.
         /// </summary>
         internal static string user_list_name {
             get {
@@ -1672,7 +1672,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Estado.
+        ///   Busca una cadena traducida similar a Estado_EN.
         /// </summary>
         internal static string user_list_state {
             get {
@@ -1681,7 +1681,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Usuario.
+        ///   Busca una cadena traducida similar a Usuario_EN.
         /// </summary>
         internal static string user_list_username {
             get {
@@ -1690,7 +1690,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Nombre.
+        ///   Busca una cadena traducida similar a Nombre_EN.
         /// </summary>
         internal static string user_name {
             get {
@@ -1699,7 +1699,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Se reestablecio la contraseña del usuario.
+        ///   Busca una cadena traducida similar a Se reestablecio la contraseña del usuario_EN.
         /// </summary>
         internal static string user_pass_reseted {
             get {
@@ -1708,7 +1708,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Asignar patente.
+        ///   Busca una cadena traducida similar a Asignar patente_EN.
         /// </summary>
         internal static string user_patentes {
             get {
@@ -1717,7 +1717,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a La disponibilidad mensual es requerida.
+        ///   Busca una cadena traducida similar a La disponibilidad mensual es requerida_EN.
         /// </summary>
         internal static string user_required_availability {
             get {
@@ -1726,7 +1726,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El email es requerido.
+        ///   Busca una cadena traducida similar a El email es requerido_EN.
         /// </summary>
         internal static string user_required_email {
             get {
@@ -1735,7 +1735,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El apellido es requerido.
+        ///   Busca una cadena traducida similar a El apellido es requerido_EN.
         /// </summary>
         internal static string user_required_lastname {
             get {
@@ -1744,7 +1744,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El nombre es requerido.
+        ///   Busca una cadena traducida similar a El nombre es requerido_EN.
         /// </summary>
         internal static string user_required_name {
             get {
@@ -1753,7 +1753,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El valor hora es requerido.
+        ///   Busca una cadena traducida similar a El valor hora es requerido_EN.
         /// </summary>
         internal static string user_required_salary {
             get {
@@ -1762,7 +1762,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Se desbloqueo el usuario.
+        ///   Busca una cadena traducida similar a Se desbloqueo el usuario_EN.
         /// </summary>
         internal static string user_required_unlocked {
             get {
@@ -1771,7 +1771,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El nombre de usuario es requerido.
+        ///   Busca una cadena traducida similar a El nombre de usuario es requerido_EN.
         /// </summary>
         internal static string user_required_username {
             get {
@@ -1780,7 +1780,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Guardar.
+        ///   Busca una cadena traducida similar a Guardar_EN.
         /// </summary>
         internal static string user_save {
             get {
@@ -1789,7 +1789,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Desbloquear.
+        ///   Busca una cadena traducida similar a Desbloquear_EN.
         /// </summary>
         internal static string user_unlock {
             get {
@@ -1798,7 +1798,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El usuario se actualizo correctamente.
+        ///   Busca una cadena traducida similar a El usuario se actualizo correctamente_EN.
         /// </summary>
         internal static string user_updated {
             get {
@@ -1807,7 +1807,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Usuario.
+        ///   Busca una cadena traducida similar a Usuario_EN.
         /// </summary>
         internal static string user_username {
             get {
@@ -1816,7 +1816,7 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Valor hora.
+        ///   Busca una cadena traducida similar a Valor hora_EN.
         /// </summary>
         internal static string user_valor {
             get {

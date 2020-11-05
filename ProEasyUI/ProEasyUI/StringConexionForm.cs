@@ -15,6 +15,7 @@ namespace ProEasyUI
             InitializeComponent();
             ReloadLang();
         }
+
         public override void ReloadLang()
         {
             try
@@ -29,7 +30,7 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 showError("General");
             }
@@ -73,7 +74,7 @@ namespace ProEasyUI
                 }
                 else
                 {
-                    showInfo("Debera volver a abrir la aplicacion para tomar la nueva configuracion");
+                    showInfo(i18n().GetString("connection.string.saved"));
                     Application.Exit();
                 }
             }
@@ -81,9 +82,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
 
         }

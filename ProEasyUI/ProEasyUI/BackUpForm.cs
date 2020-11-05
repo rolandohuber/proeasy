@@ -27,9 +27,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -42,18 +42,30 @@ namespace ProEasyUI
         {
             try
             {
+                if (!isValidForm())
+                    return;
                 string path = service.generarBackUp(Convert.ToInt32(this.textBox2.Text != null && this.textBox2.Text.Trim().Length > 0 ? this.textBox2.Text : "1"));
                 Clipboard.SetText(path);
-                showInfo("Tu bkp esta aca y lo copiamos al clipboard: " + path);
+                showInfo(i18n().GetString("backup.created") + path);
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
+        }
+
+        private bool isValidForm()
+        {
+            if (this.textBox2.Text == null || this.textBox2.Text.Trim().Length <= 0 || Convert.ToInt32(this.textBox2.Text) <= 0)
+            {
+                showError(i18n().GetString("backup.required.size"));
+                return false;
+            }
+            return true;
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
@@ -69,9 +81,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
     }

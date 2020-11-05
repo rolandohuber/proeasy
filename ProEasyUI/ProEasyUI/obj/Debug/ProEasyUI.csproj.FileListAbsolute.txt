@@ -114,3 +114,4 @@ D:\TFI\proeasy\ProEasyUI\ProEasyUI\obj\Debug\es\ProEasyUI.resources.dll
 D:\TFI\proeasy\ProEasyUI\ProEasyUI\obj\Debug\ProEasyUI.csproj.CopyComplete
 D:\TFI\proeasy\ProEasyUI\ProEasyUI\obj\Debug\ProEasyUI.exe
 D:\TFI\proeasy\ProEasyUI\ProEasyUI\obj\Debug\ProEasyUI.pdb
+D:\TFI\proeasy\ProEasyUI\ProEasyUI\obj\Debug\ProEasyUI.i18n.en_lang.resources

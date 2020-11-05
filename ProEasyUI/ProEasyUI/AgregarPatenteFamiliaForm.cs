@@ -23,9 +23,9 @@ namespace ProEasyUI
                 this.label1.Text = i18n().GetString("asig.pat.fam.disp");
                 this.label2.Text = i18n().GetString("asig.pat.fam.asign");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("ALV el idioma");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -52,9 +52,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -65,7 +65,7 @@ namespace ProEasyUI
                 Patente patente = (Patente)this.disponibles.SelectedItem;
                 if (patente == null)
                 {
-                    showWarning("Debe seleccionar una patente para asignar.");
+                    showError(i18n().GetString("asignacion.patente.familia.asign.required"));
                     return;
                 }
                 patenteService.asignarPatente(familiaSelected, patente);
@@ -75,9 +75,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -88,7 +88,7 @@ namespace ProEasyUI
                 Patente patente = (Patente)this.asignadas.SelectedItem;
                 if (patente == null)
                 {
-                    showWarning("Debe seleccionar una patente para desasignar.");
+                    showError(i18n().GetString("asignacion.patente.familia.remove.required"));
                     return;
                 }
                 patenteService.quitarPatente(familiaSelected, patente);
@@ -98,9 +98,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
     }

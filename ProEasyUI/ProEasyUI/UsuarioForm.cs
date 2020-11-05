@@ -44,9 +44,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -61,9 +61,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -78,9 +78,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -110,14 +110,15 @@ namespace ProEasyUI
                 this.familiaButton.Visible = false;
                 this.patentesButton.Visible = false;
                 this.resetButton.Visible = false;
+                this.unlockButton.Visible = false;
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -139,14 +140,15 @@ namespace ProEasyUI
                     .build());
                 button4_Click(null, null);
                 UsuarioForm_Load(null, null);
+                showInfo(i18n().GetString("user.created"));
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -157,14 +159,15 @@ namespace ProEasyUI
                 service.eliminar(userSelected);
                 button4_Click(null, null);
                 UsuarioForm_Load(null, null);
+                showInfo(i18n().GetString("user.deleted"));
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -185,14 +188,15 @@ namespace ProEasyUI
                 service.actualizar(this.userSelected);
                 button4_Click(null, null);
                 UsuarioForm_Load(null, null);
+                showInfo(i18n().GetString("user.updated"));
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -213,6 +217,7 @@ namespace ProEasyUI
             this.familiaButton.Visible = false;
             this.patentesButton.Visible = false;
             this.resetButton.Visible = false;
+            this.unlockButton.Visible = false;
         }
 
         private void listado_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -238,14 +243,15 @@ namespace ProEasyUI
                 this.familiaButton.Visible = true;
                 this.patentesButton.Visible = true;
                 this.resetButton.Visible = true;
+                this.unlockButton.Visible = true;
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -254,14 +260,15 @@ namespace ProEasyUI
             try
             {
                 service.resetPass(userSelected);
+                showInfo(i18n().GetString("user.pass.reseted"));
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -269,32 +276,32 @@ namespace ProEasyUI
         {
             if (this.nombreField.Text == null || this.nombreField.Text.Length < 1)
             {
-                MessageBox.Show("El nombre es requerido.", "Complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                showWarning(i18n().GetString("user.required.name"));
                 return false;
             }
             if (this.apellidoField.Text == null || this.apellidoField.Text.Length < 1)
             {
-                MessageBox.Show("El apellido es requerido.", "Complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                showWarning(i18n().GetString("user.required.lastname"));
                 return false;
             }
             if (this.usernameField.Text == null || this.usernameField.Text.Length < 1)
             {
-                MessageBox.Show("El nombre de usuario es requerido.", "Complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                showWarning(i18n().GetString("user.required.username"));
                 return false;
             }
             if (this.emailField.Text == null || this.emailField.Text.Length < 1)
             {
-                MessageBox.Show("El email es requerido.", "Complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                showWarning(i18n().GetString("user.required.email"));
                 return false;
             }
             if (this.disponibilidadField.Text == null || this.disponibilidadField.Text.Length < 1)
             {
-                MessageBox.Show("La disponibilidad mensual es requerida.", "Complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                showWarning(i18n().GetString("user.required.availability"));
                 return false;
             }
             if (this.valorHoraField.Text == null || this.valorHoraField.Text.Length < 1)
             {
-                MessageBox.Show("El valor hora es requerido.", "Complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                showWarning(i18n().GetString("user.required.salary"));
                 return false;
             }
 
@@ -307,15 +314,15 @@ namespace ProEasyUI
             {
                 this.userSelected.Intentos = 0;
                 this.service.actualizar(this.userSelected);
-                showInfo("Se desbloqueo el usuario");
+                showInfo(i18n().GetString("user.unlocked"));
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
     }

@@ -21,7 +21,7 @@ namespace DAL
 
                 IConfig demoConfigSection = configSource.Configs["Proeasy"];
                 var database = demoConfigSection.Get("connectionString", string.Empty);
-                var connectionString = System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(database));
+                var connectionString = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(database));
                 {
                     try
                     {
@@ -31,7 +31,7 @@ namespace DAL
                         conexion.Open();
                         conexion.Close();
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         throw new BE.ProEasyException(100, "Conexion no establecida");
                     }
@@ -79,9 +79,9 @@ namespace DAL
 
                 return retorno;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw new BE.ProEasyException(100, "Conexion no establecida");
             }
 
         }
@@ -111,9 +111,9 @@ namespace DAL
 
                 return DB;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw new BE.ProEasyException(100, "Conexion no establecida");
             }
 
         }
@@ -142,7 +142,7 @@ namespace DAL
             }
             catch (Exception)
             {
-                throw;
+                throw new BE.ProEasyException(100, "Conexion no establecida");
             }
         }
 
@@ -175,7 +175,7 @@ namespace DAL
             }
             catch (Exception)
             {
-                throw;
+                throw new BE.ProEasyException(100, "Conexion no establecida");
             }
         }
 
@@ -210,7 +210,7 @@ namespace DAL
             }
             catch (Exception)
             {
-                throw;
+                throw new BE.ProEasyException(100, "Conexion no establecida");
             }
         }
     }

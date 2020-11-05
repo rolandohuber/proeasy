@@ -11,7 +11,6 @@ namespace ProEasyUI
 {
     public partial class Login : I18nForm
     {
-
         public Login()
         {
             InitializeComponent();
@@ -32,9 +31,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -51,16 +50,16 @@ namespace ProEasyUI
                 }
                 else
                 {
-                    MessageBox.Show("Login incorrecto, chequee los datos.");
+                    showError(i18n().GetString("errors.1000"));
                 }
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("Login incorrecto, chequee los datos.");
+                showError(i18n().GetString("errors.1000"));
             }
         }
 
@@ -75,37 +74,30 @@ namespace ProEasyUI
             {
                 if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "config.ini"))
                 {
-                    try
+                    this.idiomaToolStripMenuItem.DropDownItems.Clear();
+                    foreach (Idioma idioma in IdiomaService.getInstance().listar())
                     {
-                        this.idiomaToolStripMenuItem.DropDownItems.Clear();
-                        foreach (Idioma idioma in IdiomaService.getInstance().listar())
-                        {
-                            var item = new System.Windows.Forms.ToolStripMenuItem();
-                            item.Name = idioma.Code;
-                            item.Size = new System.Drawing.Size(210, 30);
-                            item.Text = idioma.Nombre;
-                            item.Click += new System.EventHandler(this.changeLanguage);
-                            item.Checked = idioma.Code == "es";
-                            this.idiomaToolStripMenuItem.DropDownItems.Add(item);
-                        }
-                    }
-                    catch (ProEasyException ex)
-                    {
-                        showError("No tiene configurada una base de datos");
+                        var item = new ToolStripMenuItem();
+                        item.Name = idioma.Code;
+                        item.Size = new Size(210, 30);
+                        item.Text = idioma.Nombre;
+                        item.Click += new EventHandler(this.changeLanguage);
+                        item.Checked = idioma.Code == "es";
+                        this.idiomaToolStripMenuItem.DropDownItems.Add(item);
                     }
                 }
                 else
                 {
-                    showError("No tiene configurada una base de datos");
+                    showError(i18n().GetString("errors.1001"));
                 }
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -123,9 +115,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -144,9 +136,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -170,9 +162,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
     }

@@ -100,8 +100,14 @@
     <Compile Include="HoraForm.Designer.cs">
       <DependentUpon>HoraForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="I18n.cs" />
     <Compile Include="I18nForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i18n\en_lang.Designer.cs">
+      <DependentUpon>en_lang.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -184,6 +190,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="I18nForm.resx">
       <DependentUpon>I18nForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="i18n\en_lang.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>en_lang.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

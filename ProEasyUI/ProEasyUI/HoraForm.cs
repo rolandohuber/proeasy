@@ -41,9 +41,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -68,9 +68,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -92,9 +92,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
 
         }
@@ -115,14 +115,15 @@ namespace ProEasyUI
 
                 horaService.crear(h);
                 cancelButton_Click(null, null);
+                showInfo(i18n().GetString("hora.created"));
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -141,14 +142,15 @@ namespace ProEasyUI
 
                 this.horaService.actualizar(horaSelected);
                 cancelButton_Click(null, null);
+                showInfo(i18n().GetString("hora.updated"));
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -158,14 +160,15 @@ namespace ProEasyUI
             {
                 horaService.eliminar(this.horaSelected);
                 cancelButton_Click(null, null);
+                showInfo(i18n().GetString("hora.deleted"));
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -184,9 +187,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -205,9 +208,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -232,9 +235,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -242,26 +245,25 @@ namespace ProEasyUI
         {
             if (this.comboBox1.SelectedItem == null)
             {
-                MessageBox.Show("El proyecto es requerido.", "Complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                showError(i18n().GetString("hora.required.project"));
                 return false;
             }
             if (this.comboBox2.SelectedItem == null)
             {
-                MessageBox.Show("La tarea es requerida.", "Complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                showError(i18n().GetString("hora.required.task"));
                 return false;
             }
             if (this.dateTimePicker1.Value == null)
             {
-                MessageBox.Show("La fecha es requerida.", "Complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                showError(i18n().GetString("hora.required.since"));
                 return false;
             }
 
             if (this.textBox1.Text == null || this.textBox1.Text.Length < 1)
             {
-                MessageBox.Show("La cantidad de horas es requerida.", "Complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                showError(i18n().GetString("hora.required.until"));
                 return false;
             }
-
             return true;
         }
     }

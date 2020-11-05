@@ -159,7 +159,7 @@ namespace BLL
         public void quitarPatente(Usuario usuario, Patente patente)
         {
             if (!patenteMapper.existeOtraAsignacion(patente.Id, usuario.Id))
-                throw new Exception("patente sin asignacion");
+                throw new ProEasyException(70, "Patente sin asignacion");
             patenteMapper.quitarPatente(usuario, patente);
             verificadorService.actualizarDVV("USUARIO_PATENTE");
             BitacoraService.getInstance().crear(
@@ -229,7 +229,7 @@ namespace BLL
         public void quitarPatente(Familia familia, Patente patente)
         {
             if (!patenteMapper.existeOtraAsignacionFamiliaPatente(patente.Id, familia.Id))
-                throw new Exception("patente sin asignacion");
+                throw new ProEasyException(70, "Patente sin asignacion");
             patenteMapper.quitarPatente(familia, patente);
             verificadorService.actualizarDVV("FAMILIA_PATENTE");
             BitacoraService.getInstance().crear(
@@ -243,5 +243,4 @@ namespace BLL
             );
         }
     }
-
 }

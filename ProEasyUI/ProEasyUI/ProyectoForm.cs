@@ -11,6 +11,7 @@ namespace ProEasyUI
     {
         readonly ProyectoService proyectoService = ProyectoService.getInstance();
         Proyecto proyectoSelected;
+
         public ProyectoForm()
         {
             InitializeComponent();
@@ -28,9 +29,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -55,9 +56,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -81,9 +82,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -104,14 +105,15 @@ namespace ProEasyUI
 
                 cancelButton_Click(null, null);
                 ProyectoForm_Load(null, null);
+                showInfo(i18n().GetString("project.created"));
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -122,16 +124,16 @@ namespace ProEasyUI
                 this.proyectoService.eliminar(this.proyectoSelected);
                 cancelButton_Click(null, null);
                 ProyectoForm_Load(null, null);
+                showInfo(i18n().GetString("project.deleted"));
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
-
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -148,14 +150,15 @@ namespace ProEasyUI
                 this.proyectoService.actualizar(proyectoSelected);
                 cancelButton_Click(null, null);
                 ProyectoForm_Load(null, null);
+                showInfo(i18n().GetString("project.updated"));
             }
             catch (ProEasyException pEx)
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -174,7 +177,7 @@ namespace ProEasyUI
             this.resourcesButton.Visible = false;
         }
 
-        private void listado_CellClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
+        private void listado_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -200,9 +203,9 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors." + pEx.Code));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                showError("General");
+                showError(i18n().GetString("errors.1"));
             }
         }
 
@@ -210,20 +213,19 @@ namespace ProEasyUI
         {
             if (this.nombreField.Text == null || this.nombreField.Text.Length < 1)
             {
-                MessageBox.Show("El nombre es requerido.", "Complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                showWarning(i18n().GetString("project.required.name"));
                 return false;
             }
             if (this.horasEstimadasField.Text == null || this.horasEstimadasField.Text.Length < 1)
             {
-                MessageBox.Show("Las horas estimadas son requeridas.", "Complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                showWarning(i18n().GetString("project.required.horas"));
                 return false;
             }
             if (this.valorHoraField.Text == null || this.valorHoraField.Text.Length < 1)
             {
-                MessageBox.Show("El valor hora es requerido.", "Complete todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                showWarning(i18n().GetString("project.required.salary"));
                 return false;
             }
-
             return true;
         }
     }

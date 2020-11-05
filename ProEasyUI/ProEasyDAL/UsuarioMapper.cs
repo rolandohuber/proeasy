@@ -48,11 +48,11 @@ namespace DAL
                 DataTable list = sqlHelper.ExecuteReader(query);
                 if (list.Rows.Count > 1)
                 {
-                    throw new Exception("mas de un registro");
+                    throw new ProEasyException(15, "mas de un registro");
                 }
                 else if (list.Rows.Count < 1)
                 {
-                    throw new Exception("not found");
+                    throw new ProEasyException(16, "not found");
                 }
 
                 DataRow row = list.Rows[0];
@@ -83,10 +83,6 @@ namespace DAL
             }
         }
 
-        public void logout(Usuario usuario)
-        {
-            throw new System.NotImplementedException();
-        }
 
         public List<Usuario> listar(Proyecto proyecto)
         {
@@ -188,7 +184,7 @@ namespace DAL
                 bool ok = sqlHelper.ExecuteQuery(query);
                 if (!ok)
                 {
-                    throw new Exception("ocurrio un error al eliminar el usuario");
+                    throw new ProEasyException(17, "ocurrio un error al eliminar el usuario");
                 }
             }
             catch (Exception ex)
@@ -240,11 +236,11 @@ namespace DAL
                 DataTable list = sqlHelper.ExecuteReader(query);
                 if (list.Rows.Count > 1)
                 {
-                    throw new Exception("mas de un registro");
+                    throw new ProEasyException(15, "mas de un registro");
                 }
                 else if (list.Rows.Count < 1)
                 {
-                    throw new Exception("not found");
+                    throw new ProEasyException(16, "not found");
                 }
 
                 DataRow row = list.Rows[0];

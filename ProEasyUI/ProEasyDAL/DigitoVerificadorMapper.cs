@@ -78,7 +78,7 @@ namespace DAL
                 bool ok = sqlHelper.ExecuteQuery(query);
                 if (!ok)
                 {
-                    throw new Exception("ocurrio un error al eliminar el digito verificador");
+                    throw new ProEasyException(95, "ocurrio un error al eliminar el digito verificador");
                 }
             }
             catch (Exception ex)
@@ -96,11 +96,11 @@ namespace DAL
 
                 if (list.Rows.Count > 1)
                 {
-                    throw new Exception("mas de un registro");
+                    throw new ProEasyException(15, "mas de un registro");
                 }
                 else if (list.Rows.Count < 1)
                 {
-                    throw new Exception("not found");
+                    throw new ProEasyException(16, "not found");
                 }
 
                 DataRow row = list.Rows[0];

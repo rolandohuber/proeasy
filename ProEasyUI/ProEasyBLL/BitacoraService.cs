@@ -10,16 +10,19 @@ namespace BLL
         private DigitoVerificadorService verificadorService = DigitoVerificadorService.getInstance();
         readonly BitacoraMapper mapper = new BitacoraMapper();
         readonly UsuarioMapper usuarioMapper = new UsuarioMapper();
+
         private BitacoraService()
         {
 
         }
+
         public static BitacoraService getInstance()
         {
             if (instance == null)
                 instance = new BitacoraService();
             return instance;
         }
+
         public override void actualizar(Bitacora entity)
         {
             entity.Descripcion = encriptarAES(entity.Descripcion);
@@ -74,5 +77,4 @@ namespace BLL
             return list;
         }
     }
-
 }

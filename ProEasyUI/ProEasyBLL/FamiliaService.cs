@@ -26,14 +26,14 @@ namespace BLL
         public override void crear(Familia entity)
         {
             entity.Nombre = encriptarAES(entity.Nombre);
-            if (familiaMapper.existe(entity.Nombre))
-                throw new Exception("Familia existe");
+            if (familiaMapper.existe(0, entity.Nombre))
+                throw new ProEasyException(50, "La Familia existe");
             entity.Dvh = verificadorService.generarDVH(new string[] { entity.Nombre });
             familiaMapper.crear(entity);
             verificadorService.actualizarDVV("FAMILIA");
 
             BitacoraService.getInstance().crear(
-                Bitacora.builder()
+            Bitacora.builder()
                 .Criticidad("ALTA")
                 .Descripcion("SE CREO UNA FAMILIA")
                 .Funcionalidad("FAMILIA")
@@ -46,8 +46,8 @@ namespace BLL
         public override void actualizar(Familia entity)
         {
             entity.Nombre = encriptarAES(entity.Nombre);
-            if (familiaMapper.existe(entity.Nombre))
-                throw new Exception("FAmilia existe");
+            if (familiaMapper.existe(entity.Id, entity.Nombre))
+                throw new ProEasyException(50, "La Familia existe");
             entity.Dvh = verificadorService.generarDVH(new string[] { entity.Nombre });
             familiaMapper.actualizar(entity);
             verificadorService.actualizarDVV("FAMILIA");
@@ -66,10 +66,13 @@ namespace BLL
         public override void eliminar(Familia entity)
         {
             if (familiaMapper.estaAsignada(entity))
-                throw new Exception("La familia esta asignada");
+                throw new ProEasyException(51, "La Familia esta asignada a un usuario");
 
             if (familiaMapper.tieneAlgunaPatenteSinOtraAsignacion(entity))
-                throw new Exception("La familia tiene patentes sin asignacion");
+                throw new ProEasyException(52, "La Familia tiene patentes asignadas");
+
+            if (new PatenteMapper().obtenerPatentesAsignadas(entity).Count > 0)
+                throw new ProEasyException(53, "La Familia tiene patentes asignadas");
 
             familiaMapper.eliminar(entity);
             verificadorService.actualizarDVV("FAMILIA");
@@ -108,14 +111,14 @@ namespace BLL
                 familia.Nombre = desencriptarAES(familia.Nombre);
             }
             BitacoraService.getInstance().crear(
-                            Bitacora.builder()
-                            .Criticidad("ALTA")
-                            .Descripcion("SE OBTUVO EL LISTADO DE FAMILIAS")
-                            .Funcionalidad("FAMILIA")
-                            .Fecha(DateTime.Now)
-                            .Usuario(Session.getInstance().Usuario)
-                            .build()
-                        );
+            Bitacora.builder()
+                .Criticidad("ALTA")
+                .Descripcion("SE OBTUVO EL LISTADO DE FAMILIAS")
+                .Funcionalidad("FAMILIA")
+                .Fecha(DateTime.Now)
+                .Usuario(Session.getInstance().Usuario)
+                .build()
+            );
             return familias;
         }
 
@@ -127,14 +130,14 @@ namespace BLL
                 familia.Nombre = desencriptarAES(familia.Nombre);
             }
             BitacoraService.getInstance().crear(
-                            Bitacora.builder()
-                            .Criticidad("ALTA")
-                            .Descripcion("SE OBTUVIERON LAS FAMILIAS ASIGNADAS DEL USUARIO: " + user.Username)
-                            .Funcionalidad("FAMILIA")
-                            .Fecha(DateTime.Now)
-                            .Usuario(Session.getInstance().Usuario)
-                            .build()
-                        );
+            Bitacora.builder()
+                .Criticidad("ALTA")
+                .Descripcion("SE OBTUVIERON LAS FAMILIAS ASIGNADAS DEL USUARIO: " + user.Username)
+                .Funcionalidad("FAMILIA")
+                .Fecha(DateTime.Now)
+                .Usuario(Session.getInstance().Usuario)
+                .build()
+            );
             return list;
         }
 
@@ -187,5 +190,4 @@ namespace BLL
            );
         }
     }
-
 }
