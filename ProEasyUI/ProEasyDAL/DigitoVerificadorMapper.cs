@@ -293,5 +293,17 @@ namespace DAL
                 throw new ProEasyException(1, ex.Message);
             }
         }
+
+        public void actualizarDVH(string tabla, long id, string dvh)
+        {
+            string q = "UPDATE " + tabla + " SET DVH='" + dvh + "' WHERE ID=" + id;
+            this.sqlHelper.ExecuteQuery(q);
+        }
+
+        public void actualizarDVH(string tabla, int prim, int sec, string dvh)
+        {
+            string q = "UPDATE " + tabla + " SET DVH='" + dvh + "' WHERE ID_" + tabla.Split('_')[0] + "=" + prim + " AND ID_" + tabla.Split('_')[1] + "=" + sec;
+            this.sqlHelper.ExecuteQuery(q);
+        }
     }
 }

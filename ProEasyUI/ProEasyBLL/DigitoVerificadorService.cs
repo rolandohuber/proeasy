@@ -268,5 +268,151 @@ namespace BLL
             actualizarDVV(tabla.ToUpper());
             return dvh;
         }
+
+        public void recalcularIntegridad()
+        {
+            string dvv = "";
+            {
+                foreach (Hora entity in new HoraMapper().listar())
+                {
+                    string dvh = generarDVH(new string[] { entity.Proyecto.Id.ToString(), entity.Tarea.Id.ToString(), new UsuarioMapper().leer(entity.Usuario.Id).Username, entity.Cantidad.ToString() });
+                    dvv += dvh;
+                    if (!dvh.Equals(entity.Dvh))
+                    {
+                        this.registrarBitacora("HORA", entity.Id);
+                        this.mapper.actualizarDVH("HORA", entity.Id, dvh);
+                    }
+                }
+            }
+            {
+                dvv = "";
+                foreach (Familia entity in new FamiliaMapper().listar())
+                {
+                    string dvh = generarDVH(new string[] { entity.Nombre });
+                    dvv += dvh;
+                    if (!dvh.Equals(entity.Dvh))
+                    {
+                        this.registrarBitacora("FAMILIA", entity.Id);
+                        this.mapper.actualizarDVH("FAMILIA", entity.Id, dvh);
+                    }
+                }
+            }
+            {
+                dvv = "";
+                foreach (Proyecto entity in new ProyectoMapper().listar())
+                {
+                    string dvh = generarDVH(new string[] { entity.Nombre, entity.HorasEstimadas, entity.ValorHora });
+                    dvv += dvh;
+                    if (!dvh.Equals(entity.Dvh))
+                    {
+                        this.registrarBitacora("PROYECTO", entity.Id);
+                        this.mapper.actualizarDVH("PROYECTO", entity.Id, dvh);
+                    }
+                }
+            }
+            {
+                dvv = "";
+                foreach (Tarea entity in new TareaMapper().listar())
+                {
+                    string dvh = generarDVH(new string[] { entity.Titulo, entity.Descripcion });
+                    dvv += dvh;
+                    if (!dvh.Equals(entity.Dvh))
+                    {
+                        this.registrarBitacora("TAREA", entity.Id);
+                        this.mapper.actualizarDVH("TAREA", entity.Id, dvh);
+                    }
+                }
+            }
+            {
+                dvv = "";
+                foreach (Bitacora entity in new BitacoraMapper().listar())
+                {
+                    string dvh = generarDVH(new string[] { new UsuarioMapper().leer(entity.Usuario.Id).Username, entity.Fecha.ToString("dd/MM/yyyy HH:mm"), entity.Funcionalidad, entity.Descripcion, entity.Criticidad });
+                    dvv += dvh;
+                    if (!dvh.Equals(entity.Dvh))
+                    {
+                        this.registrarBitacora("BITACORA", entity.Id);
+                        this.mapper.actualizarDVH("BITACORA", entity.Id, dvh);
+                    }
+                }
+            }
+            {
+                dvv = "";
+                foreach (Usuario entity in new UsuarioMapper().listarTodos())
+                {
+                    string dvh = generarDVH(new string[] { entity.Username, entity.Apellido, entity.Nombre, entity.Contrasenia });
+                    dvv += dvh;
+                    if (!dvh.Equals(entity.Dvh))
+                    {
+                        this.registrarBitacora("USUARIO", entity.Id);
+                        this.mapper.actualizarDVH("USUARIO", entity.Id, dvh);
+                    }
+                }
+            }
+            {
+                dvv = "";
+
+                List<object[]> list = mapper.selectProyectoUsuario();
+                foreach (object[] row in list)
+                {
+                    string dvh = generarDVH(new string[] { row[0].ToString(), new UsuarioMapper().leer((int)row[1]).Username });
+                    dvv += dvh;
+                    if (!dvh.Equals(row[2].ToString()))
+                    {
+                        this.mapper.actualizarDVH("PROYECTO_USUARIO", (int)row[0], (int)row[1], dvh);
+                    }
+                }
+            }
+            {
+                dvv = "";
+                List<object[]> list = mapper.selectUsuarioFamilia();
+                foreach (object[] row in list)
+                {
+                    string dvh = generarDVH(new string[] { desencriptarAES(new UsuarioMapper().leer((int)row[0]).Username), row[1].ToString() });
+                    dvv += dvh;
+                    if (!dvh.Equals(row[2]))
+                    {
+                        this.mapper.actualizarDVH("USUARIO_FAMILIA", (int)row[0], (int)row[1], dvh);
+                    }
+                }
+            }
+            {
+                dvv = "";
+                List<object[]> list = mapper.selectFamiliaPatente();
+                foreach (object[] row in list)
+                {
+                    string dvh = generarDVH(new string[] { row[0].ToString(), row[1].ToString() });
+                    dvv += dvh;
+                    if (!dvh.Equals(row[2]))
+                    {
+                        this.mapper.actualizarDVH("FAMILIA_PATENTE", (int)row[0], (int)row[1], dvh);
+                    }
+                }
+            }
+            {
+                dvv = "";
+                List<object[]> list = mapper.selectUsuarioPatente();
+                foreach (object[] row in list)
+                {
+                    string dvh = generarDVH(new string[] { row[0].ToString(), row[1].ToString() });
+                    dvv += dvh;
+                    if (!dvh.Equals(row[2]))
+                    {
+                        this.mapper.actualizarDVH("USUARIO_PATENTE", (int)row[0], (int)row[1], dvh);
+                    }
+                }
+            }
+            this.actualizarDVV("HORA");
+            this.actualizarDVV("FAMILIA");
+            this.actualizarDVV("PROYECTO");
+            this.actualizarDVV("TAREA");
+            this.actualizarDVV("BITACORA");
+            this.actualizarDVV("USUARIO");
+            this.actualizarDVV("PROYECTO_USUARIO");
+            this.actualizarDVV("USUARIO_FAMILIA");
+            this.actualizarDVV("FAMILIA_PATENTE");
+            this.actualizarDVV("USUARIO_PATENTE");
+        }
+
     }
 }

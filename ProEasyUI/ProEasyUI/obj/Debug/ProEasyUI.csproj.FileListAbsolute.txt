@@ -141,3 +141,4 @@ D:\TFI\proeasy\ProEasyUI\ProEasyUI\bin\Debug\itext.pdfa.xml
 D:\TFI\proeasy\ProEasyUI\ProEasyUI\bin\Debug\itext.sign.xml
 D:\TFI\proeasy\ProEasyUI\ProEasyUI\bin\Debug\itext.styledxmlparser.xml
 D:\TFI\proeasy\ProEasyUI\ProEasyUI\bin\Debug\itext.svg.xml
+D:\TFI\proeasy\ProEasyUI\ProEasyUI\obj\Debug\ProEasyUI.MenuForm.es.resources

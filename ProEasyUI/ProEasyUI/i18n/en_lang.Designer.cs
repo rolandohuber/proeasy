@@ -1051,6 +1051,15 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Recalcular DV_EN.
+        /// </summary>
+        internal static string menu_dv {
+            get {
+                return ResourceManager.GetString("menu.dv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Familias_EN.
         /// </summary>
         internal static string menu_families {
@@ -1308,6 +1317,15 @@ namespace ProEasyUI.i18n {
         internal static string project_valor {
             get {
                 return ResourceManager.GetString("project.valor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Se restauro la integridad_EN.
+        /// </summary>
+        internal static string recalculo_dv_ok {
+            get {
+                return ResourceManager.GetString("recalculo.dv.ok", resourceCulture);
             }
         }
         

@@ -295,6 +295,7 @@ namespace ProEasyUI
                 this.idiomasItem.Text = i18n().GetString("menu.language");
                 this.stringConexionItem.Text = i18n().GetString("menu.connection.string");
                 this.logOutItem.Text = i18n().GetString("menu.logout");
+                this.recalcularIntegridadToolStripMenuItem.Text = i18n().GetString("menu.dv");
 
                 if (this.form != null)
                     this.form.ReloadLang();
@@ -323,6 +324,7 @@ namespace ProEasyUI
                 this.backupItem.Visible = Session.getInstance().Usuario.Patentes.Find((item) => item.Nombre.Equals("BACKUP")) != null;
                 this.restoreItem.Visible = Session.getInstance().Usuario.Patentes.Find((item) => item.Nombre.Equals("RESTORE")) != null;
                 this.stringConexionItem.Visible = Session.getInstance().Usuario.Patentes.Find((item) => item.Nombre.Equals("CONNECTION_STRING")) != null;
+                this.recalcularIntegridadToolStripMenuItem.Visible = Session.getInstance().Usuario.Patentes.Find((item) => item.Nombre.Equals("RECALCULO_DV")) != null;
             }
             catch (ProEasyException pEx)
             {
@@ -332,6 +334,12 @@ namespace ProEasyUI
             {
                 showError(i18n().GetString("errors.1"));
             }
+        }
+
+        private void recalcularIntegridadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DigitoVerificadorService.getInstance().recalcularIntegridad();
+            showInfo(i18n().GetString("recalculo.dv.ok"));
         }
     }
 }

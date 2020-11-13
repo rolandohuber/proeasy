@@ -714,4 +714,10 @@
   <data name="exportado" xml:space="preserve">
     <value>Se exporto correctamente_EN</value>
   </data>
+  <data name="menu.dv" xml:space="preserve">
+    <value>Recalcular DV_EN</value>
+  </data>
+  <data name="recalculo.dv.ok" xml:space="preserve">
+    <value>Se restauro la integridad_EN</value>
+  </data>
 </root>

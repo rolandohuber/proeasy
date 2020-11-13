@@ -16,7 +16,7 @@ namespace DAL
                 string query = "SELECT COUNT(*) FROM USUARIO WHERE USUARIO = '" + Usuario.Username + "' AND ID != " + Usuario.Id;
                 int countUsername = sqlHelper.ExecuteScalar(query);
 
-                query = "SELECT COUNT(*) FROM USUARIO WHERE EMAIL = '" + Usuario.Email + "' AND ID != " + Usuario.Id +"AND ELIMINADO=0";
+                query = "SELECT COUNT(*) FROM USUARIO WHERE EMAIL = '" + Usuario.Email + "' AND ID != " + Usuario.Id + "AND ELIMINADO=0";
                 int countEmail = sqlHelper.ExecuteScalar(query);
 
                 return countUsername > 0 || countEmail > 0;
@@ -116,6 +116,11 @@ namespace DAL
             }
         }
 
+        public bool canRecalculate(string usuario)
+        {
+            string q = "select count(*) from usuario U left join usuario_patente UP on UP.id_usuario=U.id left join usuario_familia UF on UP.id_usuario=U.id left join familia_patente FP on FP.id_familia=UF.id_familia left join patente P on P.id=UP.id_patente or P.id=FP.id_patente where usuario='" + usuario + "' AND P.nombre='nrOTmQacmYg9yUbHIbjVsA=='";
+            return sqlHelper.ExecuteScalar(q) > 0;
+        }
 
         public List<Usuario> listar(Proyecto proyecto)
         {
