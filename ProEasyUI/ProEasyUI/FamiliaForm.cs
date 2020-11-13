@@ -56,10 +56,21 @@ namespace ProEasyUI
             }
         }
 
+        void KeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString() == "F1")
+            {
+                Help.ShowHelp(this, "D:\\TFI\\proeasy\\ProEasyUI\\ProEasyUI\\bin\\Debug\\chm\\Familias_" + System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName + ".chm");
+            }
+        }
+
         private void FamiliaForm_Load(object sender, EventArgs e)
         {
             try
             {
+                this.KeyPreview = true;
+                this.KeyDown += new KeyEventHandler(KeyDownHandler);
+
                 this.textBox1.Clear();
                 this.listado.Rows.Clear();
                 List<BE.Familia> list = familiaService.listar();

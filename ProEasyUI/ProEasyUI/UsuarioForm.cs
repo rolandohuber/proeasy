@@ -90,12 +90,23 @@ namespace ProEasyUI
             listado.Height = Convert.ToInt32(this.Height * 0.95);
         }
 
+        void KeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString() == "F1")
+            {
+                Help.ShowHelp(this, "D:\\TFI\\proeasy\\ProEasyUI\\ProEasyUI\\bin\\Debug\\chm\\Usuarios_" + System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName + ".chm");
+            }
+        }
+
         private void UsuarioForm_Load(object sender, EventArgs e)
         {
             try
             {
                 listado.Width = Convert.ToInt32(this.Width * 0.4);
                 listado.Height = Convert.ToInt32(this.Height * 0.95);
+
+                this.KeyPreview = true;
+                this.KeyDown += new KeyEventHandler(KeyDownHandler);
 
                 this.listado.Rows.Clear();
 
