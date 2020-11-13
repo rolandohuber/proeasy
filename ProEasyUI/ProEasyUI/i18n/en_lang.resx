@@ -705,4 +705,13 @@
   <data name="user.updated" xml:space="preserve">
     <value>El usuario se actualizo correctamente_EN</value>
   </data>
+  <data name="hora.created" xml:space="preserve">
+    <value>Las horas se registraron correctamente_EN</value>
+  </data>
+  <data name="export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="exportado" xml:space="preserve">
+    <value>Se exporto correctamente_EN</value>
+  </data>
 </root>

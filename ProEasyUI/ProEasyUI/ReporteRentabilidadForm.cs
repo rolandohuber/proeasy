@@ -1,7 +1,13 @@
 ﻿using BE;
 using BLL;
+using iText.Kernel.Geom;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace ProEasyUI
 {
@@ -30,6 +36,7 @@ namespace ProEasyUI
                 this.Desvio.HeaderText = i18n().GetString("report.list.desvio.hs");
                 this.DesvioDinero.HeaderText = i18n().GetString("report.list.desvio.dinero");
                 this.Fecha.HeaderText = i18n().GetString("report.list.date");
+                this.button3.Text = i18n().GetString("export");
             }
             catch (ProEasyException pEx)
             {
@@ -94,6 +101,50 @@ namespace ProEasyUI
             catch (Exception)
             {
                 showError(i18n().GetString("errors.1"));
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog savefile = new SaveFileDialog();
+            savefile.FileName = "reporteRentabilidad_" + DateTime.Now.ToString("dd - MM - yyyy") + ".pdf";
+            savefile.Filter = "PDF files (*.pdf)|*.pdf";
+
+            if (savefile.ShowDialog() == DialogResult.OK)
+            {
+                PdfWriter writer = new PdfWriter(savefile.FileName);
+                PdfDocument pdf = new PdfDocument(writer);
+                Document document = new Document(pdf, PageSize.LETTER);
+                document.SetMargins(60, 20, 55, 20);
+
+
+                iText.Kernel.Font.PdfFont fontCol = iText.Kernel.Font.PdfFontFactory.CreateFont(iText.IO.Font.Constants.StandardFonts.HELVETICA_BOLD);
+                iText.Kernel.Font.PdfFont fontText = iText.Kernel.Font.PdfFontFactory.CreateFont(iText.IO.Font.Constants.StandardFonts.HELVETICA);
+
+
+                string[] columns = { i18n().GetString("report.list.project"), i18n().GetString("report.list.estimated.hs"), i18n().GetString("report.list.insumidas.hs")
+                        , i18n().GetString("report.list.desvio.hs"), i18n().GetString("report.list.desvio.dinero") };
+
+                float[] sizes = { 20, 20, 20, 20, 20 };
+                Table table = new Table(UnitValue.CreatePercentArray(sizes));
+                table.SetWidth(UnitValue.CreatePercentValue(100));
+
+                foreach (string col in columns)
+                    table.AddHeaderCell(new Cell().Add(new Paragraph(col)));
+
+                List<BE.ProyectoReporte> list = proyectoService.generarReporte(this.desdeField.Value, this.hastaField.Value);
+                foreach (BE.ProyectoReporte r in list)
+                {
+                    table.AddCell(new Cell().Add(new Paragraph(r.Nombre).SetFont(fontText)));
+                    table.AddCell(new Cell().Add(new Paragraph(r.HorasEstimadas.ToString()).SetFont(fontText)));
+                    table.AddCell(new Cell().Add(new Paragraph(r.HorasInsumidas.ToString()).SetFont(fontText)));
+                    table.AddCell(new Cell().Add(new Paragraph(r.DesvioHoras.ToString()).SetFont(fontText)));
+                    table.AddCell(new Cell().Add(new Paragraph(r.DesvioDinero.ToString()).SetFont(fontText)));
+                }
+                document.Add(table);
+                document.Close();
+
+                showInfo(i18n().GetString("exportado"));
             }
         }
     }

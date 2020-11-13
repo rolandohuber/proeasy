@@ -14,9 +14,16 @@ namespace DAL
             try
             {
                 string query = "SELECT COUNT(*) FROM USUARIO WHERE USUARIO = '" + Usuario.Username + "' AND ID != " + Usuario.Id;
-                int count = sqlHelper.ExecuteScalar(query);
+                int countUsername = sqlHelper.ExecuteScalar(query);
 
-                return count > 0;
+                query = "SELECT COUNT(*) FROM USUARIO WHERE EMAIL = '" + Usuario.Email + "' AND ID != " + Usuario.Id +"AND ELIMINADO=0";
+                int countEmail = sqlHelper.ExecuteScalar(query);
+
+                return countUsername > 0 || countEmail > 0;
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -28,10 +35,24 @@ namespace DAL
         {
             try
             {
-                string query = "SELECT INTENTOS FROM USUARIO WHERE USUARIO ='" + usuario + "'";
-                int count = sqlHelper.ExecuteScalar(query);
+                string query = "SELECT * FROM USUARIO WHERE USUARIO ='" + usuario + "'";
+                DataTable list = sqlHelper.ExecuteReader(query);
+                if (list.Rows.Count > 1)
+                {
+                    throw new ProEasyException(15, "mas de un registro");
+                }
+                else if (list.Rows.Count < 1)
+                {
+                    throw new ProEasyException(16, "not found");
+                }
 
-                return count >= 3;
+                DataRow row = list.Rows[0];
+
+                return Convert.ToInt32(row["intentos"]) >= 3 || !Convert.ToBoolean(row["habilitado"]);
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -43,7 +64,6 @@ namespace DAL
         {
             try
             {
-                //string query = "SELECT * FROM USUARIO WHERE USUARIO = '" + username + "' AND CONTRASENIA = '" + contraseña + "'";
                 string query = "SELECT * FROM USUARIO WHERE USUARIO = '" + username + "'";
                 DataTable list = sqlHelper.ExecuteReader(query);
                 if (list.Rows.Count > 1)
@@ -56,6 +76,15 @@ namespace DAL
                 }
 
                 DataRow row = list.Rows[0];
+
+                if (!contraseña.Equals(Convert.ToString(row["contrasenia"])))
+                {
+                    string q = "UPDATE USUARIO SET INTENTOS=" + (Convert.ToInt32(row["intentos"]) + 1) + " WHERE USUARIO='" + username + "'";
+                    sqlHelper.ExecuteQuery(q);
+                    throw new ProEasyException(16, "not found");
+                }
+
+
                 Idioma idioma = new Idioma();
                 idioma.Id = Convert.ToInt32(row["id_idioma"]);
                 Usuario usuario = new Usuario
@@ -76,6 +105,10 @@ namespace DAL
                 };
 
                 return usuario;
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -112,6 +145,10 @@ namespace DAL
                 }
                 return usuarios;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -140,6 +177,10 @@ namespace DAL
                 paramList.Add("@dvh", entity.Dvh);
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -170,6 +211,10 @@ namespace DAL
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -182,10 +227,18 @@ namespace DAL
             {
                 string query = "UPDATE USUARIO SET ELIMINADO = 1 WHERE ID=" + entity.Id;
                 bool ok = sqlHelper.ExecuteQuery(query);
+                query = "DELETE USUARIO_FAMILIA WHERE ID_USUARIO=" + entity.Id;
+                sqlHelper.ExecuteQuery(query);
+                query = "DELETE USUARIO_PATENTE WHERE ID_USUARIO=" + entity.Id;
+                sqlHelper.ExecuteQuery(query);
                 if (!ok)
                 {
                     throw new ProEasyException(17, "ocurrio un error al eliminar el usuario");
                 }
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -221,6 +274,10 @@ namespace DAL
 
                 }
                 return usuarios;
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -262,6 +319,10 @@ namespace DAL
 
                 return usuario;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -297,6 +358,10 @@ namespace DAL
                 }
                 return usuarios;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -312,6 +377,10 @@ namespace DAL
                 var ids = obtenerUsuariosAsignados(proyecto).Select(usuario => usuario.Id);
 
                 return lista.Where(p => ids.All(p2 => p2 != p.Id)).ToList();
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -333,6 +402,10 @@ namespace DAL
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -351,6 +424,10 @@ namespace DAL
                 paramList.Add("@id_usuario", usuario.Id);
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -387,6 +464,10 @@ namespace DAL
 
                 }
                 return usuarios;
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {

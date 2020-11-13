@@ -17,6 +17,10 @@ namespace DAL
 
                 return count > 0;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -31,6 +35,10 @@ namespace DAL
                 int count = sqlHelper.ExecuteScalar(query);
 
                 return count > 0;
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -74,6 +82,10 @@ namespace DAL
                 }
                 return false;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -93,6 +105,10 @@ namespace DAL
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -110,6 +126,10 @@ namespace DAL
                 paramList.Add("@id_patente", patente.Id);
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -130,6 +150,10 @@ namespace DAL
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -149,6 +173,10 @@ namespace DAL
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -163,6 +191,10 @@ namespace DAL
                 var ids = obtenerTodasLasFamilias(usuario).Select(familia => familia.Id);
 
                 return lista.Where(p => ids.All(p2 => p2 != p.Id)).ToList();
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -194,6 +226,10 @@ namespace DAL
                 }
                 return lista;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -216,6 +252,10 @@ namespace DAL
                     throw new ProEasyException(55, "ocurrio un error al eliminar la familia");
                 }
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -235,6 +275,10 @@ namespace DAL
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -252,6 +296,10 @@ namespace DAL
                 paramList.Add("@id_familia", familia.Id);
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -282,6 +330,10 @@ namespace DAL
                 }
 
                 return lista;
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -316,6 +368,10 @@ namespace DAL
                 //familia.Usuario = row.Field<bool>("usuario");
                 //familia.Patentes = row.Field<bool>("usuario");
                 return familia;
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {

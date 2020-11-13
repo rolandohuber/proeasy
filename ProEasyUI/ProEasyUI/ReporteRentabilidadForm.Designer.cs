@@ -42,6 +42,7 @@
             this.Desvio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DesvioDinero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,20 +104,19 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 65);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 373);
-            this.dataGridView1.TabIndex = 5;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-             this.Proyecto,
+            this.Proyecto,
             this.Estado,
             this.Estimadas,
             this.Insumidas,
             this.Desvio,
             this.DesvioDinero,
-            this.Fecha
-        });
+            this.Fecha});
+            this.dataGridView1.Location = new System.Drawing.Point(12, 65);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(776, 373);
+            this.dataGridView1.TabIndex = 5;
             // 
             // Proyecto
             // 
@@ -142,6 +142,11 @@
             this.Insumidas.Name = "Insumidas";
             this.Insumidas.ReadOnly = true;
             // 
+            // Desvio
+            // 
+            this.Desvio.Name = "Desvio";
+            this.Desvio.ReadOnly = true;
+            // 
             // DesvioDinero
             // 
             this.DesvioDinero.HeaderText = "Desvio dinero";
@@ -153,13 +158,23 @@
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
-
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(600, 23);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Exportar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // ReporteRentabilidadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -192,5 +207,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Desvio;
         private System.Windows.Forms.DataGridViewTextBoxColumn DesvioDinero;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.Button button3;
     }
 }

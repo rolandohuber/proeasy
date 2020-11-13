@@ -24,6 +24,10 @@ namespace DAL
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -46,6 +50,10 @@ namespace DAL
                 paramList.Add("@dvh", entity.Dvh);
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -84,6 +92,10 @@ namespace DAL
                 }
                 return lista;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -99,6 +111,10 @@ namespace DAL
                 paramList.Add("@id", entity.Id);
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -137,6 +153,10 @@ namespace DAL
 
                 return hora;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -167,6 +187,10 @@ namespace DAL
                     lista.Add(hora);
                 }
                 return lista;
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -205,6 +229,10 @@ namespace DAL
                     lista.Add(hora);
                 }
                 return lista;
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {

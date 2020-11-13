@@ -48,9 +48,8 @@ namespace BLL
 
         public Usuario login(string usuario, string contraseña)
         {
-            if (!verificadorService.verificarIntegridad())
-                throw new ProEasyException(11, "Error al verificar la integridad de la base");
-
+            //if (!verificadorService.verificarIntegridad())
+            //    throw new ProEasyException(11, "Error al verificar integridad");
             if (usuarioMapper.estaBloqueado(encriptarAES(usuario)))
                 throw new ProEasyException(12, "El usuario se encuentra bloqueado");
 

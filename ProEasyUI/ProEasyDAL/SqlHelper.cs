@@ -140,7 +140,7 @@ namespace DAL
 
                 return res;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw new BE.ProEasyException(100, "Conexion no establecida");
             }

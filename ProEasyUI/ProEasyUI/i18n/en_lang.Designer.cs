@@ -592,6 +592,24 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Export.
+        /// </summary>
+        internal static string export {
+            get {
+                return ResourceManager.GetString("export", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Se exporto correctamente_EN.
+        /// </summary>
+        internal static string exportado {
+            get {
+                return ResourceManager.GetString("exportado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cancelar_EN.
         /// </summary>
         internal static string family_cancel {
@@ -687,6 +705,15 @@ namespace ProEasyUI.i18n {
         internal static string family_updated {
             get {
                 return ResourceManager.GetString("family.updated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Las horas se registraron correctamente_EN.
+        /// </summary>
+        internal static string hora_created {
+            get {
+                return ResourceManager.GetString("hora.created", resourceCulture);
             }
         }
         

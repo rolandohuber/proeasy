@@ -36,6 +36,10 @@ namespace DAL
                 }
                 return entities;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -59,6 +63,10 @@ namespace DAL
                 paramList.Add("@dvh", entity.Dvh);
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -84,6 +92,10 @@ namespace DAL
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -98,6 +110,10 @@ namespace DAL
                 int count = sqlHelper.ExecuteScalar(query);
 
                 return count > 0;
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -115,6 +131,10 @@ namespace DAL
                 {
                     throw new ProEasyException(45, "ocurrio un error al eliminar el proyecto");
                 }
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -145,6 +165,10 @@ namespace DAL
                     entities.Add(entity);
                 }
                 return entities;
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -181,6 +205,10 @@ namespace DAL
                     Dvh = Convert.ToString(row["dvh"])
                 };
                 return entity;
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {

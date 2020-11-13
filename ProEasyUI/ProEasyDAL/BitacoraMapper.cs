@@ -24,6 +24,10 @@ namespace DAL
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -49,6 +53,10 @@ namespace DAL
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -65,6 +73,10 @@ namespace DAL
                 {
                     throw new ProEasyException(105, "ocurrio un error al eliminar la bitacora");
                 }
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -102,6 +114,10 @@ namespace DAL
 
                 return bitacora;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -131,6 +147,10 @@ namespace DAL
                 }
                 return bitacoras;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -141,7 +161,7 @@ namespace DAL
         {
             try
             {
-                string query = "SELECT * FROM BITACORA WHERE fecha >= @desde AND fecha <= @hasta ";
+                string query = "SELECT * FROM BITACORA WHERE FORMAT(fecha, 'dd/MM/yyyy') >= @desde AND FORMAT(fecha, 'dd/MM/yyyy') <= @hasta ";
                 if (entity.Usuario != null)
                     query += " AND id_usuario = @id_usuario";
                 if (entity.Criticidad != null)
@@ -152,8 +172,8 @@ namespace DAL
                     paramList.Add("@id_usuario", entity.Usuario.Id);
                 if (entity.Criticidad != null)
                     paramList.Add("@criticidad", entity.Criticidad);
-                paramList.Add("@desde", entity.Desde);
-                paramList.Add("@hasta", entity.Hasta);
+                paramList.Add("@desde", entity.Desde.ToString("dd/MM/yyyy"));
+                paramList.Add("@hasta", entity.Hasta.ToString("dd/MM/yyyy"));
 
                 DataTable list = sqlHelper.ExecuteQueryWithParamsRetDataTable(query, paramList);
                 List<Bitacora> bitacoras = new List<Bitacora>();
@@ -172,6 +192,10 @@ namespace DAL
                     bitacoras.Add(bitacora);
                 }
                 return bitacoras;
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {

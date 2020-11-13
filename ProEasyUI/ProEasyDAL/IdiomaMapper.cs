@@ -19,6 +19,10 @@ namespace DAL
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -36,6 +40,10 @@ namespace DAL
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -51,6 +59,10 @@ namespace DAL
                 paramList.Add("@NOMBRE", entity.Nombre);
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -68,6 +80,10 @@ namespace DAL
                 paramList.Add("@eliminado", entity.Eliminado);
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -101,6 +117,10 @@ namespace DAL
                 };
                 return idioma;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -127,6 +147,10 @@ namespace DAL
                     lista.Add(idioma);
                 }
                 return lista;
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {

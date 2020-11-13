@@ -27,6 +27,10 @@ namespace DAL
                 }
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -44,6 +48,10 @@ namespace DAL
                 paramList.Add("@valor", entity.Valor);
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -64,6 +72,10 @@ namespace DAL
                 }
                 return lista;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -80,6 +92,10 @@ namespace DAL
                 {
                     throw new ProEasyException(95, "ocurrio un error al eliminar el digito verificador");
                 }
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -114,6 +130,10 @@ namespace DAL
 
                 return item;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -139,6 +159,10 @@ namespace DAL
                 }
                 return lista;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -151,6 +175,10 @@ namespace DAL
             {
                 string query = "SELECT COUNT(*) FROM DIGITO_VERIFICADOR WHERE TABLA='" + tabla + "' AND VALOR='" + dvv + "'";
                 return sqlHelper.ExecuteScalar(query) > 0;
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -175,6 +203,10 @@ namespace DAL
                 }
                 return list;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -197,6 +229,10 @@ namespace DAL
                 });
                 }
                 return list;
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -221,6 +257,10 @@ namespace DAL
                 }
                 return list;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -243,6 +283,10 @@ namespace DAL
                 });
                 }
                 return list;
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {

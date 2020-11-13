@@ -18,6 +18,10 @@ namespace DAL
                     "select U.* from usuario U inner join usuario_familia UF on UF.id_usuario = U.id and UF.id_usuario != " + userId + " inner join familia_patente FP on FP.id_familia = UF.id_familia and FP.id_patente = " + patente + " where U.eliminado=0 and U.habilitado=1) US";
                 return sqlHelper.ExecuteScalar(query) > 0;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -46,6 +50,10 @@ namespace DAL
                 }
                 return lista;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -61,6 +69,10 @@ namespace DAL
 
                 return lista.Where(p => ids.All(p2 => p2 != p.Id)).ToList();
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -75,6 +87,10 @@ namespace DAL
                 var ids = obtenerTodasLasPatentes(usuario).Select(patente => patente.Id);
 
                 return lista.Where(p => ids.All(p2 => p2 != p.Id)).ToList();
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -103,6 +119,10 @@ namespace DAL
                     lista.Add(patente);
                 }
                 return lista;
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -153,6 +173,10 @@ namespace DAL
 
                 return lista;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -169,6 +193,10 @@ namespace DAL
                 paramList.Add("@nombre", entity.Nombre);
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -188,6 +216,10 @@ namespace DAL
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -204,6 +236,10 @@ namespace DAL
                 {
                     throw new ProEasyException(75, "ocurrio un error al eliminar la patente");
                 }
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -229,6 +265,10 @@ namespace DAL
                     lista.Add(patente);
                 }
                 return lista;
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -260,6 +300,10 @@ namespace DAL
                 };
                 return patente;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -279,6 +323,10 @@ namespace DAL
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -296,6 +344,10 @@ namespace DAL
                 paramList.Add("@id_patente", patente.Id);
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -317,6 +369,10 @@ namespace DAL
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -335,6 +391,10 @@ namespace DAL
                                 ")) UFC";
                 return sqlHelper.ExecuteScalar(query) > 0;
             }
+            catch (ProEasyException)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
                 throw new ProEasyException(1, ex.Message);
@@ -352,6 +412,10 @@ namespace DAL
                 paramList.Add("@id_patente", patente.Id);
 
                 sqlHelper.ExecuteQueryWithParams(query, paramList);
+            }
+            catch (ProEasyException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
