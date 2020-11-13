@@ -547,6 +547,15 @@ namespace ProEasyUI.i18n {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a La Familia dejara patentes sin asignar_EN.
+        /// </summary>
+        internal static string errors_54 {
+            get {
+                return ResourceManager.GetString("errors.54", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Ocurrio un error al eliminar la familia_EN.
         /// </summary>
         internal static string errors_55 {

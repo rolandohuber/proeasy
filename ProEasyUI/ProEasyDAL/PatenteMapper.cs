@@ -226,6 +226,12 @@ namespace DAL
             }
         }
 
+        public bool tieneUsuarioRelacionado(long id)
+        {
+            string q = "SELECT COUNT(*) FROM USUARIO_PATENTE WHERE ID_PATENTE=" + id;
+            return sqlHelper.ExecuteScalar(q) > 0;
+        }
+
         public override void eliminar(Patente entity)
         {
             try
@@ -387,7 +393,7 @@ namespace DAL
                                 " union " +
                                 "select * from usuario_familia " +
                                 "where id_familia in (" +
-                                    "select distinct id_familia from familia_patente where id_patente != " + patente + " and id_familia!=" + familia +
+                                    "select distinct id_familia from familia_patente where id_patente = " + patente + " and id_familia!=" + familia +
                                 ")) UFC";
                 return sqlHelper.ExecuteScalar(query) > 0;
             }

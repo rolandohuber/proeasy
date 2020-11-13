@@ -2,6 +2,7 @@ using BE;
 using DAL;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BLL
 {
@@ -177,6 +178,32 @@ namespace BLL
 
         public void quitarFamilia(Usuario usuario, Familia familia)
         {
+            //chequear si hay al menos un usuario con cada patente de esta familia
+            List<Patente> patentes = PatenteService.getInstance().obtenerPatentesAsignadas(familia);
+            foreach (Patente p in patentes.ToList())
+            {
+                if (tieneUsuarioRelacionado(p))
+                {
+                    patentes.Remove(p);
+                }
+            }
+            if (patentes.Count > 0)
+            {
+                //reviso si esta asociado a otras familias y si tienen usuarios relacionados
+                foreach (Patente p in patentes.ToList())
+                {
+                    if (tieneFamiliasRelacionadasConUsuarios(p, familia.Id))
+                    {
+                        patentes.Remove(p);
+                    }
+                }
+            }
+
+            if (patentes.Count > 0)
+            {
+                throw new ProEasyException(54, "La Familia dejara patentes sin asignar");
+            }
+
             familiaMapper.quitarFamilia(usuario, familia);
             verificadorService.actualizarDVV("USUARIO_FAMILIA");
             BitacoraService.getInstance().crear(
@@ -188,6 +215,16 @@ namespace BLL
                .Usuario(Session.getInstance().Usuario)
                .build()
            );
+        }
+
+        private bool tieneFamiliasRelacionadasConUsuarios(Patente p, long idFamilia)
+        {
+            return this.familiaMapper.tieneFamiliasRelacionadasConUsuarios(p, idFamilia);
+        }
+
+        private bool tieneUsuarioRelacionado(Patente p)
+        {
+            return PatenteService.getInstance().tieneUsuarioRelacionado(p);
         }
     }
 }

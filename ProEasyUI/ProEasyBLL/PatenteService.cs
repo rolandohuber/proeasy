@@ -211,6 +211,11 @@ namespace BLL
             return list;
         }
 
+        internal bool tieneUsuarioRelacionado(Patente p)
+        {
+            return this.patenteMapper.tieneUsuarioRelacionado(p.Id);
+        }
+
         public void asignarPatente(Familia familia, Patente patente)
         {
             patenteMapper.asignarPatente(familia, patente, verificadorService.generarDVH(new string[] { familia.Id.ToString(), patente.Id.ToString() }));

@@ -262,6 +262,12 @@ namespace DAL
             }
         }
 
+        public bool tieneFamiliasRelacionadasConUsuarios(Patente p, long idFamilia)
+        {
+            string q = "select count(*) from familia F left join familia_patente FP on FP.id_familia = F.id and FP.id_patente = " + p.Id + " where F.id != " + idFamilia;
+            return sqlHelper.ExecuteScalar(q) > 0;
+        }
+
         public void asignarFamilia(Usuario user, Familia familia, string dvh)
         {
             try
