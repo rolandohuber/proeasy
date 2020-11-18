@@ -161,21 +161,14 @@ namespace DAL
         {
             try
             {
-                string query = "SELECT * FROM BITACORA WHERE FORMAT(fecha, 'dd/MM/yyyy') >= @desde AND FORMAT(fecha, 'dd/MM/yyyy') <= @hasta ";
+                string query = "SELECT * FROM BITACORA WHERE fecha between '" + entity.Desde.ToString("yyyy/MM/dd") + " 00:00:00.000' AND '" + entity.Hasta.ToString("yyyy/MM/dd") + " 23:59:59.997' ";
                 if (entity.Usuario != null)
-                    query += " AND id_usuario = @id_usuario";
+                    query += (" AND id_usuario = '" + entity.Usuario.Id + "'");
                 if (entity.Criticidad != null)
-                    query += " AND criticidad = @criticidad";
+                    query += (" AND criticidad = '" + entity.Criticidad + "'");
 
-                Dictionary<string, object> paramList = new Dictionary<string, object>();
-                if (entity.Usuario != null)
-                    paramList.Add("@id_usuario", entity.Usuario.Id);
-                if (entity.Criticidad != null)
-                    paramList.Add("@criticidad", entity.Criticidad);
-                paramList.Add("@desde", entity.Desde.ToString("dd/MM/yyyy"));
-                paramList.Add("@hasta", entity.Hasta.ToString("dd/MM/yyyy"));
 
-                DataTable list = sqlHelper.ExecuteQueryWithParamsRetDataTable(query, paramList);
+                DataTable list = sqlHelper.ExecuteReader(query);
                 List<Bitacora> bitacoras = new List<Bitacora>();
                 foreach (DataRow row in list.Rows)
                 {

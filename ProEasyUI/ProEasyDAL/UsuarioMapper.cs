@@ -118,7 +118,9 @@ namespace DAL
 
         public bool canRecalculate(string usuario)
         {
-            string q = "select count(*) from usuario U left join usuario_patente UP on UP.id_usuario=U.id left join usuario_familia UF on UP.id_usuario=U.id left join familia_patente FP on FP.id_familia=UF.id_familia left join patente P on P.id=UP.id_patente or P.id=FP.id_patente where usuario='" + usuario + "' AND P.nombre='nrOTmQacmYg9yUbHIbjVsA=='";
+            string q = "select distinct count(distinct P.id) from usuario U " +
+                "left join usuario_patente UP on UP.id_usuario=U.id " +
+                "left join usuario_familia UF on UF.id_usuario=U.id left join familia_patente FP on FP.id_familia=UF.id_familia left join patente P on P.id=UP.id_patente or P.id=FP.id_patente where usuario='" + usuario + "' AND P.nombre='nrOTmQacmYg9yUbHIbjVsA=='";
             return sqlHelper.ExecuteScalar(q) > 0;
         }
 
